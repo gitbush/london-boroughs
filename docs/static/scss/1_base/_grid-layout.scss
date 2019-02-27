@@ -55,6 +55,7 @@
 
 // responsive grid layouts
 main{
+
     // mobile device 
     @include mobile-device{ 
         margin: 0;
@@ -76,6 +77,7 @@ main{
         "avg-house-row"
         "sidebar";
     };
+
     // tablet device 
     @include tablet-device{ 
         margin: 0;
@@ -92,11 +94,20 @@ main{
         "employment employment avg-house-row avg-house-row"
         "sidebar sidebar sidebar sidebar";
     };
+
+    // desktop screen
+    @include desktop-device{
+        display: grid;
+        grid-template-columns: 50px repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 10px;
+        grid-template-areas: 
+        "sidebar population born-abroad avg-house-prc avg-pay"
+        "sidebar BAME       BAME        language      language"
+        "sidebar migrant    crimes      crimes        obesity"
+        "sidebar employment crimes      crimes        avg-house-row";
+    };
 }
-
-
-
-
 
 /*=====  End of grid layout  ======*/
 

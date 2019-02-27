@@ -9,12 +9,15 @@ main, html, body{
     margin: 0;
 }
 
+main{
+    height: 100vh;
+}
+
 header{
     height: 50px;
     background-color: black;
 }
 section{
-    height: 100px;
     background-color: blue;
 }
 

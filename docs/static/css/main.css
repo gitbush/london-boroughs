@@ -5,13 +5,16 @@ main, html, body {
   margin: 0;
 }
 
+main {
+  height: 100vh;
+}
+
 header {
   height: 50px;
   background-color: black;
 }
 
 section {
-  height: 100px;
   background-color: blue;
 }
 
@@ -90,6 +93,16 @@ aside {
     grid-template-rows: repeat(6, auto) 50px;
     grid-gap: 10px;
     grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "employment employment avg-house-row avg-house-row" "sidebar sidebar sidebar sidebar";
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 50px repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 10px;
+    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar employment crimes      crimes        avg-house-row";
   }
 }
 
