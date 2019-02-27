@@ -54,8 +54,8 @@
 }
 
 // responsive grid layouts
-// mobile device 
 main{
+    // mobile device 
     @include mobile-device{ 
         margin: 0;
         display: grid;
@@ -76,7 +76,27 @@ main{
         "avg-house-row"
         "sidebar";
     };
+    // tablet device 
+    @include tablet-device{ 
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat (4, auto);
+        grid-template-rows: repeat(6, auto) 50px;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "population population born-abroad born-abroad"
+        "avg-house-prc avg-house-prc avg-pay avg-pay"
+        "BAME BAME language language"
+        ". crimes crimes ."
+        "migrant migrant obesity obesity"
+        "employment employment avg-house-row avg-house-row"
+        "sidebar sidebar sidebar sidebar";
+    };
 }
+
+
+
+
 
 /*=====  End of grid layout  ======*/
 
