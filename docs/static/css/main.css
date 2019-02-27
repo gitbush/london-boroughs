@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+/* base elements */
+html {
+  margin: 0;
+}
+
+/****** grid layout ******/
+#sidebar {
+  grid-area: sidebar;
+}
+
+#population {
+  grid-area: population;
+}
+
+#born-abroad {
+  grid-area: born-abroad;
+}
+
+#avg-house-prc {
+  grid-area: avg-house-prc;
+}
+
+#avg-pay {
+  grid-area: avg-pay;
+}
+
+#BAME-bar {
+  grid-area: BAME;
+}
+
+#english-lng-bar {
+  grid-area: language;
+}
+
+#migrant-by-birth-pie {
+  grid-area: migrant;
+}
+
+#crimes-map {
+  grid-area: crimes-map;
+}
+
+#obesity-scatter {
+  grid-area: obesity-scatter;
+}
+
+#gender-employment-row {
+  grid-area: gender-employment-row;
+}
+
+#avg-house-row {
+  grid-area: avg-house-row;
+}
+/*# sourceMappingURL=main.css.map */
