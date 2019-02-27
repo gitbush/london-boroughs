@@ -11,11 +11,11 @@ main {
 
 header {
   height: 50px;
-  background-color: black;
+  background-color: blue;
 }
 
 section {
-  background-color: blue;
+  border: solid 1px black;
 }
 
 aside {
@@ -26,6 +26,7 @@ aside {
 /*=============================================
 =                grid layout                  =
 =============================================*/
+/*----------  grid tempate areas  ----------*/
 #sidebar {
   grid-area: sidebar;
 }
@@ -74,6 +75,8 @@ aside {
   grid-area: avg-house-row;
 }
 
+/*----------  end of grid tempate areas  ----------*/
+/*----------  responsive grid layouts ----------*/
 @media screen and (max-width: 767px) {
   main {
     margin: 0;
@@ -106,5 +109,6 @@ aside {
   }
 }
 
+/*----------  end of responsive grid layouts ----------*/
 /*=====  End of grid layout  ======*/
 /*# sourceMappingURL=main.css.map */

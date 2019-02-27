@@ -15,10 +15,11 @@ main{
 
 header{
     height: 50px;
-    background-color: black;
+    background-color: blue;
 }
 section{
-    background-color: blue;
+    // background-color: blue;
+    border: solid 1px black;
 }
 
 aside{

@@ -4,7 +4,9 @@
 =                grid layout                  =
 =============================================*/
 
-// grid template areas
+
+/*----------  grid tempate areas  ----------*/
+
 #sidebar{
     grid-area: sidebar;
 }
@@ -52,8 +54,10 @@
 #avg-house-row{
     grid-area: avg-house-row;
 }
+/*----------  end of grid tempate areas  ----------*/
 
-// responsive grid layouts
+/*----------  responsive grid layouts ----------*/
+
 main{
 
     // mobile device 
@@ -108,6 +112,8 @@ main{
         "sidebar employment crimes      crimes        avg-house-row";
     };
 }
+
+/*----------  end of responsive grid layouts ----------*/
 
 /*=====  End of grid layout  ======*/
 
