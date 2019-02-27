@@ -1,8 +1,15 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,IAAI;CACzB",
+    "mappings": "",
     "sources": [
-        "../scss/main.scss"
+        "../scss/main.scss",
+        "../scss/0_helpers/_helpers-dir.scss",
+        "../scss/0_helpers/_variables.scss",
+        "../scss/0_helpers/_mixins.scss",
+        "../scss/1_base/_base-dir.scss",
+        "../scss/1_base/_base-elements.scss",
+        "../scss/1_base/_grid-layout.scss",
+        "../scss/2_components/_components-dir.scss"
     ],
     "names": [],
     "file": "main.css"

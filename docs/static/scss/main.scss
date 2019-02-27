@@ -1,3 +1,6 @@
-body{
-    background-color: blue;
-}
+// all directories
+// export to main.css
+
+@import "0_helpers/helpers-dir";
+@import "1_base/base-dir";
+@import "2_components/components-dir";
