@@ -1,5 +1,26 @@
 
-/* base elements */
-html{
+
+/*=============================================
+=               base elements                 =
+=============================================*/
+
+
+main, html, body{
     margin: 0;
 }
+
+header{
+    height: 50px;
+    background-color: black;
+}
+section{
+    height: 100px;
+    background-color: blue;
+}
+
+aside{
+    background-color: grey;
+}
+
+/*=====  End of Section base elements  ======*/
+

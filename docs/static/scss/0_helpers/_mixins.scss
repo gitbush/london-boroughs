@@ -2,13 +2,13 @@
 
 // media queries
 @mixin mobile-device{
-    @media screen and (max-width: $tablet-with - 1px){
+    @media screen and (max-width: $tablet-width - 1px){
         @content;
     }
 }
 
 @mixin tablet-device{
-    @media screen and (min-width: $tablet-with) and (max-width: $desktop-width - 1px){
+    @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px){
         @content;
     }
 }

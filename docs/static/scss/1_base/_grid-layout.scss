@@ -1,6 +1,9 @@
 //  css grid layout 
 
-/****** grid layout ******/
+/*=============================================
+=                grid layout                  =
+=============================================*/
+
 // grid template areas
 #sidebar{
     grid-area: sidebar;
@@ -35,22 +38,45 @@
 }
 
 #crimes-map{
-    grid-area: crimes-map;
+    grid-area: crimes;
 }
 
 #obesity-scatter{
-    grid-area: obesity-scatter;
+    grid-area: obesity;
 }
 
 #gender-employment-row{
-    grid-area: gender-employment-row;
+    grid-area: employment;
 }
 
 #avg-house-row{
     grid-area: avg-house-row;
 }
 
+// responsive grid layouts
+// mobile device 
+main{
+    @include mobile-device{ 
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(11, auto) 50px;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "population"
+        "born-abroad"
+        "avg-house-prc"
+        "avg-pay"
+        "BAME"
+        "language"
+        "migrant"
+        "crimes"
+        "obesity"
+        "employment"
+        "avg-house-row"
+        "sidebar";
+    };
+}
 
-
-
+/*=====  End of grid layout  ======*/
 

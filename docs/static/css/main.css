@@ -1,9 +1,28 @@
-/* base elements */
-html {
+/*=============================================
+=               base elements                 =
+=============================================*/
+main, html, body {
   margin: 0;
 }
 
-/****** grid layout ******/
+header {
+  height: 50px;
+  background-color: black;
+}
+
+section {
+  height: 100px;
+  background-color: blue;
+}
+
+aside {
+  background-color: grey;
+}
+
+/*=====  End of Section base elements  ======*/
+/*=============================================
+=                grid layout                  =
+=============================================*/
 #sidebar {
   grid-area: sidebar;
 }
@@ -37,18 +56,31 @@ html {
 }
 
 #crimes-map {
-  grid-area: crimes-map;
+  grid-area: crimes;
 }
 
 #obesity-scatter {
-  grid-area: obesity-scatter;
+  grid-area: obesity;
 }
 
 #gender-employment-row {
-  grid-area: gender-employment-row;
+  grid-area: employment;
 }
 
 #avg-house-row {
   grid-area: avg-house-row;
 }
+
+@media screen and (max-width: 767px) {
+  main {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(11, auto) 50px;
+    grid-gap: 10px;
+    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "employment" "avg-house-row" "sidebar";
+  }
+}
+
+/*=====  End of grid layout  ======*/
 /*# sourceMappingURL=main.css.map */
