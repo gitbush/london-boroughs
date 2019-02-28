@@ -64,9 +64,15 @@ function bornAbroadNd(cf) {
         },
     );
     
-    console.log(bornAbroadGroup.value());
+    // attach dc.js numberDisplay to born abroad ID
+    var abroadNd = dc.numberDisplay("#born-abroad")
 
-    
+    abroadNd
+        .group(bornAbroadGroup)
+        .valueAccessor(function(d){
+            return d.average;
+        });
+        
 
 
 }
