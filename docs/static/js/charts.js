@@ -9,6 +9,7 @@ function makeCharts(error, csv){
     csv.forEach(function(d){
         d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
         d.Median_House_Price = +d.Median_House_Price;
+        d.Gross_Annual_Pay = +d.Gross_Annual_Pay;
     })
 
     // format strings into numbers
@@ -45,11 +46,13 @@ function makeCharts(error, csv){
     // averages groups
     var bornAbroadGroup = reduceAvg(cf, "Proportion_of_resident_population_born_abroad");
     var housePriceGroup = reduceAvg(cf, "Median_House_Price");
+    var avgPayGroup = reduceAvg(cf, "Gross_Annual_Pay");
 
     // all charts
     populationNd(cf);
     bornAbroadNd(cf, bornAbroadGroup);
     avgHousePrcNd(cf, housePriceGroup);
+    annualPayNd(cf, avgPayGroup);
 
     dc.renderAll();
 }
@@ -90,6 +93,19 @@ function avgHousePrcNd(cf, housePriceGroup){
 
      housePriceNd
         .group(housePriceGroup)
+        .valueAccessor(function(d){
+            return d.average;
+        });
+}
+
+// gross annual pay number display
+function annualPayNd(cf, avgPayGroup){
+
+    // attach dc.js numberDisplay to avg pay ID
+    var avgPayNd = dc.numberDisplay('#avg-pay')
+
+    avgPayNd
+        .group(avgPayGroup)
         .valueAccessor(function(d){
             return d.average;
         });
