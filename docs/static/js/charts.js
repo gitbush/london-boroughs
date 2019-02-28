@@ -19,9 +19,35 @@ function makeCharts(error, csv){
     // crossfilter csv data
     var cf = crossfilter(csv);
 
+    // reuseable custom reduce average function 
+    function reduceAvg(dimension, type){
+        return dimension.groupAll().reduce(
+            function(p, v){
+                p.count ++;
+                p.total += v[type];
+                p.average = p.total/p.count;
+                return p;
+            },
+    
+            function(p, v){
+                p.count --;
+                p.total -= v[type];
+                p.average = p.total/p.count;
+                return p;
+            },
+    
+            function(){
+               return {count:0, total:0, average:0};
+            },
+        );
+    };
+    
+    // averages groups
+    var bornAbroadGroup = reduceAvg(cf, "Proportion_of_resident_population_born_abroad");
+
     // all charts
     populationNd(cf);
-    bornAbroadNd(cf);
+    bornAbroadNd(cf, bornAbroadGroup);
     avgHousePrcNd(cf);
 
     dc.renderAll();
@@ -42,29 +68,7 @@ function populationNd(cf) {
 }
 
 // % population born abroad number display 
-function bornAbroadNd(cf) {
-
-    // use custom reduce to get average of all boroughs population born abroad
-    var bornAbroadGroup = cf.groupAll().reduce(
-        
-        function(p, v){
-            p.count ++;
-            p.total += v.Proportion_of_resident_population_born_abroad;
-            p.average = p.total/p.count;
-            return p;
-        },
-
-        function(p, v){
-            p.count --;
-            p.total -= v.Proportion_of_resident_population_born_abroad;
-            p.average = p.total/p.count;
-            return p;
-        },
-
-        function(){
-           return {count:0, total:0, average:0};
-        },
-    );
+function bornAbroadNd(cf, bornAbroadGroup) {
     
     // attach dc.js numberDisplay to born abroad ID
     var abroadNd = dc.numberDisplay("#born-abroad")
