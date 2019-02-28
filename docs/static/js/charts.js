@@ -8,6 +8,7 @@ function makeCharts(error, csv){
     // convert strings to numbers
     csv.forEach(function(d){
         d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
+        d.Median_House_Price = +d.Median_House_Price;
     })
 
     // format strings into numbers
@@ -21,6 +22,7 @@ function makeCharts(error, csv){
     // all charts
     populationNd(cf);
     bornAbroadNd(cf);
+    avgHousePrcNd(cf);
 
     dc.renderAll();
 }
@@ -73,7 +75,39 @@ function bornAbroadNd(cf) {
         .valueAccessor(function(d){
             return d.average / 100; // divide by 100 to allow % number format
         });
-        
+}
 
+// average house price number display
+function avgHousePrcNd(cf){
 
+    // use custom reduce to get average of all boroughs house price
+    var housePriceGroup = cf.groupAll().reduce(
+
+        function(p,v){
+            p.count ++;
+            p.total += v.Median_House_Price;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(p,v){
+            p.count --;
+            p.total -= v.Median_House_Price;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(){
+            return {count:0, total:0, average:0};
+        },
+    );
+
+     // attach dc.js numberDisplay to avg house price ID
+     var housePriceNd = dc.numberDisplay("#avg-house-prc")
+
+     housePriceNd
+        .group(housePriceGroup)
+        .valueAccessor(function(d){
+            return d.average;
+        });
 }
