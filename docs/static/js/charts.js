@@ -68,9 +68,10 @@ function bornAbroadNd(cf) {
     var abroadNd = dc.numberDisplay("#born-abroad")
 
     abroadNd
+        .formatNumber(d3.format("%"))
         .group(bornAbroadGroup)
         .valueAccessor(function(d){
-            return d.average;
+            return d.average / 100; // divide by 100 to allow % number format
         });
         
 
