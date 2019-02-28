@@ -5,6 +5,11 @@ queue()
 // ==== main makeCharts function to render all charts
 function makeCharts(error, csv){
 
+    // convert strings to numbers
+    csv.forEach(function(d){
+        d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
+    })
+
     // format strings into numbers
     csv.forEach(function (d){
         d.GLA_Population_Estimate = +d.GLA_Population_Estimate;
@@ -15,6 +20,7 @@ function makeCharts(error, csv){
 
     // all charts
     populationNd(cf);
+    bornAbroadNd(cf);
 
     dc.renderAll();
 }
@@ -31,4 +37,36 @@ function populationNd(cf) {
         .valueAccessor(function(d){
             return d;
         });
+}
+
+// % population born abroad number display 
+function bornAbroadNd(cf) {
+
+    // use custom reduce to get average of all boroughs population born abroad
+    var bornAbroadGroup = cf.groupAll().reduce(
+        
+        function(p, v){
+            p.count ++;
+            p.total += v.Proportion_of_resident_population_born_abroad;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(p, v){
+            p.count --;
+            p.total -= v.Proportion_of_resident_population_born_abroad;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(){
+           return {count:0, total:0, average:0};
+        },
+    );
+    
+    console.log(bornAbroadGroup.value());
+
+    
+
+
 }
