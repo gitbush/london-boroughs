@@ -240,16 +240,17 @@ function obesityScatter(cf){
 // average house price row chart
 function avgHousePrcRow(cf, boroughDim) {
 
-    var avgHousePrcGroup = boroughDim.group().reduceSum(dc.pluck("Median_House_Price"));
+    var avgHousePrcGroup = boroughDim.group().reduceSum(function(d){
+        return Math.round(d.Median_House_Price / 1000)});
 
     var avgPrcRow = dc.rowChart("#avg-house-row")
 
     avgPrcRow
         .width(360)
-        .height(210)
-        .margins({top:20, right:50, bottom:55, left:15})
+        .height(200)
+        .margins({top:20, right:50, bottom:35, left:15})
         .gap(1)
-        .fixedBarHeight(12)
+        .fixedBarHeight(13)
         .cap(10)
         .useViewBoxResizing(true)
         .othersGrouper(null)
