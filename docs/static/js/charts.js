@@ -63,6 +63,7 @@ function makeCharts(error, csv){
 
 // ==== total population number display
 function populationNd(cf) {
+    
     // group on total population with groupAll on crossfilter to observe all filter when applied
     var popGroup = cf.groupAll().reduceSum(function(d){return d.GLA_Population_Estimate});
     // create number display at #population
@@ -120,18 +121,20 @@ function annualPayNd(cf, avgPayGroup, GB){
 // proportion of population that are BAME bar chart
 function BAMEBar(cf){
 
+    // dimension on Borough name
     var boroughDim = cf.dimension(dc.pluck("Area_name"));
-
+    //  group on population that are BAME
     var BAMEGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
-
+     // attach dc.js barChart to BAME-bar ID
     var BAMEBarChart = dc.barChart("#BAME-bar");
 
     BAMEBarChart
-        .width(500)
+        .width(600)
         .height(200)
+        .useViewBoxResizing(true) // adds responsiveness
         .group(BAMEGroup)
         .dimension(boroughDim)
-        .margins({top:10, right:10, bottom:30, left:30})
+        .margins({top:50, right:30, bottom:50, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
         
