@@ -14,6 +14,9 @@ function makeCharts(error, csv){
         d.Median_House_Price = +d.Median_House_Price;
         d.Gross_Annual_Pay = +d.Gross_Annual_Pay;
         d.Proportion_of_largest_migrant_population = +d.Proportion_of_largest_migrant_population;
+        d.Area_that_is_Greenspace = +d.Area_that_is_Greenspace
+        d.Childhood_Obesity = +d.Childhood_Obesity;
+    
     })
 
     // format strings into numbers
@@ -60,6 +63,7 @@ function makeCharts(error, csv){
     BAMEBar(cf);
     nonEnglishBar(cf);
     migrantPieChart(cf);
+    obesityScatter(cf);
 
     dc.renderAll();
 }
@@ -174,13 +178,14 @@ function nonEnglishBar(cf){
         
 }
 
-// largest migrant populatio by country of birth pie chart
+// largest migrant population by country of birth pie chart
 function migrantPieChart(cf){
 
+    // dimension on Largest migrant population
     var migrantCountryDim = cf.dimension(dc.pluck('Largest_migrant_population_by_country_of_birth'))
-
+    // group count of each Country
     var migrantGroup = migrantCountryDim.group();
-
+    // attach dc.js barChart to migrant-by-birth-pie ID
     var migrantPieChart = dc.pieChart("#migrant-by-birth-pie")
 
     migrantPieChart
@@ -199,4 +204,39 @@ function migrantPieChart(cf){
         // .drawPaths(true);
 }
 
+// correlation between obesity rates and areas of greenspace(parks)
+function obesityScatter(cf){
 
+    var fakeObesityDim = cf.dimension(function(d){
+        return d.Childhood_Obesity;
+    });
+
+    var fakeGreenspaceDim = cf.dimension(function(d){
+        return d.Area_that_is_Greenspace;
+    });
+
+    var obesityGreenspaceDim = cf.dimension(function(d){
+        return [ d.Area_that_is_Greenspace, d.Childhood_Obesity, d.Area_name];
+    });
+
+    var obesityGroup = obesityGreenspaceDim.group();
+    
+    var OBmin = fakeObesityDim.bottom(1)[0].Childhood_Obesity;
+    var OBmax = fakeObesityDim.top(1)[0].Childhood_Obesity;
+
+    var obesityScatterPlot = dc.scatterPlot("#obesity-scatter")
+
+    obesityScatterPlot
+        .width(300)
+        .height(250)
+        .dimension(obesityGreenspaceDim)
+        .group(obesityGroup)
+        .brushOn(false)
+        .margins({top:20, right:0, bottom:35, left:30})
+        .x(d3.scale.linear().domain([OBmin, (OBmax + 10)]))
+        // .y(d3.scale.linear().domain([(GSmin + 5), GSmax]));
+        .yAxisLabel('Childhood Obesity (%)')
+        .xAxisLabel('Area That Is Greenspace (%)')
+        .symbolSize(10)
+        .clipPadding(15);
+}
