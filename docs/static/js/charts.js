@@ -56,6 +56,7 @@ function makeCharts(error, csv){
     bornAbroadNd(cf, bornAbroadGroup);
     avgHousePrcNd(cf, housePriceGroup, GB);
     annualPayNd(cf, avgPayGroup, GB);
+    BAMEBar(cf);
 
     dc.renderAll();
 }
@@ -114,4 +115,24 @@ function annualPayNd(cf, avgPayGroup, GB){
         .valueAccessor(function(d){
             return d.average;
         });
+}
+
+// proportion of population that are BAME bar chart
+function BAMEBar(cf){
+
+    var boroughDim = cf.dimension(dc.pluck("Area_name"));
+
+    var BAMEGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
+
+    var BAMEBarChart = dc.barChart("#BAME-bar");
+
+    BAMEBarChart
+        .width(500)
+        .height(200)
+        .group(BAMEGroup)
+        .dimension(boroughDim)
+        .margins({top:10, right:10, bottom:30, left:30})
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal);
+        
 }
