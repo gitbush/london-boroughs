@@ -55,13 +55,16 @@ function makeCharts(error, csv){
     var housePriceGroup = reduceAvg(cf, "Median_House_Price");
     var avgPayGroup = reduceAvg(cf, "Gross_Annual_Pay");
 
+    // multi-use dimensions
+    var boroughDim = cf.dimension(dc.pluck("Area_name"));
+
     // all charts
     populationNd(cf);
     bornAbroadNd(cf, bornAbroadGroup);
     avgHousePrcNd(cf, housePriceGroup, GB);
     annualPayNd(cf, avgPayGroup, GB);
-    BAMEBar(cf);
-    nonEnglishBar(cf);
+    BAMEBar(cf, boroughDim);
+    nonEnglishBar(cf, boroughDim);
     migrantPieChart(cf);
     obesityScatter(cf);
 
@@ -126,10 +129,8 @@ function annualPayNd(cf, avgPayGroup, GB){
 }
 
 // proportion of population that are BAME bar chart
-function BAMEBar(cf){
+function BAMEBar(cf, boroughDim){
 
-    // dimension on Borough name
-    var boroughDim = cf.dimension(dc.pluck("Area_name"));
     //  group on population that are BAME
     var BAMEGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
      // attach dc.js barChart to BAME-bar ID
@@ -153,10 +154,8 @@ function BAMEBar(cf){
 }
 
 // proportion of population whos main language is not English bar chart
-function nonEnglishBar(cf){
+function nonEnglishBar(cf, boroughDim){
 
-    // dimension on Borough name
-    var boroughDim = cf.dimension(dc.pluck("Area_name"));
     //  group on population whose main language is not English
     var nonEnglishGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_people_whose_main_language_is_not_English"));
      // attach dc.js barChart to english-lng-bar ID
@@ -236,3 +235,4 @@ function obesityScatter(cf){
         .symbolSize(10)
         .clipPadding(15);
 }
+
