@@ -133,6 +133,9 @@ function BAMEBar(cf){
         .height(200)
         .useViewBoxResizing(true) // adds responsiveness
         .gap(1)
+        .title(function(d){
+            return `${d.key}: ${d.value}%`
+        })
         // .centerBar(true)
         .group(BAMEGroup)
         .dimension(boroughDim)
