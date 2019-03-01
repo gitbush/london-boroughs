@@ -13,6 +13,7 @@ function makeCharts(error, csv){
         d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
         d.Median_House_Price = +d.Median_House_Price;
         d.Gross_Annual_Pay = +d.Gross_Annual_Pay;
+        d.Proportion_of_largest_migrant_population = +d.Proportion_of_largest_migrant_population;
     })
 
     // format strings into numbers
@@ -58,6 +59,7 @@ function makeCharts(error, csv){
     annualPayNd(cf, avgPayGroup, GB);
     BAMEBar(cf);
     nonEnglishBar(cf);
+    migrantPieChart(cf);
 
     dc.renderAll();
 }
@@ -171,3 +173,22 @@ function nonEnglishBar(cf){
         .xUnits(dc.units.ordinal);
         
 }
+
+// largest migrant populatio by country of birth pie chart
+function migrantPieChart(cf){
+
+    var migrantCountryDim = cf.dimension(dc.pluck('Largest_migrant_population_by_country_of_birth'))
+
+    var migrantGroup = migrantCountryDim.group();
+
+    var migrantPieChart = dc.pieChart("#migrant-by-birth-pie")
+
+    migrantPieChart
+        .height(200)
+        .radius(80)
+        .transitionDuration(1500)
+        .dimension(migrantCountryDim)
+        .group(migrantGroup)
+}
+
+
