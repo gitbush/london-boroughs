@@ -132,6 +132,8 @@ function BAMEBar(cf){
         .width(600)
         .height(200)
         .useViewBoxResizing(true) // adds responsiveness
+        .gap(1)
+        // .centerBar(true)
         .group(BAMEGroup)
         .dimension(boroughDim)
         .margins({top:50, right:30, bottom:60, left:40})
