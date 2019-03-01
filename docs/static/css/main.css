@@ -110,7 +110,6 @@ aside {
 #BAME-bar .axis.x text {
   transform: rotate(-45deg);
   text-anchor: end !important;
-  margin-right: 2px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 /*# sourceMappingURL=main.css.map */
