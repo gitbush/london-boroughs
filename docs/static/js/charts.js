@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, 'docs/static/data/boroughs-data.csv') // load data first
+    .defer(d3.csv, "docs/static/data/boroughs-data.csv") // load data first
     .await(makeCharts); // load data into makeCharts function when complete or throw error if an error 
 
 // ==== main makeCharts function to render all charts
@@ -78,7 +78,7 @@ function bornAbroadNd(cf, bornAbroadGroup) {
     var abroadNd = dc.numberDisplay("#born-abroad")
 
     abroadNd
-        .formatNumber(d3.format("%"))
+        .formatNumber(d3.format(".0%"))
         .group(bornAbroadGroup)
         .valueAccessor(function(d){
             return d.average / 100; // divide by 100 to allow % number format
@@ -88,10 +88,29 @@ function bornAbroadNd(cf, bornAbroadGroup) {
 // average house price number display
 function avgHousePrcNd(cf, housePriceGroup){
 
+    // en-GB locale format
+    var GBLocale = {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["£", ""],
+        "dateTime": "%a %b %e %X %Y",
+        "date": "%d/%m/%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    }
+    // format d3.locale  
+    var GB = d3.locale(GBLocale);
+
      // attach dc.js numberDisplay to avg house price ID
      var housePriceNd = dc.numberDisplay("#avg-house-prc")
 
      housePriceNd
+        .formatNumber(GB.numberFormat("$,.0f"))
         .group(housePriceGroup)
         .valueAccessor(function(d){
             return d.average;
