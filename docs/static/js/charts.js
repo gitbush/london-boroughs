@@ -206,35 +206,31 @@ function migrantPieChart(cf){
 
 // correlation between obesity rates and areas of greenspace(parks)
 function obesityScatter(cf){
-
+    // create fake dimension to find min and max values for scales
     var fakeObesityDim = cf.dimension(function(d){
         return d.Childhood_Obesity;
     });
-
-    var fakeGreenspaceDim = cf.dimension(function(d){
-        return d.Area_that_is_Greenspace;
-    });
-
+    // dimension on three fields for scatter plot 
     var obesityGreenspaceDim = cf.dimension(function(d){
         return [ d.Area_that_is_Greenspace, d.Childhood_Obesity, d.Area_name];
     });
-
+    // straight group to reduce to one value 
     var obesityGroup = obesityGreenspaceDim.group();
-    
+    // find min and max values for x linear scales
     var OBmin = fakeObesityDim.bottom(1)[0].Childhood_Obesity;
     var OBmax = fakeObesityDim.top(1)[0].Childhood_Obesity;
-
+    // attach dc.js scatterPlot to obesity ID
     var obesityScatterPlot = dc.scatterPlot("#obesity-scatter")
 
     obesityScatterPlot
-        .width(300)
-        .height(250)
+        .width(400)
+        .height(230)
         .dimension(obesityGreenspaceDim)
         .group(obesityGroup)
+        .useViewBoxResizing(true)
         .brushOn(false)
-        .margins({top:20, right:0, bottom:35, left:30})
+        .margins({top:20, right:10, bottom:35, left:30})
         .x(d3.scale.linear().domain([OBmin, (OBmax + 10)]))
-        // .y(d3.scale.linear().domain([(GSmin + 5), GSmax]));
         .yAxisLabel('Childhood Obesity (%)')
         .xAxisLabel('Area That Is Greenspace (%)')
         .symbolSize(10)
