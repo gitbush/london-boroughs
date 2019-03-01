@@ -240,9 +240,10 @@ function obesityScatter(cf){
 // average house price row chart
 function avgHousePrcRow(cf, boroughDim) {
 
+    // group on median house price and divide by 1000 to reduce tick text size
     var avgHousePrcGroup = boroughDim.group().reduceSum(function(d){
         return Math.round(d.Median_House_Price / 1000)});
-
+    // attach dc.js rowChart to avg-house-row ID
     var avgPrcRow = dc.rowChart("#avg-house-row")
 
     avgPrcRow
