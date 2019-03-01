@@ -4,6 +4,24 @@ queue()
 
 // ==== main makeCharts function to render all charts
 function makeCharts(error, csv){
+    // ==== format d3.locale for the UK
+    // en-GB locale format
+    var GBLocale = {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["£", ""],
+        "dateTime": "%a %b %e %X %Y",
+        "date": "%d/%m/%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    }
+    // format d3.locale  
+    var GB = d3.locale(GBLocale);
 
     // convert strings to numbers
     csv.forEach(function(d){
@@ -51,8 +69,8 @@ function makeCharts(error, csv){
     // all charts
     populationNd(cf);
     bornAbroadNd(cf, bornAbroadGroup);
-    avgHousePrcNd(cf, housePriceGroup);
-    annualPayNd(cf, avgPayGroup);
+    avgHousePrcNd(cf, housePriceGroup, GB);
+    annualPayNd(cf, avgPayGroup, GB);
 
     dc.renderAll();
 }
@@ -86,25 +104,7 @@ function bornAbroadNd(cf, bornAbroadGroup) {
 }
 
 // average house price number display
-function avgHousePrcNd(cf, housePriceGroup){
-
-    // en-GB locale format
-    var GBLocale = {
-        "decimal": ".",
-        "thousands": ",",
-        "grouping": [3],
-        "currency": ["£", ""],
-        "dateTime": "%a %b %e %X %Y",
-        "date": "%d/%m/%Y",
-        "time": "%H:%M:%S",
-        "periods": ["AM", "PM"],
-        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    }
-    // format d3.locale  
-    var GB = d3.locale(GBLocale);
+function avgHousePrcNd(cf, housePriceGroup, GB){
 
      // attach dc.js numberDisplay to avg house price ID
      var housePriceNd = dc.numberDisplay("#avg-house-prc")
@@ -118,12 +118,13 @@ function avgHousePrcNd(cf, housePriceGroup){
 }
 
 // gross annual pay number display
-function annualPayNd(cf, avgPayGroup){
+function annualPayNd(cf, avgPayGroup, GB){
 
     // attach dc.js numberDisplay to avg pay ID
     var avgPayNd = dc.numberDisplay('#avg-pay')
 
     avgPayNd
+        .formatNumber(GB.numberFormat("$,.0f"))
         .group(avgPayGroup)
         .valueAccessor(function(d){
             return d.average;
