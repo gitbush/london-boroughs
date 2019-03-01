@@ -185,10 +185,17 @@ function migrantPieChart(cf){
 
     migrantPieChart
         .height(200)
-        .radius(80)
-        .transitionDuration(1500)
+        .radius(70)
+        .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
+        .cx(120)
+        .cy(100)
+        .legend(dc.legend().x(210).y(20).itemHeight(10).gap(5))
+        .externalLabels(10)
+        .innerRadius(30)
+        // .minAngleForLabel(99)
+        // .drawPaths(true);
 }
 
 
