@@ -189,6 +189,7 @@ function migrantPieChart(cf){
         .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
+        .useViewBoxResizing(true) // adds responsiveness
         .cx(120)
         .cy(100)
         .legend(dc.legend().x(210).y(20).itemHeight(10).gap(5))
