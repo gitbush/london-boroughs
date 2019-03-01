@@ -107,4 +107,9 @@ aside {
 
 /*----------  end of responsive grid layouts ----------*/
 /*=====  End of grid layout  ======*/
+#BAME-bar .axis.x text {
+  transform: rotate(-45deg);
+  text-anchor: end !important;
+  margin-right: 2px;
+}
 /*# sourceMappingURL=main.css.map */

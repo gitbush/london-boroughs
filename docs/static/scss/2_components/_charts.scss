@@ -1,0 +1,7 @@
+// styles for all dc.js charts
+
+#BAME-bar .axis.x text{
+    transform: rotate(-45deg);
+    text-anchor: end !important;
+    margin-right: 2px;
+}
