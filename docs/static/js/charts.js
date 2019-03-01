@@ -63,7 +63,7 @@ function makeCharts(error, csv){
 
 // ==== total population number display
 function populationNd(cf) {
-    
+
     // group on total population with groupAll on crossfilter to observe all filter when applied
     var popGroup = cf.groupAll().reduceSum(function(d){return d.GLA_Population_Estimate});
     // create number display at #population
@@ -134,7 +134,7 @@ function BAMEBar(cf){
         .useViewBoxResizing(true) // adds responsiveness
         .group(BAMEGroup)
         .dimension(boroughDim)
-        .margins({top:50, right:30, bottom:50, left:40})
+        .margins({top:50, right:30, bottom:60, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
         
