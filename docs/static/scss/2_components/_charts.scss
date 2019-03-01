@@ -1,7 +1,8 @@
 // styles for all dc.js charts
 
 #BAME-bar .axis.x text,
-#english-lng-bar .axis.x text{
+#english-lng-bar .axis.x text,
+#avg-house-row .axis text{
     transform: rotate(-45deg);
     text-anchor: end !important;
     font-size: 0.7rem;

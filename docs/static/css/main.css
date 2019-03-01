@@ -108,7 +108,8 @@ aside {
 /*----------  end of responsive grid layouts ----------*/
 /*=====  End of grid layout  ======*/
 #BAME-bar .axis.x text,
-#english-lng-bar .axis.x text {
+#english-lng-bar .axis.x text,
+#avg-house-row .axis text {
   transform: rotate(-45deg);
   text-anchor: end !important;
   font-size: 0.7rem;

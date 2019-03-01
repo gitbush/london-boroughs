@@ -67,6 +67,7 @@ function makeCharts(error, csv){
     nonEnglishBar(cf, boroughDim);
     migrantPieChart(cf);
     obesityScatter(cf);
+    avgHousePrcRow(cf, boroughDim);
 
     dc.renderAll();
 }
@@ -223,7 +224,7 @@ function obesityScatter(cf){
 
     obesityScatterPlot
         .width(400)
-        .height(230)
+        .height(250)
         .dimension(obesityGreenspaceDim)
         .group(obesityGroup)
         .useViewBoxResizing(true)
@@ -236,3 +237,24 @@ function obesityScatter(cf){
         .clipPadding(15);
 }
 
+// average house price row chart
+function avgHousePrcRow(cf, boroughDim) {
+
+    var avgHousePrcGroup = boroughDim.group().reduceSum(dc.pluck("Median_House_Price"));
+
+    var avgPrcRow = dc.rowChart("#avg-house-row")
+
+    avgPrcRow
+        .width(360)
+        .height(210)
+        .margins({top:20, right:50, bottom:55, left:15})
+        .gap(1)
+        .fixedBarHeight(12)
+        .cap(10)
+        .useViewBoxResizing(true)
+        .othersGrouper(null)
+        .dimension(boroughDim)
+        .group(avgHousePrcGroup);
+
+    
+}
