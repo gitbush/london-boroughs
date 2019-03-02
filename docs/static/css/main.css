@@ -63,8 +63,8 @@ aside {
   grid-area: obesity;
 }
 
-#gender-employment-row {
-  grid-area: employment;
+#degree-row {
+  grid-area: degree;
 }
 
 #avg-house-row {
@@ -80,7 +80,7 @@ aside {
     grid-template-columns: auto;
     grid-template-rows: repeat(11, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "employment" "avg-house-row" "sidebar";
+    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "degree" "avg-house-row" "sidebar";
   }
 }
 
@@ -91,7 +91,7 @@ aside {
     grid-template-columns: repeat 4, 1fr;
     grid-template-rows: repeat(6, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "employment employment avg-house-row avg-house-row" "sidebar sidebar sidebar sidebar";
+    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house-row avg-house-row" "sidebar sidebar sidebar sidebar";
   }
 }
 
@@ -101,7 +101,7 @@ aside {
     grid-template-columns: 50px repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-gap: 10px;
-    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar employment crimes      crimes        avg-house-row";
+    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar degree crimes      crimes        avg-house-row";
   }
 }
 

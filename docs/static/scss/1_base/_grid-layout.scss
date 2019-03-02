@@ -47,8 +47,8 @@
     grid-area: obesity;
 }
 
-#gender-employment-row{
-    grid-area: employment;
+#degree-row{
+    grid-area: degree;
 }
 
 #avg-house-row{
@@ -77,7 +77,7 @@ main{
         "migrant"
         "crimes"
         "obesity"
-        "employment"
+        "degree"
         "avg-house-row"
         "sidebar";
     };
@@ -95,7 +95,7 @@ main{
         "BAME BAME language language"
         ". crimes crimes ."
         "migrant migrant obesity obesity"
-        "employment employment avg-house-row avg-house-row"
+        "degree degree avg-house-row avg-house-row"
         "sidebar sidebar sidebar sidebar";
     };
 
@@ -109,7 +109,7 @@ main{
         "sidebar population born-abroad avg-house-prc avg-pay"
         "sidebar BAME       BAME        language      language"
         "sidebar migrant    crimes      crimes        obesity"
-        "sidebar employment crimes      crimes        avg-house-row";
+        "sidebar degree crimes      crimes        avg-house-row";
     };
 }
 
