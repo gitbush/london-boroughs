@@ -16,6 +16,7 @@ function makeCharts(error, csv){
         d.Proportion_of_largest_migrant_population = +d.Proportion_of_largest_migrant_population;
         d.Area_that_is_Greenspace = +d.Area_that_is_Greenspace
         d.Childhood_Obesity = +d.Childhood_Obesity;
+        d.Proportion_of_working_age_with_degree_or_equivalent_and_above = +d.Proportion_of_working_age_with_degree_or_equivalent_and_above;
     
     })
 
@@ -50,7 +51,7 @@ function makeCharts(error, csv){
         );
     };
     
-    // averages groups
+    // groupAll averages groups
     var bornAbroadGroup = reduceAvg(cf, "Proportion_of_resident_population_born_abroad");
     var housePriceGroup = reduceAvg(cf, "Median_House_Price");
     var avgPayGroup = reduceAvg(cf, "Gross_Annual_Pay");
@@ -68,6 +69,7 @@ function makeCharts(error, csv){
     migrantPieChart(cf);
     obesityScatter(cf);
     avgHousePrcRow(cf, boroughDim);
+    degreeRow(cf);
 
     dc.renderAll();
 }
@@ -247,7 +249,7 @@ function avgHousePrcRow(cf, boroughDim) {
     var avgPrcRow = dc.rowChart("#avg-house-row")
 
     avgPrcRow
-        .width(360)
+        .width(400)
         .height(200)
         .margins({top:20, right:50, bottom:35, left:15})
         .gap(1)
@@ -259,4 +261,47 @@ function avgHousePrcRow(cf, boroughDim) {
         .group(avgHousePrcGroup);
 
     
+}
+
+// proportion of working age people with a degree row chart
+function degreeRow(cf){
+    // dimension on Inner and Outer London boroughs
+    var InnerOuterDim = cf.dimension(function(d){
+        return d.Inner_Outer_London;
+    });
+    // find average of group using custom reduce()
+    var degreeGroup = InnerOuterDim.group().reduce(
+        
+        function(p,v){
+            p.count ++;
+            p.total += v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(p,v){
+            p.count --;
+            p.total -= v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
+            p.average = p.total/p.count;
+            return p;
+        },
+
+        function(){
+            return {count:0, total:0, average:0};
+        },
+    )
+    // attach dc.js rowChart to degree-row ID
+    var degreeRowChart = dc.rowChart("#degree-row")
+
+    degreeRowChart
+        .width(600)
+        .height(230)
+        .useViewBoxResizing(true)
+        .margins({top:10, right:10, bottom:20, left:20})
+        .dimension(InnerOuterDim)
+        .group(degreeGroup)
+        .valueAccessor(function(d){
+            return d.value.average
+        });
+
 }
