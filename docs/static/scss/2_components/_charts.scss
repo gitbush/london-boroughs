@@ -8,3 +8,12 @@
     font-size: 0.7rem;
 }
 
+
+.area path{
+    stroke: white;
+}
+
+.area:hover{
+    fill-opacity: 0.5;
+    cursor: pointer;
+}
