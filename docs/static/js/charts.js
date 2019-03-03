@@ -1,9 +1,10 @@
 queue()
-    .defer(d3.csv, "docs/static/data/boroughs-data.csv") // load data first
+    .defer(d3.csv, "docs/static/data/boroughs-data.csv") // load csv data 
+    .defer(d3.json, "docs/static/data/boroughsGeo.json") // load geoJson data for choropleth map
     .await(makeCharts); // load data into makeCharts function when complete or throw error if an error 
 
 // ==== main makeCharts function to render all charts
-function makeCharts(error, csv){
+function makeCharts(error, csv, geoJson){
     
     // format d3.locale  
     var GB = d3.locale(GBLocale);
@@ -206,6 +207,25 @@ function migrantPieChart(cf){
         // .drawPaths(true);
 }
 
+// crimes per 1000 popluation choropleth map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // correlation between obesity rates and areas of greenspace(parks)
 function obesityScatter(cf){
     // create fake dimension to find min and max values for scales
@@ -305,3 +325,4 @@ function degreeRow(cf){
         });
 
 }
+
