@@ -18,7 +18,7 @@ function makeCharts(error, csv, geoJson){
         d.Area_that_is_Greenspace = +d.Area_that_is_Greenspace
         d.Childhood_Obesity = +d.Childhood_Obesity;
         d.Proportion_of_working_age_with_degree_or_equivalent_and_above = +d.Proportion_of_working_age_with_degree_or_equivalent_and_above;
-    
+        d.Crime_rates_per_thousand_population = +d.Crime_rates_per_thousand_population;
     })
 
     // format strings into numbers
@@ -220,16 +220,18 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
                         .scale(15000) // scale the map 
-                        .translate([150,120]); // translate the map in the svg
+                        .translate([150,140]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#crimes-map")
 
     crimesChoroMap
-        .width(500)
-        .height(500)
+        .width(350)
+        .height(300)
         .dimension(boroughDim)
         .group(crimesRateGroup)
+        .useViewBoxResizing(true)
+        .colors(d3.scale.quantize().domain([0, 200]).range(["#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#08519c","#08306b"]))
         .projection(projection)
         .overlayGeoJson(geoJson.features, "area", function(d){
             return d.properties.LAD13NM;
