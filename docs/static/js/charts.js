@@ -71,6 +71,7 @@ function makeCharts(error, csv, geoJson){
     obesityScatter(cf);
     avgHousePrcRow(cf, boroughDim);
     degreeRow(cf);
+    crimeRatesChoro(cf, boroughDim, geoJson);
 
     dc.renderAll();
 }
@@ -207,9 +208,34 @@ function migrantPieChart(cf){
         // .drawPaths(true);
 }
 
-// crimes per 1000 popluation choropleth map
+/* ==== crimes per 1000 popluation choropleth map
+* choropleth map learnt from LinkedIn Learning - dc.js course
+*/
+function crimeRatesChoro(cf, boroughDim, geoJson){
+    // pull in boroughDim and group on Crime_rates_per_thousand_population
+    var crimesRateGroup = boroughDim.group().reduceSum(dc.pluck("Crime_rates_per_thousand_population"));
+    // set centre of geoJson map coordinates using d3.geo.centroid to allow for translating 
+    var centre = d3.geo.centroid(geoJson);
+    // set projection to allow for lat and long of geoJson to be drawn in the browser
+    var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
+                        .center(centre)
+                        .scale(15000) // scale the map 
+                        .translate([150,120]); // translate the map in the svg
 
+    // attach dc.js choroplethChart to crime-rates ID
+    var crimesChoroMap = dc.geoChoroplethChart("#crimes-map")
 
+    crimesChoroMap
+        .width(500)
+        .height(500)
+        .dimension(boroughDim)
+        .group(crimesRateGroup)
+        .projection(projection)
+        .overlayGeoJson(geoJson.features, "area", function(d){
+            return d.properties.LAD13NM;
+        })
+
+}
 
 
 
