@@ -237,6 +237,23 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             return d.properties.LAD13NM;
         })
 
+    crimesChoroMap.on("pretransition", function(chart){
+         
+        var colorArray = colorbrewer.Blues[9];
+
+        var svg = chart.select("svg")
+
+        var grad = svg.append("defs")
+                    .append("linearGradient")
+                    .attr("id", "grad")
+                    .attr("x1", "0%")
+                    .attr("x2", "100%")
+                    .attr("y1", "0%")
+                    .attr("y2", "0%")
+        
+
+    })
+
 }
 
 
