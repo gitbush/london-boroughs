@@ -231,7 +231,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
         .dimension(boroughDim)
         .group(crimesRateGroup)
         .useViewBoxResizing(true)
-        .colors(d3.scale.quantize().domain([0, 200]).range(["#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#08519c","#08306b"]))
+        .colors(d3.scale.quantize().range(colorbrewer.Blues[9]).domain([0, 200]))
         .projection(projection)
         .overlayGeoJson(geoJson.features, "area", function(d){
             return d.properties.LAD13NM;
