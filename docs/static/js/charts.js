@@ -237,21 +237,44 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             return d.properties.LAD13NM;
         })
 
+    /**
+     * Create a color legend
+     * Learnt from https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html
+     */   
     crimesChoroMap.on("pretransition", function(chart){
-         
+        // use color brewers "Blues" scheme
         var colorArray = colorbrewer.Blues[9];
 
         var svg = chart.select("svg")
-
+        /**
+         * Append a defs element to svg to render rects
+         * Append an svg linearGradient element 
+         */
         var grad = svg.append("defs")
                     .append("linearGradient")
                     .attr("id", "grad")
                     .attr("x1", "0%")
                     .attr("x2", "100%")
                     .attr("y1", "0%")
-                    .attr("y2", "0%")
-        
-
+                    .attr("y2", "0%");
+        // Set linearGradient stop positions to colorArray index
+        grad.selectAll("stop")
+            .data(colorArray)
+            .enter()
+            .append("stop")
+            .attr("offset", function(d, i) {
+                return (i / colorArray.length) *100 +"%";
+            })
+            .attr("stop-color", function(d){
+                return d;
+            });
+        // Append rect and fill with linearGradient styles
+        svg.append("rect")
+            .attr("x", "20")
+            .attr("y", "20")
+            .attr("width", "10rem")
+            .attr("height", "0.8rem")
+            .attr("fill", "url(#grad)");
     })
 
 }
