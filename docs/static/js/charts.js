@@ -222,7 +222,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
                         .scale(15000) // scale the map 
-                        .translate([150,140]); // translate the map in the svg
+                        .translate([130,140]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#crimes-map")
@@ -247,8 +247,8 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
         // use color brewers "Blues" scheme
         var colorArray = colorbrewer.Blues[9];
         // set height and width for color legend 
-        var width = 250;
-        var height = 10;
+        var width = 10;
+        var height = 170;
 
         /**
          * Append a defs element to svg to render rects
@@ -260,8 +260,8 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
                     .append("linearGradient")
                     .attr("id", "grad")
                     .attr("x1", "0%")
-                    .attr("x2", "100%")
-                    .attr("y1", "0%")
+                    .attr("x2", "0%")
+                    .attr("y1", "100%")
                     .attr("y2", "0%");
 
         // Set linearGradient stop positions to colorArray index
@@ -277,52 +277,38 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             });
 
         // set margin object for color legend positioning 
-        var margin = {left:10,right:0,top:20,bottom:0};
+        var margin = {left:260,right:0,top:60,bottom:0};
         
         // create legend group to control color legend svg and yAxis together 
-        var legendGroup = svg.append("g").attr("transform", "translate("+margin.left+","+margin.top+")");
+        var legendGroup = svg.append("g")
+                .attr("transform", "translate("+margin.left+","+margin.top+")");
 
         // Append rect and fill with linearGradient styles to legend group 
         legendGroup.append("rect")
-            .attr("x", "0")
-            .attr("y", "0")
-            .attr("width", width)
-            .attr("height", height)
-            .attr("fill", "url(#grad)");
+                .attr("x", "0")
+                .attr("y", "0")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("fill", "url(#grad)");
 
         var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
         var max = crimesDim.top(1)[0].Crime_rates_per_thousand_population
         // create linear scale for crimes 
         var y = d3.scale.linear()
-                    .domain([min, max])
-                    .range([0, width]);
+                .domain([max, min])
+                .range([0, height]);
         // create axis bottom for color legend
         var yAxis = d3.svg.axis()
-                    .scale(y)
-                    .ticks(6)
-                    .innerTickSize(4)
-                    .orient("bottom");
+                .scale(y)
+                .ticks(6)
+                .innerTickSize(4)
+                .orient("right");
         legendGroup.append("g")
-            .attr("class", "axis y")
-            .attr("transform", "translate(0, 10)")
-            .call(yAxis);
+                .attr("class", "axis y")
+                .attr("transform", "translate(10, 0)")
+                .call(yAxis);
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // correlation between obesity rates and areas of greenspace(parks)
 function obesityScatter(cf){
