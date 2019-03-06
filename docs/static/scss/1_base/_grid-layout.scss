@@ -10,6 +10,7 @@ main{
 
     // mobile device 
     @include mobile-device{ 
+        padding-top:10px;
         margin: 0;
         display: grid;
         grid-template-columns: auto;
@@ -32,6 +33,7 @@ main{
 
     // tablet device 
     @include tablet-device{ 
+        padding-top:10px;
         margin: 0;
         display: grid;
         grid-template-columns: repeat (4, 1fr);
@@ -49,6 +51,7 @@ main{
 
     // desktop screen
     @include desktop-device{
+        padding-right:10px;
         display: grid;
         grid-template-columns: 50px repeat(4, 1fr);
         grid-template-rows: repeat(4, auto);
@@ -62,6 +65,55 @@ main{
 }
 
 /*----------  end of responsive grid layouts ----------*/
+
+/*----------  grid helpers ----------*/
+//  easier way? nested grid? 
+
+section{
+    @include mobile-device{
+        margin: 0 10px;
+    }
+}
+
+#population,
+#avg-house-prc,
+#BAME,
+#migrant-by-birth,
+#degree{
+    @include tablet-device{
+        margin-left: 10px;
+    }
+}
+
+#born-abroad,
+#avg-pay,
+#english-lng,
+#obesity,
+#avg-house{
+    @include tablet-device{
+        margin-right: 10px;
+    }
+}
+
+#population,
+#born-abroad,
+#avg-pay,
+#avg-house-prc{
+    @include desktop-device{
+        margin-top: 10px;
+    }
+}
+
+#degree,
+#crimes,
+#avg-house{
+    @include desktop-device{
+        margin-bottom: 10px;
+    }
+}
+
+/*----------  end of grid helpers ----------*/
+
 
 /*----------  grid tempate areas  ----------*/
 

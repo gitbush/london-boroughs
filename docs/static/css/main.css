@@ -25,6 +25,7 @@ aside {
 /*----------  responsive grid layouts ----------*/
 @media screen and (max-width: 767px) {
   main {
+    padding-top: 10px;
     margin: 0;
     display: grid;
     grid-template-columns: auto;
@@ -36,6 +37,7 @@ aside {
 
 @media screen and (min-width: 768px) and (max-width: 899px) {
   main {
+    padding-top: 10px;
     margin: 0;
     display: grid;
     grid-template-columns: repeat 4, 1fr;
@@ -47,6 +49,7 @@ aside {
 
 @media screen and (min-width: 900px) {
   main {
+    padding-right: 10px;
     display: grid;
     grid-template-columns: 50px repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -56,6 +59,51 @@ aside {
 }
 
 /*----------  end of responsive grid layouts ----------*/
+/*----------  grid helpers ----------*/
+@media screen and (max-width: 767px) {
+  section {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  #population,
+  #avg-house-prc,
+  #BAME,
+  #migrant-by-birth,
+  #degree {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  #born-abroad,
+  #avg-pay,
+  #english-lng,
+  #obesity,
+  #avg-house {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #population,
+  #born-abroad,
+  #avg-pay,
+  #avg-house-prc {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #degree,
+  #crimes,
+  #avg-house {
+    margin-bottom: 10px;
+  }
+}
+
+/*----------  end of grid helpers ----------*/
 /*----------  grid tempate areas  ----------*/
 #sidebar {
   grid-area: sidebar;
