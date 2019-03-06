@@ -246,7 +246,8 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
     crimesChoroMap.on("pretransition", function(chart){
         // use color brewers "Blues" scheme
         var colorArray = colorbrewer.Blues[9];
-        var width = 200;
+        var width = 250;
+        var height = 15;
 
         var svg = chart.select("svg")
         /**
@@ -271,12 +272,17 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             .attr("stop-color", function(d){
                 return d;
             });
+
+        var margin = {left:10,right:0,top:20,bottom:0};
+
+        var legendGroup = svg.append("g").attr("transform", "translate("+margin.left+","+margin.top+")");
+
         // Append rect and fill with linearGradient styles
-        svg.append("rect")
-            .attr("x", "20")
-            .attr("y", "20")
+        legendGroup.append("rect")
+            .attr("x", "0")
+            .attr("y", "0")
             .attr("width", width)
-            .attr("height", "0.8rem")
+            .attr("height", height)
             .attr("fill", "url(#grad)");
 
         var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
@@ -290,9 +296,9 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
                     .scale(y)
                     .ticks(6)
                     .orient("bottom");
-        svg.append("g")
+        legendGroup.append("g")
             .attr("class", "axis y")
-            .attr("transform", "translate(0, 20)")
+            .attr("transform", "translate(0, 15)")
             .call(yAxis);
     })
 
