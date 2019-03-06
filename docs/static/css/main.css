@@ -10,10 +10,6 @@ header {
   background-color: grey;
 }
 
-section {
-  border: solid 1px black;
-}
-
 aside {
   background-color: grey;
 }
@@ -26,6 +22,40 @@ aside {
 /*=============================================
 =                grid layout                  =
 =============================================*/
+/*----------  responsive grid layouts ----------*/
+@media screen and (max-width: 767px) {
+  main {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(11, auto) 50px;
+    grid-gap: 10px;
+    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "degree" "avg-house" "sidebar";
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  main {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat 4, 1fr;
+    grid-template-rows: repeat(6, auto) 50px;
+    grid-gap: 10px;
+    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house avg-house" "sidebar sidebar sidebar sidebar";
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 50px repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 10px;
+    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar degree crimes      crimes        avg-house";
+  }
+}
+
+/*----------  end of responsive grid layouts ----------*/
 /*----------  grid tempate areas  ----------*/
 #sidebar {
   grid-area: sidebar;
@@ -76,40 +106,6 @@ aside {
 }
 
 /*----------  end of grid tempate areas  ----------*/
-/*----------  responsive grid layouts ----------*/
-@media screen and (max-width: 767px) {
-  main {
-    margin: 0;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(11, auto) 50px;
-    grid-gap: 10px;
-    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "degree" "avg-house" "sidebar";
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 899px) {
-  main {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat 4, 1fr;
-    grid-template-rows: repeat(6, auto) 50px;
-    grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house-row avg-house" "sidebar sidebar sidebar sidebar";
-  }
-}
-
-@media screen and (min-width: 900px) {
-  main {
-    display: grid;
-    grid-template-columns: 50px repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-gap: 10px;
-    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar degree crimes      crimes        avg-house";
-  }
-}
-
-/*----------  end of responsive grid layouts ----------*/
 /*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,

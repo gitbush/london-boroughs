@@ -4,6 +4,64 @@
 =                grid layout                  =
 =============================================*/
 
+/*----------  responsive grid layouts ----------*/
+
+main{
+
+    // mobile device 
+    @include mobile-device{ 
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(11, auto) 50px;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "population"
+        "born-abroad"
+        "avg-house-prc"
+        "avg-pay"
+        "BAME"
+        "language"
+        "migrant"
+        "crimes"
+        "obesity"
+        "degree"
+        "avg-house"
+        "sidebar";
+    };
+
+    // tablet device 
+    @include tablet-device{ 
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat (4, 1fr);
+        grid-template-rows: repeat(6, auto) 50px;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "population population born-abroad born-abroad"
+        "avg-house-prc avg-house-prc avg-pay avg-pay"
+        "BAME BAME language language"
+        ". crimes crimes ."
+        "migrant migrant obesity obesity"
+        "degree degree avg-house avg-house"
+        "sidebar sidebar sidebar sidebar";
+    };
+
+    // desktop screen
+    @include desktop-device{
+        display: grid;
+        grid-template-columns: 50px repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 10px;
+        grid-template-areas: 
+        "sidebar population born-abroad avg-house-prc avg-pay"
+        "sidebar BAME       BAME        language      language"
+        "sidebar migrant    crimes      crimes        obesity"
+        "sidebar degree crimes      crimes        avg-house";
+    };
+}
+
+/*----------  end of responsive grid layouts ----------*/
 
 /*----------  grid tempate areas  ----------*/
 
@@ -56,64 +114,7 @@
 }
 /*----------  end of grid tempate areas  ----------*/
 
-/*----------  responsive grid layouts ----------*/
 
-main{
-
-    // mobile device 
-    @include mobile-device{ 
-        margin: 0;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: repeat(11, auto) 50px;
-        grid-gap: 10px;
-        grid-template-areas: 
-        "population"
-        "born-abroad"
-        "avg-house-prc"
-        "avg-pay"
-        "BAME"
-        "language"
-        "migrant"
-        "crimes"
-        "obesity"
-        "degree"
-        "avg-house"
-        "sidebar";
-    };
-
-    // tablet device 
-    @include tablet-device{ 
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat (4, 1fr);
-        grid-template-rows: repeat(6, auto) 50px;
-        grid-gap: 10px;
-        grid-template-areas: 
-        "population population born-abroad born-abroad"
-        "avg-house-prc avg-house-prc avg-pay avg-pay"
-        "BAME BAME language language"
-        ". crimes crimes ."
-        "migrant migrant obesity obesity"
-        "degree degree avg-house-row avg-house"
-        "sidebar sidebar sidebar sidebar";
-    };
-
-    // desktop screen
-    @include desktop-device{
-        display: grid;
-        grid-template-columns: 50px repeat(4, 1fr);
-        grid-template-rows: repeat(4, auto);
-        grid-gap: 10px;
-        grid-template-areas: 
-        "sidebar population born-abroad avg-house-prc avg-pay"
-        "sidebar BAME       BAME        language      language"
-        "sidebar migrant    crimes      crimes        obesity"
-        "sidebar degree crimes      crimes        avg-house";
-    };
-}
-
-/*----------  end of responsive grid layouts ----------*/
 
 /*=====  End of grid layout  ======*/
 
