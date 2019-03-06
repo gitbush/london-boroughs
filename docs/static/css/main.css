@@ -155,6 +155,13 @@ aside {
 
 /*----------  end of grid tempate areas  ----------*/
 /*=====  End of grid layout  ======*/
+.nd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px;
+  grid-template-areas: "fas number-display number-display";
+}
+
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
 #row-avg-house .axis text {
