@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- bootstrap 4 css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- dc.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.css">
+    <!-- bootstrap 4 css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- main.css -->
     <link rel="stylesheet" href="docs/static/css/main.css">
     <title>London Boroughs</title>
@@ -19,30 +19,45 @@
     </header>
     <main>
         <aside id="sidebar"></aside>
-        <section id="population"></section>
-        <section id="born-abroad"></section>
-        <section id="avg-house-prc"></section>
-        <section id="avg-pay"></section>
-        <section id="BAME-bar">
+        <section id="population">
+            <div id="nd-population"></div>
+        </section>
+        <section id="born-abroad">
+            <div id="nd-born-abroad"></div>
+        </section>
+        <section id="avg-house-prc">
+            <div id="nd-avg-house-prc"></div>
+        </section>
+        <section id="avg-pay">
+            <div id="nd-avg-pay"></div>
+        </section>
+        <section id="BAME">
             <header>Black, Asian and Minority Ethnic</header>
+            <div id="bar-BAME"></div>
         </section>
-        <section id="english-lng-bar">
+        <section id="english-lng">
             <header>Main Language Is Not English</header>
+            <div id="bar-english-lng"></div>
         </section>
-        <section id="migrant-by-birth-pie">
+        <section id="migrant-by-birth">
             <header>Largest Migrant Population By Birth</header>
+            <div id="pie-migrant-by-birth"></div>
         </section>
-        <section id="crimes-map">
+        <section id="crimes">
             <header>Crimes per 1000 Population</header>
+            <div id="map-crimes"></div>
         </section>
-        <section id="obesity-scatter">
+        <section id="obesity">
             <header>Greenspace vs Obesity Rates</header>
+            <div id="scatter-obesity"></div>
         </section>
-        <section id="degree-row">
+        <section id="degree">
             <header>Proportion of Working Age with a Degree</header>
+            <div id="row-degree"></div>
         </section>
-        <section id="avg-house-row">
+        <section id="avg-house">
             <header>Average House Price</header>
+            <div id="row-avg-house"></div>
         </section>
     </main>
 

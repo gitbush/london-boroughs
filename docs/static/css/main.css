@@ -43,32 +43,32 @@ aside {
   grid-area: avg-pay;
 }
 
-#BAME-bar {
+#BAME {
   grid-area: BAME;
 }
 
-#english-lng-bar {
+#english-lng {
   grid-area: language;
 }
 
-#migrant-by-birth-pie {
+#migrant-by-birth {
   grid-area: migrant;
 }
 
-#crimes-map {
+#crimes {
   grid-area: crimes;
 }
 
-#obesity-scatter {
+#obesity {
   grid-area: obesity;
 }
 
-#degree-row {
+#degree {
   grid-area: degree;
 }
 
-#avg-house-row {
-  grid-area: avg-house-row;
+#avg-house {
+  grid-area: avg-house;
 }
 
 /*----------  end of grid tempate areas  ----------*/
@@ -80,7 +80,18 @@ aside {
     grid-template-columns: auto;
     grid-template-rows: repeat(11, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "degree" "avg-house-row" "sidebar";
+    grid-template-areas: "population"
+ "born-abroad"
+ "avg-house-prc"
+ "avg-pay"
+ "BAME"
+ "language"
+ "migrant"
+ "crimes"
+ "obesity"
+ "degree"
+ "avg-house"
+ "sidebar";
   }
 }
 
@@ -91,7 +102,13 @@ aside {
     grid-template-columns: repeat 4, 1fr;
     grid-template-rows: repeat(6, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house-row avg-house-row" "sidebar sidebar sidebar sidebar";
+    grid-template-areas: "population population born-abroad born-abroad"
+ "avg-house-prc avg-house-prc avg-pay avg-pay"
+ "BAME BAME language language"
+ ". crimes crimes ."
+ "migrant migrant obesity obesity"
+ "degree degree avg-house-row avg-house"
+ "sidebar sidebar sidebar sidebar";
   }
 }
 
@@ -101,21 +118,24 @@ aside {
     grid-template-columns: 50px repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-gap: 10px;
-    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar degree crimes      crimes        avg-house-row";
+    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay"
+ "sidebar BAME       BAME        language      language"
+ "sidebar migrant    crimes      crimes        obesity"
+ "sidebar degree crimes      crimes        avg-house";
   }
 }
 
 /*----------  end of responsive grid layouts ----------*/
 /*=====  End of grid layout  ======*/
-#BAME-bar .axis.x text,
-#english-lng-bar .axis.x text,
-#avg-house-row .axis text {
+#bar-BAME .axis.x text,
+#bar-english-lng .axis.x text,
+#row-avg-house .axis text {
   transform: rotate(-45deg);
   text-anchor: end !important;
   font-size: 0.7rem;
 }
 
-#crimes-map .axis text {
+#map-crimes .axis text {
   font-size: 0.4rem;
 }
 

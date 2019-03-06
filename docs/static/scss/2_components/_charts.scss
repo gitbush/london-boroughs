@@ -1,14 +1,14 @@
 // styles for all dc.js charts
 
-#BAME-bar .axis.x text,
-#english-lng-bar .axis.x text,
-#avg-house-row .axis text{
+#bar-BAME .axis.x text,
+#bar-english-lng .axis.x text,
+#row-avg-house .axis text{
     transform: rotate(-45deg);
     text-anchor: end !important;
     font-size: 0.7rem;
 }
 
-#crimes-map .axis text{
+#map-crimes .axis text{
     font-size: 0.4rem;
 }
 

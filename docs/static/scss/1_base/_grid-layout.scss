@@ -27,32 +27,32 @@
     grid-area: avg-pay;
 }
 
-#BAME-bar{
+#BAME{
     grid-area: BAME;
 }
 
-#english-lng-bar{
+#english-lng{
     grid-area: language;
 }
 
-#migrant-by-birth-pie{
+#migrant-by-birth{
     grid-area: migrant;
 }
 
-#crimes-map{
+#crimes{
     grid-area: crimes;
 }
 
-#obesity-scatter{
+#obesity{
     grid-area: obesity;
 }
 
-#degree-row{
+#degree{
     grid-area: degree;
 }
 
-#avg-house-row{
-    grid-area: avg-house-row;
+#avg-house{
+    grid-area: avg-house;
 }
 /*----------  end of grid tempate areas  ----------*/
 
@@ -78,7 +78,7 @@ main{
         "crimes"
         "obesity"
         "degree"
-        "avg-house-row"
+        "avg-house"
         "sidebar";
     };
 
@@ -95,7 +95,7 @@ main{
         "BAME BAME language language"
         ". crimes crimes ."
         "migrant migrant obesity obesity"
-        "degree degree avg-house-row avg-house-row"
+        "degree degree avg-house-row avg-house"
         "sidebar sidebar sidebar sidebar";
     };
 
@@ -109,7 +109,7 @@ main{
         "sidebar population born-abroad avg-house-prc avg-pay"
         "sidebar BAME       BAME        language      language"
         "sidebar migrant    crimes      crimes        obesity"
-        "sidebar degree crimes      crimes        avg-house-row";
+        "sidebar degree crimes      crimes        avg-house";
     };
 }
 

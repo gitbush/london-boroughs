@@ -82,7 +82,7 @@ function populationNd(cf) {
     // group on total population with groupAll on crossfilter to observe all filter when applied
     var popGroup = cf.groupAll().reduceSum(function(d){return d.GLA_Population_Estimate});
     // create number display at #population
-    var popNd = dc.numberDisplay("#population");
+    var popNd = dc.numberDisplay("#nd-population");
     // dc number display
     popNd
         .group(popGroup)
@@ -95,7 +95,7 @@ function populationNd(cf) {
 function bornAbroadNd(cf, bornAbroadGroup) {
     
     // attach dc.js numberDisplay to born abroad ID
-    var abroadNd = dc.numberDisplay("#born-abroad")
+    var abroadNd = dc.numberDisplay("#nd-born-abroad")
 
     abroadNd
         .formatNumber(d3.format(".0%"))
@@ -109,7 +109,7 @@ function bornAbroadNd(cf, bornAbroadGroup) {
 function avgHousePrcNd(cf, housePriceGroup, GB){
 
      // attach dc.js numberDisplay to avg house price ID
-     var housePriceNd = dc.numberDisplay("#avg-house-prc")
+     var housePriceNd = dc.numberDisplay("#nd-avg-house-prc")
 
      housePriceNd
         .formatNumber(GB.numberFormat("$,.0f"))
@@ -123,7 +123,7 @@ function avgHousePrcNd(cf, housePriceGroup, GB){
 function annualPayNd(cf, avgPayGroup, GB){
 
     // attach dc.js numberDisplay to avg pay ID
-    var avgPayNd = dc.numberDisplay('#avg-pay')
+    var avgPayNd = dc.numberDisplay("#nd-avg-pay")
 
     avgPayNd
         .formatNumber(GB.numberFormat("$,.0f"))
@@ -139,7 +139,7 @@ function BAMEBar(cf, boroughDim){
     //  group on population that are BAME
     var BAMEGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
      // attach dc.js barChart to BAME-bar ID
-    var BAMEBarChart = dc.barChart("#BAME-bar");
+    var BAMEBarChart = dc.barChart("#bar-BAME");
 
     BAMEBarChart
         .width(600)
@@ -164,7 +164,7 @@ function nonEnglishBar(cf, boroughDim){
     //  group on population whose main language is not English
     var nonEnglishGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_people_whose_main_language_is_not_English"));
      // attach dc.js barChart to english-lng-bar ID
-    var nonEnglishBarChart = dc.barChart("#english-lng-bar");
+    var nonEnglishBarChart = dc.barChart("#bar-english-lng");
 
     nonEnglishBarChart
         .width(600)
@@ -190,7 +190,7 @@ function migrantPieChart(cf){
     // group count of each Country
     var migrantGroup = migrantCountryDim.group();
     // attach dc.js barChart to migrant-by-birth-pie ID
-    var migrantPieChart = dc.pieChart("#migrant-by-birth-pie")
+    var migrantPieChart = dc.pieChart("#pie-migrant-by-birth")
 
     migrantPieChart
         .height(200)
@@ -225,7 +225,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
                         .translate([130,140]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
-    var crimesChoroMap = dc.geoChoroplethChart("#crimes-map")
+    var crimesChoroMap = dc.geoChoroplethChart("#map-crimes")
 
     crimesChoroMap
         .width(350)
@@ -326,7 +326,7 @@ function obesityScatter(cf){
     var OBmin = fakeObesityDim.bottom(1)[0].Childhood_Obesity;
     var OBmax = fakeObesityDim.top(1)[0].Childhood_Obesity;
     // attach dc.js scatterPlot to obesity ID
-    var obesityScatterPlot = dc.scatterPlot("#obesity-scatter")
+    var obesityScatterPlot = dc.scatterPlot("#scatter-obesity")
 
     obesityScatterPlot
         .width(400)
@@ -350,7 +350,7 @@ function avgHousePrcRow(cf, boroughDim) {
     var avgHousePrcGroup = boroughDim.group().reduceSum(function(d){
         return Math.round(d.Median_House_Price / 1000)});
     // attach dc.js rowChart to avg-house-row ID
-    var avgPrcRow = dc.rowChart("#avg-house-row")
+    var avgPrcRow = dc.rowChart("#row-avg-house")
 
     avgPrcRow
         .width(400)
@@ -395,7 +395,7 @@ function degreeRow(cf){
         },
     )
     // attach dc.js rowChart to degree-row ID
-    var degreeRowChart = dc.rowChart("#degree-row")
+    var degreeRowChart = dc.rowChart("#row-degree")
 
     degreeRowChart
         .width(600)
