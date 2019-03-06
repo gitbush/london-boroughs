@@ -246,14 +246,16 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
     crimesChoroMap.on("pretransition", function(chart){
         // use color brewers "Blues" scheme
         var colorArray = colorbrewer.Blues[9];
+        // set height and width for color legend 
         var width = 250;
-        var height = 15;
+        var height = 10;
 
-        var svg = chart.select("svg")
         /**
          * Append a defs element to svg to render rects
          * Append an svg linearGradient element 
          */
+        var svg = chart.select("svg");
+
         var grad = svg.append("defs")
                     .append("linearGradient")
                     .attr("id", "grad")
@@ -261,6 +263,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
                     .attr("x2", "100%")
                     .attr("y1", "0%")
                     .attr("y2", "0%");
+
         // Set linearGradient stop positions to colorArray index
         grad.selectAll("stop")
             .data(colorArray)
@@ -273,11 +276,13 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
                 return d;
             });
 
+        // set margin object for color legend positioning 
         var margin = {left:10,right:0,top:20,bottom:0};
-
+        
+        // create legend group to control color legend svg and yAxis together 
         var legendGroup = svg.append("g").attr("transform", "translate("+margin.left+","+margin.top+")");
 
-        // Append rect and fill with linearGradient styles
+        // Append rect and fill with linearGradient styles to legend group 
         legendGroup.append("rect")
             .attr("x", "0")
             .attr("y", "0")
@@ -295,15 +300,13 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
         var yAxis = d3.svg.axis()
                     .scale(y)
                     .ticks(6)
+                    .innerTickSize(4)
                     .orient("bottom");
         legendGroup.append("g")
             .attr("class", "axis y")
-            .attr("transform", "translate(0, 15)")
+            .attr("transform", "translate(0, 10)")
             .call(yAxis);
-    })
-
-   
-
+    });
 }
 
 
