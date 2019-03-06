@@ -212,6 +212,8 @@ function migrantPieChart(cf){
 * choropleth map learnt from LinkedIn Learning - dc.js course
 */
 function crimeRatesChoro(cf, boroughDim, geoJson){
+
+    var crimesDim = cf.dimension(dc.pluck("Crime_rates_per_thousand_population"));
     // pull in boroughDim and group on Crime_rates_per_thousand_population
     var crimesRateGroup = boroughDim.group().reduceSum(dc.pluck("Crime_rates_per_thousand_population"));
     // set centre of geoJson map coordinates using d3.geo.centroid to allow for translating 
@@ -276,6 +278,15 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             .attr("height", "0.8rem")
             .attr("fill", "url(#grad)");
     })
+
+    var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
+    var max = crimesDim.top(1)[0].Crime_rates_per_thousand_population
+    // create linear scale for crimes 
+    var y = d3.scale.linear()
+                .domain([min, max])
+                .range([0, 300]);
+    
+    
 
 }
 
