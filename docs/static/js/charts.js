@@ -385,8 +385,13 @@ function degreeRow(cf){
 
         function(p,v){
             p.count --;
-            p.total -= v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
-            p.average = p.total/p.count;
+            if(p.count == 0){
+                p.total = 0;
+                p.average = 0;
+            } else {
+                p.total -= v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
+                p.average = p.total/p.count;
+            }
             return p;
         },
 
