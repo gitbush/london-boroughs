@@ -40,7 +40,7 @@ aside {
     padding-top: 10px;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat 4, 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, auto) 50px;
     grid-gap: 10px;
     grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house avg-house" "sidebar sidebar sidebar sidebar";
