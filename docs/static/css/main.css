@@ -155,7 +155,7 @@ aside {
 
 /*----------  end of grid tempate areas  ----------*/
 /*=====  End of grid layout  ======*/
-.nd {
+.nd-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   max-height: 80px;
@@ -198,7 +198,7 @@ aside {
   padding-top: 5px;
 }
 
-#nd-population {
+.nd-display {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 600;
