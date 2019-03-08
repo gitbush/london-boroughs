@@ -193,18 +193,22 @@ function migrantPieChart(cf){
     var migrantPieChart = dc.pieChart("#pie-migrant-by-birth")
 
     migrantPieChart
-        .height(200)
-        .radius(70)
+        .height(250)
+        .radius(80)
         .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
         .useViewBoxResizing(true) // adds responsiveness
         .cx(120)
-        .cy(100)
-        .legend(dc.legend().x(210).y(20).itemHeight(10).gap(5))
-        .externalLabels(10)
-        .innerRadius(30)
-        // .minAngleForLabel(99)
+        .cy(155)
+        .legend(dc.legend()
+                .x(90).y(110)
+                .itemHeight(12)
+                .gap(5)
+                .maxItems(5))
+        // .externalLabels(10)
+        .innerRadius(60)
+        .minAngleForLabel(10)
         // .drawPaths(true);
 }
 
