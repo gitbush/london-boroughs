@@ -193,16 +193,16 @@ function migrantPieChart(cf){
     var migrantPieChart = dc.pieChart("#pie-migrant-by-birth")
 
     migrantPieChart
-        .height(250)
+        .height(200)
         .radius(80)
         .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
         .useViewBoxResizing(true) // adds responsiveness
-        .cx(120)
-        .cy(155)
+        .cx(140)
+        .cy(105)
         .legend(dc.legend()
-                .x(90).y(110)
+                .x(105).y(65)
                 .itemHeight(12)
                 .gap(5)
                 .maxItems(5))

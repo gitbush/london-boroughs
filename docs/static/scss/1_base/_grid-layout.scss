@@ -4,7 +4,7 @@
 =                grid layout                  =
 =============================================*/
 
-/*----------  responsive grid layouts ----------*/
+/*----------  main grid layouts ----------*/
 
 main{
 
@@ -194,7 +194,7 @@ section{
 
 .pie-grid{
     display: grid;
-    grid-template-rows: 4rem 2fr;
+    grid-template-rows: 4rem auto 4rem;
 }
 
 /*----------  end of chart grids  ----------*/

@@ -6,7 +6,6 @@ main, html, body {
 }
 
 header {
-  height: 50px;
   background-color: grey;
 }
 
@@ -22,7 +21,7 @@ aside {
 /*=============================================
 =                grid layout                  =
 =============================================*/
-/*----------  responsive grid layouts ----------*/
+/*----------  main grid layouts ----------*/
 @media screen and (max-width: 767px) {
   main {
     padding-top: 10px;
@@ -177,7 +176,7 @@ aside {
 /*----------  pie chart grids  ----------*/
 .pie-grid {
   display: grid;
-  grid-template-rows: 4rem 2fr;
+  grid-template-rows: 4rem auto 4rem;
 }
 
 /*----------  end of chart grids  ----------*/
@@ -230,9 +229,35 @@ aside {
 .bar-content,
 .pie-content {
   text-align: center;
-  padding: 0px 10% 0px 10%;
+  padding: 10px 10% 0px 10%;
   font-size: .7rem;
 }
 
 /*----------  end of bar charts  ----------*/
+/*----------  pie chart ----------*/
+@media screen and (max-width: 767px) {
+  #pie-migrant-by-birth {
+    float: none;
+    position: relative;
+    left: 11.3333333%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  #pie-migrant-by-birth {
+    float: none;
+    position: relative;
+    left: 11%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #pie-migrant-by-birth {
+    float: none;
+    position: relative;
+    left: 3%;
+  }
+}
+
+/*----------  end of pie chart  ----------*/
 /*# sourceMappingURL=main.css.map */

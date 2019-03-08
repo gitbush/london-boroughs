@@ -49,13 +49,36 @@
 /*----------  end of number displays  ----------*/
 
 /*----------  bar charts  ----------*/
+
 .bar-content,
 .pie-content{
     // display: grid;
     // grid-template-columns: auto;
     text-align: center;
-    padding: 0px 10% 0px 10%;
+    padding: 10px 10% 0px 10%;
     font-size: .7rem;
 }
 
 /*----------  end of bar charts  ----------*/
+
+/*----------  pie chart ----------*/
+
+#pie-migrant-by-birth{
+    @include mobile-device{
+        float: none;
+        position: relative;
+        left: 11.3333333%;
+    }
+    @include tablet-device{
+        float: none;
+        position: relative;
+        left: 11%;
+    }
+    @include desktop-device{
+        float: none;
+        position: relative;
+        left: 3%;
+    }   
+}
+
+/*----------  end of pie chart  ----------*/
