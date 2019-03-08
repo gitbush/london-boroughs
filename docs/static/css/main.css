@@ -157,9 +157,13 @@ aside {
 /*=====  End of grid layout  ======*/
 .nd {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 100px;
-  grid-template-areas: "fas number-display number-display";
+  grid-template-columns: 1fr 2fr;
+  max-height: 80px;
+}
+
+.nd-content {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
 }
 
 #bar-BAME .axis.x text,
@@ -182,4 +186,23 @@ aside {
   fill-opacity: 0.5;
   cursor: pointer;
 }
+
+/*----------  number displays  ----------*/
+.fas {
+  margin: .7rem 1.5rem;
+  font-size: 3rem;
+}
+
+.nd-header {
+  text-align: center;
+  padding-top: 5px;
+}
+
+#nd-population {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/*----------  end of number displays  ----------*/
 /*# sourceMappingURL=main.css.map */
