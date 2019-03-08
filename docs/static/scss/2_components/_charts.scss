@@ -82,7 +82,16 @@
 
 /*----------  end of pie chart  ----------*/
 
+/*----------  scatter plot  ----------*/
+
 #scatter-obesity{
     float: none;
     margin-left: 10px;
 }
+
+text{
+    #scatter-obesity &{
+        font-size: .9rem;
+    } 
+}
+/*----------  end of scatter plot  ----------*/

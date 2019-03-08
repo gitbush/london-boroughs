@@ -333,7 +333,7 @@ function obesityScatter(cf){
     var obesityScatterPlot = dc.scatterPlot("#scatter-obesity")
 
     obesityScatterPlot
-        .width(380)
+        .width(370)
         .height(220)
         .dimension(obesityGreenspaceDim)
         .group(obesityGroup)
