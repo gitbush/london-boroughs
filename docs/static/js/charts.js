@@ -357,11 +357,11 @@ function avgHousePrcRow(cf, boroughDim) {
     var avgPrcRow = dc.rowChart("#row-avg-house")
 
     avgPrcRow
-        .width(400)
-        .height(200)
-        .margins({top:20, right:50, bottom:35, left:15})
+        .width(350)
+        .height(230)
+        .margins({top:20, right:30, bottom:45, left:20})
         .gap(1)
-        .fixedBarHeight(13)
+        .fixedBarHeight(15)
         .cap(10)
         .useViewBoxResizing(true)
         .othersGrouper(null)
