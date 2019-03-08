@@ -166,9 +166,7 @@ section{
 }
 /*----------  end of grid tempate areas  ----------*/
 
-
-
-/*=====  End of grid layout  ======*/
+/*----------  number display grids  ----------*/
 
 .nd-grid{
     display: grid;
@@ -180,3 +178,18 @@ section{
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
+
+/*---------- end of number display grids  ----------*/
+
+/*----------  bar chart grids  ----------*/
+
+.bar-grid{
+    display: grid;
+    grid-template-rows: 4rem 2fr;
+}
+
+
+/*----------  end of bar chart grids  ----------*/
+
+/*=====  End of grid layout  ======*/
+

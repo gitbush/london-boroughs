@@ -154,7 +154,7 @@ aside {
 }
 
 /*----------  end of grid tempate areas  ----------*/
-/*=====  End of grid layout  ======*/
+/*----------  number display grids  ----------*/
 .nd-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -166,6 +166,15 @@ aside {
   grid-template-rows: 1fr 2fr;
 }
 
+/*---------- end of number display grids  ----------*/
+/*----------  bar chart grids  ----------*/
+.bar-grid {
+  display: grid;
+  grid-template-rows: 4rem 2fr;
+}
+
+/*----------  end of bar chart grids  ----------*/
+/*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
 #row-avg-house .axis text {
@@ -205,4 +214,14 @@ aside {
 }
 
 /*----------  end of number displays  ----------*/
+/*----------  bar charts  ----------*/
+.bar-content {
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+  padding: 0px 10% 0px 10%;
+  font-size: .7rem;
+}
+
+/*----------  end of bar charts  ----------*/
 /*# sourceMappingURL=main.css.map */
