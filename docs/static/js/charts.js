@@ -333,13 +333,13 @@ function obesityScatter(cf){
     var obesityScatterPlot = dc.scatterPlot("#scatter-obesity")
 
     obesityScatterPlot
-        .width(400)
-        .height(250)
+        .width(380)
+        .height(220)
         .dimension(obesityGreenspaceDim)
         .group(obesityGroup)
         .useViewBoxResizing(true)
         .brushOn(false)
-        .margins({top:20, right:10, bottom:35, left:30})
+        .margins({top:10, right:10, bottom:35, left:30})
         .x(d3.scale.linear().domain([OBmin, (OBmax + 10)]))
         .yAxisLabel('Childhood Obesity (%)')
         .xAxisLabel('Area That Is Greenspace (%)')

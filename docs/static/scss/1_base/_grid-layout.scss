@@ -190,14 +190,14 @@ section{
 
 /*----------  end of bar chart grids  ----------*/
 
-/*----------  pie chart grids  ----------*/
+/*----------  individual chart grids  ----------*/
 
-.pie-grid{
+.chart-grid{
     display: grid;
-    grid-template-rows: 4rem auto 4rem;
+    grid-template-rows: 4rem auto auto;
 }
 
-/*----------  end of chart grids  ----------*/
+/*----------  end of individual chart grids  ----------*/
 
 
 /*=====  End of grid layout  ======*/

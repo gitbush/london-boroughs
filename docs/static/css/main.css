@@ -173,13 +173,13 @@ aside {
 }
 
 /*----------  end of bar chart grids  ----------*/
-/*----------  pie chart grids  ----------*/
-.pie-grid {
+/*----------  individual chart grids  ----------*/
+.chart-grid {
   display: grid;
-  grid-template-rows: 4rem auto 4rem;
+  grid-template-rows: 4rem auto auto;
 }
 
-/*----------  end of chart grids  ----------*/
+/*----------  end of individual chart grids  ----------*/
 /*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
@@ -259,4 +259,8 @@ aside {
 }
 
 /*----------  end of pie chart  ----------*/
+#scatter-obesity {
+  float: none;
+  margin-left: 10px;
+}
 /*# sourceMappingURL=main.css.map */
