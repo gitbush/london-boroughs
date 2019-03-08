@@ -174,6 +174,13 @@ aside {
 }
 
 /*----------  end of bar chart grids  ----------*/
+/*----------  pie chart grids  ----------*/
+.pie-grid {
+  display: grid;
+  grid-template-rows: 4rem 2fr;
+}
+
+/*----------  end of chart grids  ----------*/
 /*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
@@ -220,9 +227,8 @@ aside {
 
 /*----------  end of number displays  ----------*/
 /*----------  bar charts  ----------*/
-.bar-content {
-  display: grid;
-  grid-template-columns: auto;
+.bar-content,
+.pie-content {
   text-align: center;
   padding: 0px 10% 0px 10%;
   font-size: .7rem;

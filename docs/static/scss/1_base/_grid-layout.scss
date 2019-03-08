@@ -188,8 +188,17 @@ section{
     grid-template-rows: 4rem 2fr;
 }
 
-
 /*----------  end of bar chart grids  ----------*/
+
+/*----------  pie chart grids  ----------*/
+
+.pie-grid{
+    display: grid;
+    grid-template-rows: 4rem 2fr;
+}
+
+/*----------  end of chart grids  ----------*/
+
 
 /*=====  End of grid layout  ======*/
 

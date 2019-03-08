@@ -49,9 +49,10 @@
 /*----------  end of number displays  ----------*/
 
 /*----------  bar charts  ----------*/
-.bar-content{
-    display: grid;
-    grid-template-columns: auto;
+.bar-content,
+.pie-content{
+    // display: grid;
+    // grid-template-columns: auto;
     text-align: center;
     padding: 0px 10% 0px 10%;
     font-size: .7rem;
