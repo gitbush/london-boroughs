@@ -176,7 +176,7 @@ function nonEnglishBar(cf, boroughDim){
         })
         .group(nonEnglishGroup)
         .dimension(boroughDim)
-        .margins({top:20, right:30, bottom:60, left:40})
+        .margins({top:10, right:30, bottom:80, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
         
