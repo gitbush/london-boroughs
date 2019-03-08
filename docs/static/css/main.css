@@ -196,6 +196,11 @@ aside {
   cursor: pointer;
 }
 
+.card-header {
+  text-align: center;
+  font-weight: 500;
+}
+
 /*----------  number displays  ----------*/
 .fas {
   margin: .7rem 1.5rem;
