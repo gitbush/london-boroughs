@@ -226,8 +226,7 @@ aside {
 
 /*----------  end of number displays  ----------*/
 /*----------  bar charts  ----------*/
-.bar-content,
-.pie-content {
+.chart-content {
   text-align: center;
   padding: 10px 8% 0px 8%;
   font-size: .7rem;
