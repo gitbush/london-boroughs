@@ -226,7 +226,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
                         .scale(15000) // scale the map 
-                        .translate([130,140]); // translate the map in the svg
+                        .translate([150,140]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#map-crimes")
@@ -281,7 +281,7 @@ function crimeRatesChoro(cf, boroughDim, geoJson){
             });
 
         // set margin object for color legend positioning 
-        var margin = {left:260,right:0,top:60,bottom:0};
+        var margin = {left:280,right:0,top:60,bottom:0};
         
         // create legend group to control color legend svg and yAxis together 
         var legendGroup = svg.append("g")
