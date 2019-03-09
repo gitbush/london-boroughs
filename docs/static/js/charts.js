@@ -339,7 +339,7 @@ function obesityScatter(cf){
         .group(obesityGroup)
         .useViewBoxResizing(true)
         .brushOn(false)
-        .margins({top:10, right:10, bottom:35, left:30})
+        .margins({top:10, right:10, bottom:35, left:35})
         .x(d3.scale.linear().domain([OBmin, (OBmax + 10)]))
         .yAxisLabel('Childhood Obesity (%)')
         .xAxisLabel('Area That Is Greenspace (%)')
