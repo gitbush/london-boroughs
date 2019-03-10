@@ -391,12 +391,15 @@ function employComposite(cf, boroughDim){
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Across London")
         .y(d3.scale.linear().domain([40, 90]))
+        .legend(dc.legend().x(60).y(150).itemHeight(13).gap(5))
         .compose([
             dc.lineChart(employCompChart)
                 .group(maleGroup, "Male Employment Rate")
+                .interpolate("bundle")
                 .colors("red"),
             dc.lineChart(employCompChart)
                 .group(femaleGroup, "Female Employment Rate")
+                .interpolate("bundle")
                 .colors("green")
         ]);
         
