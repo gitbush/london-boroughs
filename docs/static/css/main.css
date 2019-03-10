@@ -31,7 +31,7 @@ aside {
     grid-template-columns: auto;
     grid-template-rows: repeat(11, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "degree" "avg-house" "sidebar";
+    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "employment" "avg-house" "sidebar";
   }
 }
 
@@ -43,7 +43,7 @@ aside {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, auto) 50px;
     grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "degree degree avg-house avg-house" "sidebar sidebar sidebar sidebar";
+    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "employment employment avg-house avg-house" "sidebar sidebar sidebar sidebar";
   }
 }
 
@@ -54,7 +54,7 @@ aside {
     grid-template-columns: 50px repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-gap: 10px;
-    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar degree crimes      crimes        avg-house";
+    grid-template-areas: "sidebar population born-abroad avg-house-prc avg-pay" "sidebar BAME       BAME        language      language" "sidebar migrant    crimes      crimes        obesity" "sidebar employment crimes      crimes        avg-house";
   }
 }
 
@@ -71,7 +71,7 @@ aside {
   #avg-house-prc,
   #BAME,
   #migrant-by-birth,
-  #degree {
+  #employment {
     margin-left: 10px;
   }
 }
@@ -96,7 +96,7 @@ aside {
 }
 
 @media screen and (min-width: 900px) {
-  #degree,
+  #employment,
   #crimes,
   #avg-house {
     margin-bottom: 10px;
@@ -145,8 +145,8 @@ aside {
   grid-area: obesity;
 }
 
-#degree {
-  grid-area: degree;
+#employment {
+  grid-area: employment;
 }
 
 #avg-house {

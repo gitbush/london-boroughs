@@ -26,7 +26,7 @@ main{
         "migrant"
         "crimes"
         "obesity"
-        "degree"
+        "employment"
         "avg-house"
         "sidebar";
     };
@@ -45,7 +45,7 @@ main{
         "BAME BAME language language"
         ". crimes crimes ."
         "migrant migrant obesity obesity"
-        "degree degree avg-house avg-house"
+        "employment employment avg-house avg-house"
         "sidebar sidebar sidebar sidebar";
     };
 
@@ -60,7 +60,7 @@ main{
         "sidebar population born-abroad avg-house-prc avg-pay"
         "sidebar BAME       BAME        language      language"
         "sidebar migrant    crimes      crimes        obesity"
-        "sidebar degree crimes      crimes        avg-house";
+        "sidebar employment crimes      crimes        avg-house";
     };
 }
 
@@ -79,7 +79,7 @@ section{
 #avg-house-prc,
 #BAME,
 #migrant-by-birth,
-#degree{
+#employment{
     @include tablet-device{
         margin-left: 10px;
     }
@@ -104,7 +104,7 @@ section{
     }
 }
 
-#degree,
+#employment,
 #crimes,
 #avg-house{
     @include desktop-device{
@@ -157,8 +157,8 @@ section{
     grid-area: obesity;
 }
 
-#degree{
-    grid-area: degree;
+#employment{
+    grid-area: employment;
 }
 
 #avg-house{
