@@ -70,7 +70,7 @@ function makeCharts(error, csv, geoJson){
     migrantPieChart(cf);
     obesityScatter(cf);
     avgHousePrcRow(cf, boroughDim);
-    degreeRow(cf);
+    employComposite(cf, boroughDim);
     crimeRatesChoro(cf, boroughDim, geoJson);
 
     dc.renderAll();
@@ -372,50 +372,30 @@ function avgHousePrcRow(cf, boroughDim) {
 }
 
 // proportion of working age people with a degree row chart
-function degreeRow(cf){
-    // dimension on Inner and Outer London boroughs
-    var InnerOuterDim = cf.dimension(function(d){
-        return d.Inner_Outer_London;
-    });
-    // find average of group using custom reduce()
-    var degreeGroup = InnerOuterDim.group().reduce(
-        
-        function(p,v){
-            p.count ++;
-            p.total += v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
-            p.average = p.total/p.count;
-            return p;
-        },
+function employComposite(cf, boroughDim){
+    
+    var maleGroup = boroughDim.group().reduceSum(dc.pluck("Male_employment_rate"));
+    var femaleGroup = boroughDim.group().reduceSum(dc.pluck("Female_employment_rate"));
 
-        function(p,v){
-            p.count --;
-            if(p.count == 0){
-                p.total = 0;
-                p.average = 0;
-            } else {
-                p.total -= v.Proportion_of_working_age_with_degree_or_equivalent_and_above;
-                p.average = p.total/p.count;
-            }
-            return p;
-        },
+    // attach dc.js compositeChart to line-employment ID
+    var employCompChart = dc.compositeChart("#line-employment")
 
-        function(){
-            return {count:0, total:0, average:0};
-        },
-    )
-    // attach dc.js rowChart to degree-row ID
-    var degreeRowChart = dc.rowChart("#row-degree")
-
-    degreeRowChart
-        .width(600)
+    employCompChart
+        .width(470)
         .height(230)
         .useViewBoxResizing(true)
-        .margins({top:10, right:10, bottom:20, left:20})
-        .dimension(InnerOuterDim)
-        .group(degreeGroup)
-        .valueAccessor(function(d){
-            return d.value.average
-        });
-
+        .margins({top:10, right:40, bottom:40, left:40})
+        .dimension(boroughDim)
+        .group(maleGroup)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .compose([
+            dc.lineChart(employCompChart)
+                .group(maleGroup, "Male Employment Rate")
+                .colors("red"),
+            dc.lineChart(employCompChart)
+                .group(femaleGroup, "Female Employment Rate")
+                .colors("green")
+        ]);
 }
 
