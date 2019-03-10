@@ -384,11 +384,12 @@ function employComposite(cf, boroughDim){
         .width(470)
         .height(230)
         .useViewBoxResizing(true)
-        .margins({top:10, right:40, bottom:40, left:40})
+        .margins({top:20, right:40, bottom:25, left:40})
         .dimension(boroughDim)
         .group(maleGroup)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .xAxisLabel("Across London")
         .y(d3.scale.linear().domain([40, 90]))
         .compose([
             dc.lineChart(employCompChart)

@@ -95,3 +95,14 @@ text{
     } 
 }
 /*----------  end of scatter plot  ----------*/
+
+/*----------  composite chart  ----------*/
+
+#line-employment .x.axis text,
+#line-employment .x.axis .tick{
+    display: none;
+}
+
+
+/*----------  end of composite chart  ----------*/
+
