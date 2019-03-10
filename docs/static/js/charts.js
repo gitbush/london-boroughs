@@ -389,6 +389,7 @@ function employComposite(cf, boroughDim){
         .group(maleGroup)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .y(d3.scale.linear().domain([40, 90]))
         .compose([
             dc.lineChart(employCompChart)
                 .group(maleGroup, "Male Employment Rate")
@@ -397,5 +398,8 @@ function employComposite(cf, boroughDim){
                 .group(femaleGroup, "Female Employment Rate")
                 .colors("green")
         ]);
+        
+        employCompChart.yAxis().ticks(6);
+
 }
 
