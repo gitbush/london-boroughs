@@ -249,11 +249,10 @@ function crimeRatesChoro(cf2, geoJson){
         .dimension(areaDim)
         .group(crimesRateGroup)
         .useViewBoxResizing(true)
-        // .title(function(d){
-        //         return `${d.key}
-        //     ${d.value} crimes per 1000 people`
+        .title(function(d){
+                return `${d.key} reported ${d.value} offences`
             
-        // })
+        })
         .colors(d3.scale.quantize().range(colorbrewer.Blues[9]).domain([0, 55000]))
         .projection(projection)
         .overlayGeoJson(geoJson.features, "area", function(d){
