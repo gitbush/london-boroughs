@@ -70,7 +70,7 @@ function makeCharts(error, csv, geoJson){
     migrantPieChart(cf);
     obesityScatter(cf);
     avgHousePrcRow(cf, boroughDim);
-    employComposite(cf, boroughDim);
+    genderPayComposite(cf, boroughDim);
     crimeRatesChoro(cf, boroughDim, geoJson);
 
     dc.renderAll();
@@ -372,10 +372,10 @@ function avgHousePrcRow(cf, boroughDim) {
 }
 
 // proportion of working age people with a degree row chart
-function employComposite(cf, boroughDim){
+function genderPayComposite(cf, boroughDim){
     
-    var maleGroup = boroughDim.group().reduceSum(dc.pluck("Male_employment_rate"));
-    var femaleGroup = boroughDim.group().reduceSum(dc.pluck("Female_employment_rate"));
+    var maleGroup = boroughDim.group().reduceSum(dc.pluck("Gross_Annual_Pay_Male"));
+    var femaleGroup = boroughDim.group().reduceSum(dc.pluck("Gross_Annual_Pay_Female"));
 
     // attach dc.js compositeChart to line-employment ID
     var employCompChart = dc.compositeChart("#line-employment")
@@ -390,20 +390,20 @@ function employComposite(cf, boroughDim){
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Across London")
-        .y(d3.scale.linear().domain([40, 90]))
+        // .y(d3.scale.linear().domain([40, 90]))
         .legend(dc.legend().x(60).y(150).itemHeight(13).gap(5))
         .compose([
             dc.lineChart(employCompChart)
-                .group(maleGroup, "Male Employment Rate")
+                .group(maleGroup, "Male Average Pay ")
                 .interpolate("bundle")
                 .colors("red"),
             dc.lineChart(employCompChart)
-                .group(femaleGroup, "Female Employment Rate")
+                .group(femaleGroup, "Female Average Pay")
                 .interpolate("bundle")
                 .colors("green")
         ]);
         
-        employCompChart.yAxis().ticks(6);
+        employCompChart.yAxis().ticks(8);
 
 }
 
