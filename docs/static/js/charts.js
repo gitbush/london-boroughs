@@ -209,6 +209,10 @@ function migrantPieChart(cf){
         // .externalLabels(10)
         .innerRadius(60)
         .minAngleForLabel(10)
+        .title(function(d){
+                    return `${d.key} tops the migrant
+            population in ${d.value} boroughs`
+        })
         // .drawPaths(true);
 }
 
