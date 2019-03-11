@@ -344,7 +344,13 @@ function obesityScatter(cf){
         .yAxisLabel('Childhood Obesity (%)')
         .xAxisLabel('Area That Is Greenspace (%)')
         .symbolSize(10)
-        .clipPadding(15);
+        .clipPadding(15)
+        .title(function(d){
+            return `${d.key[2]}
+            Greenspace Area: ${d.key[0]}%
+            Childhood Obesity Rate: ${d.key[1]}%`
+
+        });
 }
 
 // average house price row chart
