@@ -69,7 +69,7 @@ function makeCharts(error, csv, geoJson){
     nonEnglishBar(cf, boroughDim);
     migrantPieChart(cf);
     obesityScatter(cf);
-    avgHousePrcRow(cf, boroughDim);
+    avgHousePrcRow(cf, boroughDim, GB);
     genderPayComposite(cf, boroughDim);
     crimeRatesChoro(cf, boroughDim, geoJson);
 
@@ -348,7 +348,7 @@ function obesityScatter(cf){
 }
 
 // average house price row chart
-function avgHousePrcRow(cf, boroughDim) {
+function avgHousePrcRow(cf, boroughDim, GB) {
 
     // group on median house price and divide by 1000 to reduce tick text size
     var avgHousePrcGroup = boroughDim.group().reduceSum(function(d){
@@ -366,9 +366,10 @@ function avgHousePrcRow(cf, boroughDim) {
         .useViewBoxResizing(true)
         .othersGrouper(null)
         .dimension(boroughDim)
-        .group(avgHousePrcGroup);
-
-    
+        .group(avgHousePrcGroup)
+        .title(function(d){
+            return `${d.key}: ${GB.numberFormat("$,.0f")(d.value * 1000)}`
+        });
 }
 
 // proportion of working age people with a degree row chart
