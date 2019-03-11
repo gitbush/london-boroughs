@@ -1,16 +1,18 @@
 queue()
     .defer(d3.csv, "docs/static/data/boroughs-data.csv") // load csv data 
+    .defer(d3.csv, "docs/static/data/map-data.csv") // load csv data for choropleth map
     .defer(d3.json, "docs/static/data/boroughsGeo.json") // load geoJson data for choropleth map
     .await(makeCharts); // load data into makeCharts function when complete or throw error if an error 
 
 // ==== main makeCharts function to render all charts
-function makeCharts(error, csv, geoJson){
+function makeCharts(error, londonCsv, crimeCsv, geoJson){
     
     // format d3.locale  
     var GB = d3.locale(GBLocale);
 
     // convert strings to numbers
-    csv.forEach(function(d){
+    londonCsv.forEach(function(d){
+        d.GLA_Population_Estimate = +d.GLA_Population_Estimate;
         d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
         d.Median_House_Price = +d.Median_House_Price;
         d.Gross_Annual_Pay = +d.Gross_Annual_Pay;
@@ -21,13 +23,9 @@ function makeCharts(error, csv, geoJson){
         d.Crime_rates_per_thousand_population = +d.Crime_rates_per_thousand_population;
     })
 
-    // format strings into numbers
-    csv.forEach(function (d){
-        d.GLA_Population_Estimate = +d.GLA_Population_Estimate;
-    });
 
     // crossfilter csv data
-    var cf = crossfilter(csv);
+    var cf = crossfilter(londonCsv);
 
     // reuseable custom reduce average function 
     function reduceAvg(dimension, type){
