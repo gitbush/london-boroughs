@@ -263,71 +263,71 @@ function crimeRatesChoro(cf2, geoJson){
      * Create a color legend
      * Learnt from https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html
      */   
-    // crimesChoroMap.on("pretransition", function(chart){
-    //     // use color brewers "Blues" scheme
-    //     var colorArray = colorbrewer.Blues[9];
-    //     // set height and width for color legend 
-    //     var width = 10;
-    //     var height = 170;
+    crimesChoroMap.on("pretransition", function(chart){
+        // use color brewers "Blues" scheme
+        var colorArray = colorbrewer.Blues[9];
+        // set height and width for color legend 
+        var width = 10;
+        var height = 170;
 
-    //     /**
-    //      * Append a defs element to svg to render rects
-    //      * Append an svg linearGradient element 
-    //      */
-    //     var svg = chart.select("svg");
+        /**
+         * Append a defs element to svg to render rects
+         * Append an svg linearGradient element 
+         */
+        var svg = chart.select("svg");
 
-    //     var grad = svg.append("defs")
-    //                 .append("linearGradient")
-    //                 .attr("id", "grad")
-    //                 .attr("x1", "0%")
-    //                 .attr("x2", "0%")
-    //                 .attr("y1", "100%")
-    //                 .attr("y2", "0%");
+        var grad = svg.append("defs")
+                    .append("linearGradient")
+                    .attr("id", "grad")
+                    .attr("x1", "0%")
+                    .attr("x2", "0%")
+                    .attr("y1", "100%")
+                    .attr("y2", "0%");
 
-    //     // Set linearGradient stop positions to colorArray index
-    //     grad.selectAll("stop")
-    //         .data(colorArray)
-    //         .enter()
-    //         .append("stop")
-    //         .attr("offset", function(d, i) {
-    //             return (i / colorArray.length) *100 +"%";
-    //         })
-    //         .attr("stop-color", function(d){
-    //             return d;
-    //         });
+        // Set linearGradient stop positions to colorArray index
+        grad.selectAll("stop")
+            .data(colorArray)
+            .enter()
+            .append("stop")
+            .attr("offset", function(d, i) {
+                return (i / colorArray.length) *100 +"%";
+            })
+            .attr("stop-color", function(d){
+                return d;
+            });
 
-    //     // set margin object for color legend positioning 
-    //     var margin = {left:280,right:0,top:60,bottom:0};
+        // set margin object for color legend positioning 
+        var margin = {left:280,right:0,top:60,bottom:0};
         
-    //     // create legend group to control color legend svg and yAxis together 
-    //     var legendGroup = svg.append("g")
-    //             .attr("transform", "translate("+margin.left+","+margin.top+")");
+        // create legend group to control color legend svg and yAxis together 
+        var legendGroup = svg.append("g")
+                .attr("transform", "translate("+margin.left+","+margin.top+")");
 
-    //     // Append rect and fill with linearGradient styles to legend group 
-    //     legendGroup.append("rect")
-    //             .attr("x", "0")
-    //             .attr("y", "0")
-    //             .attr("width", width)
-    //             .attr("height", height)
-    //             .attr("fill", "url(#grad)");
+        // Append rect and fill with linearGradient styles to legend group 
+        legendGroup.append("rect")
+                .attr("x", "0")
+                .attr("y", "0")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("fill", "url(#grad)");
 
-    //     // var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
-    //     // var max = crimesDim.top(1)[0].Crime_rates_per_thousand_population
-    //     // create linear scale for crimes 
-    //     var y = d3.scale.linear()
-    //             .domain([max, min])
-    //             .range([0, height]);
-    //     // create axis bottom for color legend
-    //     var yAxis = d3.svg.axis()
-    //             .scale(y)
-    //             .ticks(6)
-    //             .innerTickSize(4)
-    //             .orient("right");
-    //     legendGroup.append("g")
-    //             .attr("class", "axis y")
-    //             .attr("transform", "translate(10, 0)")
-    //             .call(yAxis);
-    // });
+        // var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
+        // var max = crimesDim.top(1)[0].Crime_rates_per_thousand_population
+        // create linear scale for crimes 
+        var y = d3.scale.linear()
+                .domain([60000, 0])
+                .range([0, height]);
+        // create axis bottom for color legend
+        var yAxis = d3.svg.axis()
+                .scale(y)
+                .ticks(10)
+                .innerTickSize(4)
+                .orient("right");
+        legendGroup.append("g")
+                .attr("class", "axis y")
+                .attr("transform", "translate(10, 0)")
+                .call(yAxis);
+    });
 }
 
 // correlation between obesity rates and areas of greenspace(parks)
