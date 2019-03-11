@@ -339,7 +339,7 @@ function obesityScatter(cf){
         .group(obesityGroup)
         .useViewBoxResizing(true)
         .brushOn(false)
-        .margins({top:10, right:10, bottom:35, left:35})
+        .margins({top:10, right:30, bottom:35, left:35})
         .x(d3.scale.linear().domain([OBmin, (OBmax + 10)]))
         .yAxisLabel('Childhood Obesity (%)')
         .xAxisLabel('Area That Is Greenspace (%)')
@@ -381,7 +381,7 @@ function employComposite(cf, boroughDim){
     var employCompChart = dc.compositeChart("#line-employment")
 
     employCompChart
-        .width(470)
+        .width(350)
         .height(230)
         .useViewBoxResizing(true)
         .margins({top:20, right:40, bottom:25, left:40})
