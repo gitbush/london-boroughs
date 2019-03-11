@@ -23,9 +23,15 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
         d.Crime_rates_per_thousand_population = +d.Crime_rates_per_thousand_population;
     })
 
+    // format crimeCsv
+    crimeCsv.forEach(function(d){
+        d.Crime_Count = +d.Crime_Count;
+    });
+
 
     // crossfilter csv data
     var cf = crossfilter(londonCsv);
+    var cf2 = crossfilter(crimeCsv);
 
     // reuseable custom reduce average function 
     function reduceAvg(dimension, type){
