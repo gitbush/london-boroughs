@@ -378,7 +378,7 @@ function genderPayComposite(cf, boroughDim){
     var femaleGroup = boroughDim.group().reduceSum(dc.pluck("Gross_Annual_Pay_Female"));
 
     // attach dc.js compositeChart to line-employment ID
-    var employCompChart = dc.compositeChart("#line-employment")
+    var employCompChart = dc.compositeChart("#line-gender-pay")
 
     employCompChart
         .width(350)

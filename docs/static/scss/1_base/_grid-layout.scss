@@ -26,7 +26,7 @@ main{
         "migrant"
         "crimes"
         "obesity"
-        "employment"
+        "gender-pay"
         "avg-house"
         "sidebar";
     };
@@ -45,7 +45,7 @@ main{
         "BAME BAME language language"
         ". crimes crimes ."
         "migrant migrant obesity obesity"
-        "employment employment avg-house avg-house"
+        "gender-pay gender-pay avg-house avg-house"
         "sidebar sidebar sidebar sidebar";
     };
 
@@ -60,7 +60,7 @@ main{
         "sidebar population born-abroad avg-house-prc avg-pay"
         "sidebar BAME       BAME        language      language"
         "sidebar migrant    crimes      crimes        obesity"
-        "sidebar employment crimes      crimes        avg-house";
+        "sidebar gender-pay crimes      crimes        avg-house";
     };
 }
 
@@ -79,7 +79,7 @@ section{
 #avg-house-prc,
 #BAME,
 #migrant-by-birth,
-#employment{
+#gender-pay{
     @include tablet-device{
         margin-left: 10px;
     }
@@ -104,7 +104,7 @@ section{
     }
 }
 
-#employment,
+#gender-pay,
 #crimes,
 #avg-house{
     @include desktop-device{
@@ -157,8 +157,8 @@ section{
     grid-area: obesity;
 }
 
-#employment{
-    grid-area: employment;
+#gender-pay{
+    grid-area: gender-pay;
 }
 
 #avg-house{
