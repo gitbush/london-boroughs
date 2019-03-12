@@ -10,11 +10,10 @@ main{
 
     // mobile device 
     @include mobile-device{ 
-        padding-top:10px;
-        margin: 0;
+        margin: 10px;
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: repeat(11, auto) 50px;
+        grid-template-rows: repeat(11, auto);
         grid-gap: 10px;
         grid-template-areas: 
         "population"
@@ -27,17 +26,15 @@ main{
         "crimes"
         "obesity"
         "gender-pay"
-        "avg-house"
-        "sidebar";
+        "avg-house";
     };
 
     // tablet device 
     @include tablet-device{ 
-        padding-top:10px;
-        margin: 0;
+        margin: 10px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, auto) 50px;
+        grid-template-rows: repeat(6, auto);
         grid-gap: 10px;
         grid-template-areas: 
         "population population born-abroad born-abroad"
@@ -45,81 +42,27 @@ main{
         "BAME BAME language language"
         ". crimes crimes ."
         "migrant migrant obesity obesity"
-        "gender-pay gender-pay avg-house avg-house"
-        "sidebar sidebar sidebar sidebar";
+        "gender-pay gender-pay avg-house avg-house";
     };
 
     // desktop screen
     @include desktop-device{
-        padding-right:10px;
+        margin: 10px;
         display: grid;
-        grid-template-columns: 50px repeat(4, 1fr);
+        grid-template-columns: 1rem repeat(4, 1fr)  1rem;
         grid-template-rows: repeat(4, auto);
         grid-gap: 10px;
         grid-template-areas: 
-        "sidebar population born-abroad avg-house-prc avg-pay"
-        "sidebar BAME       BAME        language      language"
-        "sidebar migrant    crimes      crimes        obesity"
-        "sidebar gender-pay crimes      crimes        avg-house";
+        ". population born-abroad avg-house-prc avg-pay ."
+        ". BAME       BAME        language      language ."
+        ". migrant    crimes      crimes        obesity ."
+        ". gender-pay crimes      crimes        avg-house .";
     };
 }
 
 /*----------  end of responsive grid layouts ----------*/
 
-/*----------  grid helpers ----------*/
-//  easier way? nested grid? 
-
-section{
-    @include mobile-device{
-        margin: 0 10px;
-    }
-}
-
-#population,
-#avg-house-prc,
-#BAME,
-#migrant-by-birth,
-#gender-pay{
-    @include tablet-device{
-        margin-left: 10px;
-    }
-}
-
-#born-abroad,
-#avg-pay,
-#english-lng,
-#obesity,
-#avg-house{
-    @include tablet-device{
-        margin-right: 10px;
-    }
-}
-
-#population,
-#born-abroad,
-#avg-pay,
-#avg-house-prc{
-    @include desktop-device{
-        margin-top: 10px;
-    }
-}
-
-#gender-pay,
-#crimes,
-#avg-house{
-    @include desktop-device{
-        margin-bottom: 10px;
-    }
-}
-
-/*----------  end of grid helpers ----------*/
-
-
 /*----------  grid tempate areas  ----------*/
-
-#sidebar{
-    grid-area: sidebar;
-}
 
 #population{
     grid-area: population;
