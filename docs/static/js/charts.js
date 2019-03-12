@@ -336,12 +336,17 @@ function crimesRowChart(cf2){
     var crimesRow = dc.rowChart("#row-crimes");
 
     crimesRow
-        .width(530)
-        .height(200)
-        .margins({top:20, right:20, bottom:45, left:180})
+        .width(500)
+        .height(230)
+        .margins({top:20, right:20, bottom:45, left:130})
         .gap(1)
-        .fixedBarHeight(15)
-        .labelOffsetX(-150)
+        .fixedBarHeight(17)
+        .labelOffsetX(-110)
+        .renderTitleLabel(true)
+        .title(function(d){
+            return d.value;
+        })
+        .elasticX(true)
         .useViewBoxResizing(true)
         .othersGrouper(null)
         .dimension(crimeTypeDim)
