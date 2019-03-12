@@ -1,3 +1,27 @@
+/*----------  navbar styles  ----------*/
+.navbar{
+    padding: 0.1rem 1rem;
+}
+
 .navbar-heading{
     color: white;
+}
+
+.fab{
+    font-size: 2.2rem;
+    color: white;
+}
+
+.nav-link{
+    padding: 0;
+    cursor: pointer;
+}
+
+.contact{
+    font-size: 1.2rem;
+}
+
+.nav-item{
+    text-align: center;
+    padding: 5px;
 }

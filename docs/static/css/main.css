@@ -6,7 +6,6 @@ main, html, body {
 }
 
 header {
-  height: auto;
   background-color: grey;
 }
 
@@ -17,6 +16,10 @@ aside {
 /*=====  End of Section base elements  ======*/
 .card {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  height: auto;
 }
 
 /*=============================================
@@ -187,8 +190,32 @@ aside {
 
 /*----------  end of individual chart grids  ----------*/
 /*=====  End of grid layout  ======*/
+/*----------  navbar styles  ----------*/
+.navbar {
+  padding: 0.1rem 1rem;
+}
+
 .navbar-heading {
   color: white;
+}
+
+.fab {
+  font-size: 2.2rem;
+  color: white;
+}
+
+.nav-link {
+  padding: 0;
+  cursor: pointer;
+}
+
+.contact {
+  font-size: 1.2rem;
+}
+
+.nav-item {
+  text-align: center;
+  padding: 5px;
 }
 
 #bar-BAME .axis.x text,
