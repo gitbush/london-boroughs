@@ -78,6 +78,7 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
     avgHousePrcRow(cf, boroughDim, GB);
     genderPayComposite(cf, boroughDim);
     crimeRatesChoro(cf2, geoJson);
+    crimesRowChart(cf2);
 
     dc.renderAll();
 }
@@ -226,11 +227,8 @@ function migrantPieChart(cf){
 * choropleth map learnt from LinkedIn Learning - dc.js course
 */
 function crimeRatesChoro(cf2, geoJson){
-
+    
     var areaDim = cf2.dimension(dc.pluck("Area_Name"));
-
-    // var crimesDim = cf.dimension(dc.pluck("Crime_rates_per_thousand_population"));
-    // pull in boroughDim and group on Crime_rates_per_thousand_population
     var crimesRateGroup = areaDim.group().reduceSum(dc.pluck("Crime_Count"));
     // set centre of geoJson map coordinates using d3.geo.centroid to allow for translating 
     var centre = d3.geo.centroid(geoJson);
@@ -238,14 +236,14 @@ function crimeRatesChoro(cf2, geoJson){
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
                         .scale(15000) // scale the map 
-                        .translate([150,100]); // translate the map in the svg
+                        .translate([150,105]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#map-crimes")
 
     crimesChoroMap
         .width(350)
-        .height(300)
+        .height(200)
         .dimension(areaDim)
         .group(crimesRateGroup)
         .useViewBoxResizing(true)
@@ -328,6 +326,32 @@ function crimeRatesChoro(cf2, geoJson){
                 .attr("transform", "translate(10, 0)")
                 .call(yAxis);
     });
+}
+
+function crimesRowChart(cf2){
+    var crimeTypeDim = cf2.dimension(dc.pluck("Major_Text"));
+
+    var countGroup = crimeTypeDim.group().reduceSum(dc.pluck("Crime_Count"));
+
+    var crimesRow = dc.rowChart("#row-crimes");
+
+    crimesRow
+        .width(500)
+        .height(220)
+        .margins({top:20, right:20, bottom:45, left:130})
+        .gap(1)
+        .fixedBarHeight(16)
+        .labelOffsetX(-110)
+        .renderTitleLabel(true)
+        .title(function(d){
+            return d.value;
+        })
+        .elasticX(true)
+        .useViewBoxResizing(true)
+        .othersGrouper(null)
+        .dimension(crimeTypeDim)
+        .group(countGroup)
+
 }
 
 // correlation between obesity rates and areas of greenspace(parks)

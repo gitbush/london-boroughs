@@ -180,6 +180,11 @@ aside {
   grid-template-rows: 4rem auto auto;
 }
 
+.map-grid {
+  display: grid;
+  grid-template-rows: 4rem auto auto auto;
+}
+
 /*----------  end of individual chart grids  ----------*/
 /*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
@@ -290,4 +295,16 @@ aside {
 }
 
 /*----------  end of composite chart  ----------*/
+/*----------  crimes choropleth map  ----------*/
+#row-crimes svg text {
+  fill: black;
+}
+
+@media screen and (min-width: 900px) {
+  #row-crimes {
+    max-width: 41vw;
+  }
+}
+
+/*----------  end of crimes choropleth map  ----------*/
 /*# sourceMappingURL=main.css.map */
