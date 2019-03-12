@@ -187,6 +187,10 @@ aside {
 
 /*----------  end of individual chart grids  ----------*/
 /*=====  End of grid layout  ======*/
+.navbar-heading {
+  color: white;
+}
+
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
 #row-avg-house .axis text {
