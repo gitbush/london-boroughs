@@ -290,4 +290,7 @@ aside {
 }
 
 /*----------  end of composite chart  ----------*/
+#row-crimes svg text {
+  fill: black;
+}
 /*# sourceMappingURL=main.css.map */

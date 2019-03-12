@@ -336,13 +336,13 @@ function crimesRowChart(cf2){
     var crimesRow = dc.rowChart("#row-crimes");
 
     crimesRow
-        .width(350)
+        .width(530)
         .height(200)
-        .margins({top:20, right:30, bottom:45, left:20})
+        .margins({top:20, right:20, bottom:45, left:180})
         .gap(1)
         .fixedBarHeight(15)
-        .cap(10)
-        // .useViewBoxResizing(true)
+        .labelOffsetX(-150)
+        .useViewBoxResizing(true)
         .othersGrouper(null)
         .dimension(crimeTypeDim)
         .group(countGroup)
