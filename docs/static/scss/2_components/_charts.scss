@@ -1,5 +1,7 @@
 // styles for all dc.js charts
 
+/*---------- general chart styles  ----------*/
+
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
 #row-avg-house .axis text{
@@ -8,24 +10,22 @@
     font-size: 0.7rem;
 }
 
-#map-crimes .axis text{
-    font-size: 0.4rem;
+#bar-BAME .axis .tick text,
+#bar-english-lng .axis .tick text{
+    @include mobile-device{
+        font-size: 0.9rem;
+    }
 }
 
-
-.area path{
-    stroke: white;
-}
-
-.area:hover{
-    fill-opacity: 0.5;
-    cursor: pointer;
-}
-
-.card-header{
+.chart-content{
+    // display: grid;
+    // grid-template-columns: auto;
     text-align: center;
-    font-weight: 500;
+    padding: 10px 8% 0px 8%;
+    font-size: .7rem;
 }
+
+/*----------  end of general chart styles ----------*/
 
 /*----------  number displays  ----------*/
 
@@ -50,13 +50,6 @@
 
 /*----------  bar charts  ----------*/
 
-.chart-content{
-    // display: grid;
-    // grid-template-columns: auto;
-    text-align: center;
-    padding: 10px 8% 0px 8%;
-    font-size: .7rem;
-}
 
 /*----------  end of bar charts  ----------*/
 
@@ -66,7 +59,7 @@
     @include mobile-device{
         float: none;
         position: relative;
-        left: 14.3333333%;
+        left: 10%;
     }
     @include tablet-device{
         float: none;
@@ -123,5 +116,35 @@ text{
         max-width: 41vw;
     }
 }
+
+#map-crimes .axis text{
+    @include mobile-device{
+        font-size: 0.6rem;
+    }
+    @include tablet-device{
+        font-size: 0.6rem;
+    }
+    @include desktop-device{
+        font-size: 0.4rem;
+    }
+
+}
+
+#row-crimes .row text{
+    font-size: 0.8rem;
+    @include mobile-device{
+        font-size: 1rem;
+    }
+}
+
+.area path{
+    stroke: white;
+}
+
+.area:hover{
+    fill-opacity: 0.5;
+    cursor: pointer;
+}
+
 
 /*----------  end of crimes choropleth map  ----------*/

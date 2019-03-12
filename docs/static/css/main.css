@@ -25,6 +25,8 @@ aside {
 
 .card-header {
   height: auto;
+  text-align: center;
+  font-weight: 500;
 }
 
 /*=============================================
@@ -38,17 +40,7 @@ aside {
     grid-template-columns: auto;
     grid-template-rows: repeat(11, auto);
     grid-gap: 10px;
-    grid-template-areas: "population"
- "born-abroad"
- "avg-house-prc"
- "avg-pay"
- "BAME"
- "language"
- "migrant"
- "crimes"
- "obesity"
- "gender-pay"
- "avg-house";
+    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "gender-pay" "avg-house";
   }
 }
 
@@ -59,12 +51,7 @@ aside {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, auto);
     grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad"
- "avg-house-prc avg-house-prc avg-pay avg-pay"
- "BAME BAME language language"
- ". crimes crimes ."
- "migrant migrant obesity obesity"
- "gender-pay gender-pay avg-house avg-house";
+    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "gender-pay gender-pay avg-house avg-house";
   }
 }
 
@@ -75,10 +62,7 @@ aside {
     grid-template-columns: 1rem repeat(4, 1fr) 1rem;
     grid-template-rows: repeat(4, auto);
     grid-gap: 10px;
-    grid-template-areas: ". population born-abroad avg-house-prc avg-pay ."
- ". BAME       BAME        language      language ."
- ". migrant    crimes      crimes        obesity ."
- ". gender-pay crimes      crimes        avg-house .";
+    grid-template-areas: ". population born-abroad avg-house-prc avg-pay ." ". BAME       BAME        language      language ." ". migrant    crimes      crimes        obesity ." ". gender-pay crimes      crimes        avg-house .";
   }
 }
 
@@ -190,6 +174,7 @@ aside {
   padding: 5px;
 }
 
+/*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
 #row-avg-house .axis text {
@@ -198,24 +183,20 @@ aside {
   font-size: 0.7rem;
 }
 
-#map-crimes .axis text {
-  font-size: 0.4rem;
+@media screen and (max-width: 767px) {
+  #bar-BAME .axis .tick text,
+  #bar-english-lng .axis .tick text {
+    font-size: 0.9rem;
+  }
 }
 
-.area path {
-  stroke: white;
-}
-
-.area:hover {
-  fill-opacity: 0.5;
-  cursor: pointer;
-}
-
-.card-header {
+.chart-content {
   text-align: center;
-  font-weight: 500;
+  padding: 10px 8% 0px 8%;
+  font-size: .7rem;
 }
 
+/*----------  end of general chart styles ----------*/
 /*----------  number displays  ----------*/
 .fas {
   margin: .7rem 1.5rem;
@@ -235,19 +216,13 @@ aside {
 
 /*----------  end of number displays  ----------*/
 /*----------  bar charts  ----------*/
-.chart-content {
-  text-align: center;
-  padding: 10px 8% 0px 8%;
-  font-size: .7rem;
-}
-
 /*----------  end of bar charts  ----------*/
 /*----------  pie chart ----------*/
 @media screen and (max-width: 767px) {
   #pie-migrant-by-birth {
     float: none;
     position: relative;
-    left: 14.3333333%;
+    left: 10%;
   }
 }
 
@@ -307,6 +282,43 @@ aside {
   #row-crimes {
     max-width: 41vw;
   }
+}
+
+@media screen and (max-width: 767px) {
+  #map-crimes .axis text {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  #map-crimes .axis text {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #map-crimes .axis text {
+    font-size: 0.4rem;
+  }
+}
+
+#row-crimes .row text {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  #row-crimes .row text {
+    font-size: 1rem;
+  }
+}
+
+.area path {
+  stroke: white;
+}
+
+.area:hover {
+  fill-opacity: 0.5;
+  cursor: pointer;
 }
 
 /*----------  end of crimes choropleth map  ----------*/

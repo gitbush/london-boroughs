@@ -159,7 +159,7 @@ function BAMEBar(cf, boroughDim){
         // .centerBar(true)
         .group(BAMEGroup)
         .dimension(boroughDim)
-        .margins({top:10, right:30, bottom:80, left:40})
+        .margins({top:10, right:30, bottom:85, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
         
@@ -183,7 +183,7 @@ function nonEnglishBar(cf, boroughDim){
         })
         .group(nonEnglishGroup)
         .dimension(boroughDim)
-        .margins({top:10, right:30, bottom:80, left:40})
+        .margins({top:10, right:30, bottom:85, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
         
@@ -337,10 +337,10 @@ function crimesRowChart(cf2){
     crimesRow
         .width(500)
         .height(220)
-        .margins({top:20, right:20, bottom:45, left:130})
+        .margins({top:20, right:20, bottom:45, left:150})
         .gap(1)
         .fixedBarHeight(16)
-        .labelOffsetX(-110)
+        .labelOffsetX(-130)
         .renderTitleLabel(true)
         .title(function(d){
             return d3.format(",")(d.value);
