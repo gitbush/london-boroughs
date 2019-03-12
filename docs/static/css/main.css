@@ -180,6 +180,11 @@ aside {
   grid-template-rows: 4rem auto auto;
 }
 
+.map-grid {
+  display: grid;
+  grid-template-rows: 4rem auto auto auto;
+}
+
 /*----------  end of individual chart grids  ----------*/
 /*=====  End of grid layout  ======*/
 #bar-BAME .axis.x text,
