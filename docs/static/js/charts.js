@@ -236,14 +236,14 @@ function crimeRatesChoro(cf2, geoJson){
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
                         .scale(15000) // scale the map 
-                        .translate([150,100]); // translate the map in the svg
+                        .translate([150,105]); // translate the map in the svg
 
     // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#map-crimes")
 
     crimesChoroMap
         .width(350)
-        .height(300)
+        .height(200)
         .dimension(areaDim)
         .group(crimesRateGroup)
         .useViewBoxResizing(true)
@@ -337,10 +337,10 @@ function crimesRowChart(cf2){
 
     crimesRow
         .width(500)
-        .height(230)
+        .height(220)
         .margins({top:20, right:20, bottom:45, left:130})
         .gap(1)
-        .fixedBarHeight(17)
+        .fixedBarHeight(16)
         .labelOffsetX(-110)
         .renderTitleLabel(true)
         .title(function(d){
