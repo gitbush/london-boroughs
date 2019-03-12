@@ -248,8 +248,7 @@ function crimeRatesChoro(cf2, geoJson){
         .group(crimesRateGroup)
         .useViewBoxResizing(true)
         .title(function(d){
-                return `${d.key} reported ${d.value} offences`
-            
+                return `${d.key} reported ${d3.format(",")(d.value)} offences`
         })
         .colors(d3.scale.quantize().range(colorbrewer.Blues[9]).domain([0, 55000]))
         .projection(projection)
@@ -344,7 +343,7 @@ function crimesRowChart(cf2){
         .labelOffsetX(-110)
         .renderTitleLabel(true)
         .title(function(d){
-            return d.value;
+            return d3.format(",")(d.value);
         })
         .elasticX(true)
         .useViewBoxResizing(true)
