@@ -78,6 +78,7 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
     avgHousePrcRow(cf, boroughDim, GB);
     genderPayComposite(cf, boroughDim);
     crimeRatesChoro(cf2, geoJson);
+    crimesRowChart(cf2);
 
     dc.renderAll();
 }
@@ -325,6 +326,27 @@ function crimeRatesChoro(cf2, geoJson){
                 .attr("transform", "translate(10, 0)")
                 .call(yAxis);
     });
+}
+
+function crimesRowChart(cf2){
+    var crimeTypeDim = cf2.dimension(dc.pluck("Major_Text"));
+
+    var countGroup = crimeTypeDim.group().reduceSum(dc.pluck("Crime_Count"));
+
+    var crimesRow = dc.rowChart("#row-crimes");
+
+    crimesRow
+        .width(350)
+        .height(200)
+        .margins({top:20, right:30, bottom:45, left:20})
+        .gap(1)
+        .fixedBarHeight(15)
+        .cap(10)
+        // .useViewBoxResizing(true)
+        .othersGrouper(null)
+        .dimension(crimeTypeDim)
+        .group(countGroup)
+
 }
 
 // correlation between obesity rates and areas of greenspace(parks)
