@@ -290,7 +290,16 @@ aside {
 }
 
 /*----------  end of composite chart  ----------*/
+/*----------  crimes choropleth map  ----------*/
 #row-crimes svg text {
   fill: black;
 }
+
+@media screen and (min-width: 900px) {
+  #row-crimes {
+    max-width: 41vw;
+  }
+}
+
+/*----------  end of crimes choropleth map  ----------*/
 /*# sourceMappingURL=main.css.map */

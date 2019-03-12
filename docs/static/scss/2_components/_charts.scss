@@ -112,6 +112,16 @@ text{
 
 /*----------  end of composite chart  ----------*/
 
+/*----------  crimes choropleth map  ----------*/
+
 #row-crimes svg text{
     fill: black;
 }
+
+#row-crimes{
+    @include desktop-device{
+        max-width: 41vw;
+    }
+}
+
+/*----------  end of crimes choropleth map  ----------*/
