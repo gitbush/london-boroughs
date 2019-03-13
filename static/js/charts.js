@@ -1,7 +1,7 @@
 queue()
-    .defer(d3.csv, "docs/static/data/boroughs-data.csv") // load csv data 
-    .defer(d3.csv, "docs/static/data/map-data.csv") // load csv data for choropleth map
-    .defer(d3.json, "docs/static/data/boroughsGeo.json") // load geoJson data for choropleth map
+    .defer(d3.csv, "static/data/boroughs-data.csv") // load csv data 
+    .defer(d3.csv, "static/data/map-data.csv") // load csv data for choropleth map
+    .defer(d3.json, "static/data/boroughsGeo.json") // load geoJson data for choropleth map
     .await(makeCharts); // load data into makeCharts function when complete or throw error if an error 
 
 // ==== main makeCharts function to render all charts
