@@ -341,6 +341,7 @@ function crimesRowChart(cf2){
         .gap(1)
         .fixedBarHeight(16)
         .labelOffsetX(-130)
+        .transitionDuration(500)
         .renderTitleLabel(true)
         .title(function(d){
             return d3.format(",")(d.value);

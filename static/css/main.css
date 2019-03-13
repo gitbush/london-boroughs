@@ -304,6 +304,10 @@ aside {
   }
 }
 
+#row-crimes svg g g.axis .tick {
+  display: none;
+}
+
 .area path {
   stroke: white;
 }
