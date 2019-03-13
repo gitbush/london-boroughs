@@ -145,35 +145,32 @@ aside {
 }
 
 /*----------  end of individual chart grids  ----------*/
+footer {
+  display: grid;
+  grid-template-columns: 5rem auto 6rem;
+}
+
 /*=====  End of grid layout  ======*/
 /*----------  navbar styles  ----------*/
-.navbar {
-  padding: 0.1rem 1rem;
+.navbar-header {
+  display: grid;
+  grid-template-columns: auto 2rem;
+  padding: 0.3rem 1rem;
+  background-color: #343a40 !important;
 }
 
 .navbar-heading {
   color: white;
 }
 
-.fab {
-  font-size: 2.2rem;
+/*----------  navbar info icon  ----------*/
+.navbar-header .fas {
   color: white;
+  margin: 0;
+  font-size: 2rem;
 }
 
-.nav-link {
-  padding: 0;
-  cursor: pointer;
-}
-
-.contact {
-  font-size: 1.2rem;
-}
-
-.nav-item {
-  text-align: center;
-  padding: 5px;
-}
-
+/*---------- end of navbar info icon  ----------*/
 /*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
@@ -312,6 +309,10 @@ aside {
   }
 }
 
+#row-crimes svg g g.axis .tick {
+  display: none;
+}
+
 .area path {
   stroke: white;
 }
@@ -321,5 +322,25 @@ aside {
   cursor: pointer;
 }
 
+/*----------  reset all button  ----------*/
+.reset-all {
+  height: 30px;
+  margin: .6rem .5rem;
+  padding: 2%;
+  background-color: #bbb;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.reset {
+  position: absolute;
+  left: 2rem;
+  top: 8.2rem;
+  font-size: .9rem;
+}
+
+/*----------  end of reset all button  ----------*/
 /*----------  end of crimes choropleth map  ----------*/
 /*# sourceMappingURL=main.css.map */

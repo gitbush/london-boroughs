@@ -1,27 +1,22 @@
 /*----------  navbar styles  ----------*/
-.navbar{
-    padding: 0.1rem 1rem;
+.navbar-header{
+    display: grid;
+    grid-template-columns: auto 2rem;
+    padding: 0.3rem 1rem;
+    background-color: #343a40 !important;
 }
 
 .navbar-heading{
     color: white;
 }
 
-.fab{
-    font-size: 2.2rem;
+
+/*----------  navbar info icon  ----------*/
+
+.navbar-header .fas{
     color: white;
+    margin: 0;
+    font-size: 2rem;
 }
 
-.nav-link{
-    padding: 0;
-    cursor: pointer;
-}
-
-.contact{
-    font-size: 1.2rem;
-}
-
-.nav-item{
-    text-align: center;
-    padding: 5px;
-}
+/*---------- end of navbar info icon  ----------*/

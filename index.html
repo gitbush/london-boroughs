@@ -17,22 +17,8 @@
 </head>
 <body>
     <header class="navbar-header"> 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <h4 class="navbar-heading">London Dashboard</h4>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link contact" href="#">Contact<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/gitbush/london-boroughs" target="_blank"><i class="fab fa-github"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <h4 class="navbar-heading">London Dashboard</h4>
+        <a data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></a>
     </header>
     <main>
         <section id="population" class="card nd-grid">
@@ -119,7 +105,9 @@
                         Explore the map below to see where the most crimes were 
                         reported.</p>
                 </div>
-                <div id="map-crimes"></div>
+                <div id="map-crimes">
+                    <a class="reset" style="display: none" href="javascript: dc.filterAll(); dc.redrawAll();">Reset Map</a>
+                </div>
                 <div class="chart-content">
                     <p>According to Metropolitan Police’s data, Westminster was – by far – the 
                         most crime ridden London borough in 2016 with 54,802 reported criminal offences.
@@ -176,7 +164,46 @@
             <div id="row-avg-house"></div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="github">
+
+        </div>
+        <div class="footer-content"></div>
+        <div class="reset-all">
+            <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+        </div>
+    </footer>
+
+    <!-- welcome info modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">London Boroughs Dashboard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>The aim of this London Boroughs Dashboard is to be an easy to use source 
+                    of London data and gateway to analysis of a varied array of topics.
+                    Anyone who is interested should be able to look through this window
+                    and gain a detailed breakdown of each borough.</p>
+                <p>
+                    All charts are clickable and provide varied levels of interactivity. Be
+                    sure to hit the reset button to refresh any filters that have been applied.
+                </p>
+                <p>
+                    Happy Browsing!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of welcome info modal -->
 
     <!-- d3.ja, crossfilter.js, dc.js, queue.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
@@ -192,8 +219,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- scripts.js  -->
-    <script src="static/js/charts.js"></script>
     <script src="static/js/d3_locale.js"></script>
+    <script src="static/js/scripts.js"></script>
+    <script src="static/js/charts.js"></script>
 
 </body>
 </html>
