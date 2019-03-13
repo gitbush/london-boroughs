@@ -7,6 +7,9 @@
     color: white;
 }
 
+
+/*----------  contact/github button  ----------*/
+
 .fab{
     font-size: 2.2rem;
     color: white;
@@ -18,10 +21,15 @@
 }
 
 .contact{
+    display: inline-block;
     font-size: 1.2rem;
+    padding: .08rem .25rem;
+    color: black;
 }
 
 .nav-item{
     text-align: center;
     padding: 5px;
 }
+
+/*----------  end of contact/github button  ----------*/
