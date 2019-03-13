@@ -141,10 +141,11 @@ function annualPayNd(cf, avgPayGroup, GB){
 }
 
 // proportion of population that are BAME bar chart
-function BAMEBar(cf, boroughDim){
-
+function BAMEBar(cf){
+    //  dimension on borough names
+    var BAMEBoroughDim = cf.dimension(dc.pluck("Area_name"));
     //  group on population that are BAME
-    var BAMEGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
+    var BAMEGroup = BAMEBoroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
      // attach dc.js barChart to BAME-bar ID
     var BAMEBarChart = dc.barChart("#bar-BAME");
 
@@ -158,7 +159,7 @@ function BAMEBar(cf, boroughDim){
         })
         // .centerBar(true)
         .group(BAMEGroup)
-        .dimension(boroughDim)
+        .dimension(BAMEBoroughDim)
         .margins({top:10, right:30, bottom:85, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
@@ -166,10 +167,11 @@ function BAMEBar(cf, boroughDim){
 }
 
 // proportion of population whos main language is not English bar chart
-function nonEnglishBar(cf, boroughDim){
-
+function nonEnglishBar(cf){
+    //  dimension on borough names 
+    var engLangDim = cf.dimension(dc.pluck("Area_name"));
     //  group on population whose main language is not English
-    var nonEnglishGroup = boroughDim.group().reduceSum(dc.pluck("Proportion_people_whose_main_language_is_not_English"));
+    var nonEnglishGroup = engLangDim.group().reduceSum(dc.pluck("Proportion_people_whose_main_language_is_not_English"));
      // attach dc.js barChart to english-lng-bar ID
     var nonEnglishBarChart = dc.barChart("#bar-english-lng");
 
@@ -182,7 +184,7 @@ function nonEnglishBar(cf, boroughDim){
             return `${d.key}: ${d.value}%`
         })
         .group(nonEnglishGroup)
-        .dimension(boroughDim)
+        .dimension(engLangDim)
         .margins({top:10, right:30, bottom:85, left:40})
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
