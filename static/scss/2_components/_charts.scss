@@ -152,7 +152,7 @@ text{
 
 
 /*----------  reset all button  ----------*/
-.reset{
+.reset-all{
     height: 30px;
     margin: .6rem .5rem;
     padding: 2%;
@@ -161,6 +161,13 @@ text{
     color: white;
     text-align: center;
     cursor: pointer;
+}
+
+.reset{
+    position: absolute;
+    left: 2rem;
+    top: 8.2rem;
+    font-size: .9rem;
 }
 
 /*----------  end of reset all button  ----------*/

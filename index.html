@@ -105,7 +105,9 @@
                         Explore the map below to see where the most crimes were 
                         reported.</p>
                 </div>
-                <div id="map-crimes"></div>
+                <div id="map-crimes">
+                    <a class="reset" style="display: none" href="javascript: dc.filterAll(); dc.redrawAll();">Reset Map</a>
+                </div>
                 <div class="chart-content">
                     <p>According to Metropolitan Police’s data, Westminster was – by far – the 
                         most crime ridden London borough in 2016 with 54,802 reported criminal offences.
@@ -167,7 +169,7 @@
 
         </div>
         <div class="footer-content"></div>
-        <div class="reset">
+        <div class="reset-all">
             <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
         </div>
     </footer>
