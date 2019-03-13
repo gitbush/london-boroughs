@@ -1,35 +1,9 @@
 /*----------  navbar styles  ----------*/
-.navbar{
-    padding: 0.1rem 1rem;
+.navbar-header{
+    padding: 0.3rem 1rem;
+    background-color: #343a40 !important;
 }
 
 .navbar-heading{
     color: white;
 }
-
-
-/*----------  contact/github button  ----------*/
-
-.fab{
-    font-size: 2.2rem;
-    color: white;
-}
-
-.nav-link{
-    padding: 0;
-    cursor: pointer;
-}
-
-.contact{
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: .08rem .25rem;
-    color: black;
-}
-
-.nav-item{
-    text-align: center;
-    padding: 5px;
-}
-
-/*----------  end of contact/github button  ----------*/
