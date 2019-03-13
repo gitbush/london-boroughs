@@ -148,6 +148,8 @@ aside {
 /*=====  End of grid layout  ======*/
 /*----------  navbar styles  ----------*/
 .navbar-header {
+  display: grid;
+  grid-template-columns: auto 2rem;
   padding: 0.3rem 1rem;
   background-color: #343a40 !important;
 }
@@ -156,6 +158,14 @@ aside {
   color: white;
 }
 
+/*----------  navbar info icon  ----------*/
+.navbar-header .fas {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+}
+
+/*---------- end of navbar info icon  ----------*/
 /*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,

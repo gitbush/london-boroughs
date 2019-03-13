@@ -1,5 +1,7 @@
 /*----------  navbar styles  ----------*/
 .navbar-header{
+    display: grid;
+    grid-template-columns: auto 2rem;
     padding: 0.3rem 1rem;
     background-color: #343a40 !important;
 }
@@ -7,3 +9,14 @@
 .navbar-heading{
     color: white;
 }
+
+
+/*----------  navbar info icon  ----------*/
+
+.navbar-header .fas{
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+}
+
+/*---------- end of navbar info icon  ----------*/
