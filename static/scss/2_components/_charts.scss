@@ -137,6 +137,10 @@ text{
     }
 }
 
+#row-crimes svg g g.axis .tick { 
+    display: none; 
+}
+
 .area path{
     stroke: white;
 }
@@ -145,6 +149,28 @@ text{
     fill-opacity: 0.5;
     cursor: pointer;
 }
+
+
+/*----------  reset all button  ----------*/
+.reset-all{
+    height: 30px;
+    margin: .6rem .5rem;
+    padding: 2%;
+    background-color: #bbb;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.reset{
+    position: absolute;
+    left: 2rem;
+    top: 8.2rem;
+    font-size: .9rem;
+}
+
+/*----------  end of reset all button  ----------*/
 
 
 /*----------  end of crimes choropleth map  ----------*/
