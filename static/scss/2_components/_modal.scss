@@ -1,0 +1,10 @@
+
+/*----------  info modal  ----------*/
+
+#infoModal{
+    @include mobile-device{
+        max-width: 100vw;
+    }
+}
+
+/*----------  end of info modal  ----------*/

@@ -343,4 +343,12 @@ footer {
 
 /*----------  end of reset all button  ----------*/
 /*----------  end of crimes choropleth map  ----------*/
+/*----------  info modal  ----------*/
+@media screen and (max-width: 767px) {
+  #infoModal {
+    max-width: 100vw;
+  }
+}
+
+/*----------  end of info modal  ----------*/
 /*# sourceMappingURL=main.css.map */
