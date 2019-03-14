@@ -10,7 +10,7 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
     // format d3.locale  
     var GB = d3.locale(GBLocale);
 
-    // convert strings to numbers
+    // londonCsv format data
     londonCsv.forEach(function(d){
         d.GLA_Population_Estimate = +d.GLA_Population_Estimate;
         d.Proportion_of_resident_population_born_abroad = +d.Proportion_of_resident_population_born_abroad;
@@ -23,7 +23,7 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
         d.Crime_rates_per_thousand_population = +d.Crime_rates_per_thousand_population;
     })
 
-    // format crimeCsv
+    // crimeCsv format data 
     crimeCsv.forEach(function(d){
         d.Area_Name = String(d.Area_Name);
         d.Major_Text = String(d.Major_Text);
@@ -71,8 +71,8 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
     bornAbroadNd(cf, bornAbroadGroup);
     avgHousePrcNd(cf, housePriceGroup, GB);
     annualPayNd(cf, avgPayGroup, GB);
-    BAMEBar(cf, boroughDim);
-    nonEnglishBar(cf, boroughDim);
+    BAMEBar(cf);
+    nonEnglishBar(cf);
     migrantPieChart(cf);
     obesityScatter(cf);
     avgHousePrcRow(cf, boroughDim, GB);
@@ -86,11 +86,9 @@ function makeCharts(error, londonCsv, crimeCsv, geoJson){
 // ==== total population number display
 function populationNd(cf) {
 
-    // group on total population with groupAll on crossfilter to observe all filter when applied
     var popGroup = cf.groupAll().reduceSum(function(d){return d.GLA_Population_Estimate});
-    // create number display at #population
     var popNd = dc.numberDisplay("#nd-population");
-    // dc number display
+
     popNd
         .group(popGroup)
         .valueAccessor(function(d){
@@ -98,55 +96,50 @@ function populationNd(cf) {
         });
 }
 
-// % population born abroad number display 
+// ==== % population born abroad number display 
 function bornAbroadNd(cf, bornAbroadGroup) {
     
-    // attach dc.js numberDisplay to born abroad ID
     var abroadNd = dc.numberDisplay("#nd-born-abroad")
 
     abroadNd
-        .formatNumber(d3.format(".0%"))
+        .formatNumber(d3.format(".0%")) // format number as percentage
         .group(bornAbroadGroup)
         .valueAccessor(function(d){
             return d.average / 100; // divide by 100 to allow % number format
         });
 }
 
-// average house price number display
+// ==== average house price number display
 function avgHousePrcNd(cf, housePriceGroup, GB){
 
-     // attach dc.js numberDisplay to avg house price ID
      var housePriceNd = dc.numberDisplay("#nd-avg-house-prc")
 
      housePriceNd
-        .formatNumber(GB.numberFormat("$,.0f"))
+        .formatNumber(GB.numberFormat("$,.0f")) // format number as £1000s
         .group(housePriceGroup)
         .valueAccessor(function(d){
             return d.average;
         });
 }
 
-// gross annual pay number display
+// ==== gross annual pay number display
 function annualPayNd(cf, avgPayGroup, GB){
 
-    // attach dc.js numberDisplay to avg pay ID
     var avgPayNd = dc.numberDisplay("#nd-avg-pay")
 
     avgPayNd
-        .formatNumber(GB.numberFormat("$,.0f"))
+        .formatNumber(GB.numberFormat("$,.0f")) // format number as £1000s
         .group(avgPayGroup)
         .valueAccessor(function(d){
             return d.average;
         });
 }
 
-// proportion of population that are BAME bar chart
+// ==== proportion of population that are BAME bar chart
 function BAMEBar(cf){
-    //  dimension on borough names
+
     var BAMEBoroughDim = cf.dimension(dc.pluck("Area_name"));
-    //  group on population that are BAME
     var BAMEGroup = BAMEBoroughDim.group().reduceSum(dc.pluck("Proportion_of_population_from_BAME_groups"));
-     // attach dc.js barChart to BAME-bar ID
     var BAMEBarChart = dc.barChart("#bar-BAME");
 
     BAMEBarChart
@@ -157,7 +150,6 @@ function BAMEBar(cf){
         .title(function(d){
             return `${d.key}: ${d.value}%`
         })
-        // .centerBar(true)
         .group(BAMEGroup)
         .dimension(BAMEBoroughDim)
         .margins({top:10, right:30, bottom:85, left:40})
@@ -166,13 +158,11 @@ function BAMEBar(cf){
         
 }
 
-// proportion of population whos main language is not English bar chart
+// ==== proportion of population whos main language is not English bar chart
 function nonEnglishBar(cf){
-    //  dimension on borough names 
+
     var engLangDim = cf.dimension(dc.pluck("Area_name"));
-    //  group on population whose main language is not English
     var nonEnglishGroup = engLangDim.group().reduceSum(dc.pluck("Proportion_people_whose_main_language_is_not_English"));
-     // attach dc.js barChart to english-lng-bar ID
     var nonEnglishBarChart = dc.barChart("#bar-english-lng");
 
     nonEnglishBarChart
@@ -191,14 +181,11 @@ function nonEnglishBar(cf){
         
 }
 
-// largest migrant population by country of birth pie chart
+// ==== largest migrant population by country of birth pie chart
 function migrantPieChart(cf){
 
-    // dimension on Largest migrant population
     var migrantCountryDim = cf.dimension(dc.pluck('Largest_migrant_population_by_country_of_birth'))
-    // group count of each Country
     var migrantGroup = migrantCountryDim.group();
-    // attach dc.js barChart to migrant-by-birth-pie ID
     var migrantPieChart = dc.pieChart("#pie-migrant-by-birth")
 
     migrantPieChart
@@ -215,21 +202,18 @@ function migrantPieChart(cf){
                 .itemHeight(12)
                 .gap(5)
                 .maxItems(5))
-        // .externalLabels(10)
         .innerRadius(60)
         .minAngleForLabel(10)
         .title(function(d){
                     return `${d.key} tops the migrant
             population in ${d.value} boroughs`
-        })
-        // .drawPaths(true);
+        });
 }
 
-/* ==== crimes per 1000 popluation choropleth map
-* choropleth map learnt from LinkedIn Learning - dc.js course
-*/
+// ==== crimes per 1000 popluation choropleth map
+// choropleth map learnt from LinkedIn Learning - dc.js course
 function crimeRatesChoro(cf2, geoJson){
-    
+
     var areaDim = cf2.dimension(dc.pluck("Area_Name"));
     var crimesRateGroup = areaDim.group().reduceSum(dc.pluck("Crime_Count"));
     // set centre of geoJson map coordinates using d3.geo.centroid to allow for translating 
@@ -237,10 +221,9 @@ function crimeRatesChoro(cf2, geoJson){
     // set projection to allow for lat and long of geoJson to be drawn in the browser
     var projection = d3.geo.mercator() // default projection is geo.AlbersUSA which does not work for UK geoJson 
                         .center(centre)
-                        .scale(15000) // scale the map 
-                        .translate([150,105]); // translate the map in the svg
+                        .scale(15000) // scale the map to size 
+                        .translate([150,105]); 
 
-    // attach dc.js choroplethChart to crime-rates ID
     var crimesChoroMap = dc.geoChoroplethChart("#map-crimes")
 
     crimesChoroMap
@@ -259,7 +242,7 @@ function crimeRatesChoro(cf2, geoJson){
         })
 
     /**
-     * Create a color legend
+     * Create a d3.js color legend with a yAxis 
      * Learnt from https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html
      */   
     crimesChoroMap.on("pretransition", function(chart){
@@ -298,7 +281,7 @@ function crimeRatesChoro(cf2, geoJson){
         // set margin object for color legend positioning 
         var margin = {left:280,right:0,top:25,bottom:0};
         
-        // create legend group to control color legend svg and yAxis together 
+        // create legend group to control color legend svg and yAxis position together 
         var legendGroup = svg.append("g")
                 .attr("transform", "translate("+margin.left+","+margin.top+")");
 
@@ -310,13 +293,11 @@ function crimeRatesChoro(cf2, geoJson){
                 .attr("height", height)
                 .attr("fill", "url(#grad)");
 
-        // var min = crimesDim.bottom(1)[0].Crime_rates_per_thousand_population;
-        // var max = crimesDim.top(1)[0].Crime_rates_per_thousand_population
         // create linear scale for crimes 
         var y = d3.scale.linear()
                 .domain([60000, 0])
                 .range([0, height]);
-        // create axis bottom for color legend
+        // create axis left for color legend
         var yAxis = d3.svg.axis()
                 .scale(y)
                 .ticks(10)
@@ -329,11 +310,11 @@ function crimeRatesChoro(cf2, geoJson){
     });
 }
 
+// ==== crime category row chart
 function crimesRowChart(cf2){
+
     var crimeTypeDim = cf2.dimension(dc.pluck("Major_Text"));
-
     var countGroup = crimeTypeDim.group().reduceSum(dc.pluck("Crime_Count"));
-
     var crimesRow = dc.rowChart("#row-crimes");
 
     crimesRow
@@ -352,26 +333,28 @@ function crimesRowChart(cf2){
         .useViewBoxResizing(true)
         .othersGrouper(null)
         .dimension(crimeTypeDim)
-        .group(countGroup)
+        .group(countGroup);
 
 }
 
 // correlation between obesity rates and areas of greenspace(parks)
 function obesityScatter(cf){
-    // create fake dimension to find min and max values for scales
-    var fakeObesityDim = cf.dimension(function(d){
-        return d.Childhood_Obesity;
-    });
+    
     // dimension on three fields for scatter plot 
     var obesityGreenspaceDim = cf.dimension(function(d){
         return [ d.Area_that_is_Greenspace, d.Childhood_Obesity, d.Area_name];
     });
-    // straight group to reduce to one value 
+
     var obesityGroup = obesityGreenspaceDim.group();
+
+    // create fake dimension to find min and max values for scales
+    var fakeObesityDim = cf.dimension(function(d){
+        return d.Childhood_Obesity;
+    });
     // find min and max values for x linear scales
     var OBmin = fakeObesityDim.bottom(1)[0].Childhood_Obesity;
     var OBmax = fakeObesityDim.top(1)[0].Childhood_Obesity;
-    // attach dc.js scatterPlot to obesity ID
+
     var obesityScatterPlot = dc.scatterPlot("#scatter-obesity")
 
     obesityScatterPlot
@@ -401,7 +384,7 @@ function avgHousePrcRow(cf, boroughDim, GB) {
     // group on median house price and divide by 1000 to reduce tick text size
     var avgHousePrcGroup = boroughDim.group().reduceSum(function(d){
         return Math.round(d.Median_House_Price / 1000)});
-    // attach dc.js rowChart to avg-house-row ID
+
     var avgPrcRow = dc.rowChart("#row-avg-house")
 
     avgPrcRow
@@ -425,8 +408,6 @@ function genderPayComposite(cf, boroughDim){
     
     var maleGroup = boroughDim.group().reduceSum(dc.pluck("Gross_Annual_Pay_Male"));
     var femaleGroup = boroughDim.group().reduceSum(dc.pluck("Gross_Annual_Pay_Female"));
-
-    // attach dc.js compositeChart to line-employment ID
     var employCompChart = dc.compositeChart("#line-gender-pay")
 
     employCompChart
