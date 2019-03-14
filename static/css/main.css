@@ -19,16 +19,6 @@ aside {
 }
 
 /*=====  End of Section base elements  ======*/
-.card {
-  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.card-header {
-  height: auto;
-  text-align: center;
-  font-weight: 500;
-}
-
 /*=============================================
 =                grid layout                  =
 =============================================*/
@@ -171,6 +161,16 @@ footer {
 }
 
 /*---------- end of navbar info icon  ----------*/
+.card {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  height: auto;
+  text-align: center;
+  font-weight: 500;
+}
+
 /*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
