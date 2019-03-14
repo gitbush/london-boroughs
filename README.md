@@ -35,25 +35,25 @@ The dashboard relies:
 * HTML 
     - For markup
 * CSS
-...For dashboard styles and grid layout
+    - For dashboard styles and grid layout
 * Bootstrap (version 4.3.1)
-... Used for all cards, font styles and modal.
+    -  Used for all cards, font styles and modal.
 * D3.js (version 3.5.17)
-... JavaScript library for manipulating documents based on data and the backbone of the dashbaord.
+    -  JavaScript library for manipulating documents based on data and the backbone of the dashbaord.
 * Dc.js (version 2.1.8)
-... Leveraging d3.js to render charts in CSS-friendly SVG format. 
+    - Leveraging d3.js to render charts in CSS-friendly SVG format. 
 * Crossfilter.js (version 1.3.12)
-... A dependency of dc.js to provide linked filtering and aggregation of large datasets.
+    - A dependency of dc.js to provide linked filtering and aggregation of large datasets.
 * Javascript 
-... All three charting libraries are based on Javascript.
-* Queue.js (version 1.0.7)
-... Used to load in csv and geoJson data 
+    - All three charting libraries are based on Javascript.
+* Queue.js (version 1.0.7) 
+    - Used to load in csv and geoJson data 
 * Color Brewer (version 1)
-... A tool designed to select various color schemes for maps and other graphics. Used in the crimes chorpleth map and color legend.
+    - A tool designed to select various color schemes for maps and other graphics. Used in the crimes chorpleth map and color legend.
 * Jquery
-... For the welcome/info modal.
+    - For the welcome/info modal.
 * Font Awesome (version v5.7.2)
-... For number display icons and info icon.
+    - For number display icons and info icon.
 
 ## Testing
 
