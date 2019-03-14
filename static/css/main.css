@@ -14,8 +14,9 @@ header {
   background-color: grey;
 }
 
-aside {
-  background-color: grey;
+.footer-content h6 {
+  color: white;
+  margin: 15px 0px 15px 10px;
 }
 
 /*=====  End of Section base elements  ======*/
@@ -137,7 +138,7 @@ aside {
 /*----------  end of individual chart grids  ----------*/
 footer {
   display: grid;
-  grid-template-columns: 5rem auto 6rem;
+  grid-template-columns: auto 6rem;
 }
 
 /*=====  End of grid layout  ======*/
