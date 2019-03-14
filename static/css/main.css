@@ -158,14 +158,12 @@ footer {
   color: white;
 }
 
-/*----------  navbar info icon  ----------*/
 .navbar-header .fas {
   color: white;
   margin: 0;
   font-size: 2rem;
 }
 
-/*---------- end of navbar info icon  ----------*/
 .card {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -217,8 +215,6 @@ footer {
 }
 
 /*----------  end of number displays  ----------*/
-/*----------  bar charts  ----------*/
-/*----------  end of bar charts  ----------*/
 /*----------  pie chart ----------*/
 @media screen and (max-width: 767px) {
   #pie-migrant-by-birth {
@@ -275,17 +271,8 @@ footer {
 }
 
 /*----------  end of composite chart  ----------*/
-/*----------  crimes choropleth map  ----------*/
-#row-crimes svg text {
-  fill: black;
-}
-
-@media screen and (min-width: 900px) {
-  #row-crimes {
-    max-width: 41vw;
-  }
-}
-
+/*----------  crimes section ----------*/
+/*---- crimes map ----*/
 @media screen and (max-width: 767px) {
   #map-crimes .axis text {
     font-size: 0.6rem;
@@ -304,6 +291,27 @@ footer {
   }
 }
 
+.area path {
+  stroke: white;
+}
+
+.area:hover {
+  fill-opacity: 0.5;
+  cursor: pointer;
+}
+
+/*---- end of crimes map ----*/
+/*---- crimes row chart ----*/
+#row-crimes svg text {
+  fill: black;
+}
+
+@media screen and (min-width: 900px) {
+  #row-crimes {
+    max-width: 41vw;
+  }
+}
+
 #row-crimes .row text {
   font-size: 0.8rem;
 }
@@ -318,15 +326,8 @@ footer {
   display: none;
 }
 
-.area path {
-  stroke: white;
-}
-
-.area:hover {
-  fill-opacity: 0.5;
-  cursor: pointer;
-}
-
+/*---- end of crimes row chart ----*/
+/*----------  end of crimes section ----------*/
 /*----------  reset all button  ----------*/
 .reset-all {
   height: 30px;
@@ -347,7 +348,6 @@ footer {
 }
 
 /*----------  end of reset all button  ----------*/
-/*----------  end of crimes choropleth map  ----------*/
 /*----------  info modal  ----------*/
 @media screen and (max-width: 767px) {
   #infoModal {
