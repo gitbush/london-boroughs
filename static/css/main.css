@@ -57,7 +57,7 @@ header {
   }
 }
 
-/*----------  end of responsive grid layouts ----------*/
+/*----------  end of grid layouts ----------*/
 /*----------  grid tempate areas  ----------*/
 #population {
   grid-area: population;
@@ -124,23 +124,27 @@ header {
 }
 
 /*----------  end of bar chart grids  ----------*/
-/*----------  individual chart grids  ----------*/
+/*----------  common chart grids  ----------*/
 .chart-grid {
   display: grid;
   grid-template-rows: 4rem auto auto;
 }
 
+/*----------  end of common chart grids  ----------*/
+/*----------  crimes grid  ----------*/
 .map-grid {
   display: grid;
   grid-template-rows: 4rem auto auto auto;
 }
 
-/*----------  end of individual chart grids  ----------*/
+/*----------  end of crimes grid  ----------*/
+/*----------  footer grid  ----------*/
 footer {
   display: grid;
   grid-template-columns: auto 6rem;
 }
 
+/*----------  end of footer grid  ----------*/
 /*=====  End of grid layout  ======*/
 /*----------  navbar styles  ----------*/
 .navbar-header {
