@@ -36,6 +36,8 @@ The dashboard relies:
     - For markup
 * CSS
     - For dashboard styles and grid layout
+* SCSS
+    - For splitting the stylesheets into partials for ease of development. My first time using SCSS and I do need to find a work flow that suits me. 
 * Bootstrap (version 4.3.1)
     -  Used for all cards, font styles and modal.
 * D3.js (version 3.5.17)
@@ -59,7 +61,7 @@ The dashboard relies:
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+I would have liked to incorporate some form of automated testing and TDD during the build of this project but I could not find any reliable sources showing how to use a testing framework like Jasmine on d3.js charts. Or svg testing in general.
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
@@ -77,23 +79,19 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+The project source control was handled by git and remotely on Github. The repository can be found here:
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+Repo: <a href= "https://github.com/gitbush/london-boroughs" target="_blank">https://github.com/gitbush/london-boroughs</a>
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+Deployed site on Github pages here:
 
-
-## Credits
+Github Pages: <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
-### Media
-- The photos used in this site were obtained from ...
+The dashboard is based on two seperate datasets:
+* <a href="https://data.london.gov.uk/dataset/london-borough-profiles" target="_blank">London Boroughs Data</a>
+* <a href= "https://www.met.police.uk/sd/stats-and-data/met/crime-data-dashboard/" target="_blank">Met Police Stats and Data</a>
 
 ### Acknowledgements
 
