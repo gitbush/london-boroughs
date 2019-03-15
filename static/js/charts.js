@@ -189,21 +189,15 @@ function migrantPieChart(cf){
     var migrantPieChart = dc.pieChart("#pie-migrant-by-birth")
 
     migrantPieChart
-        .height(200)
-        .radius(80)
+        .height(210)
+        .radius(60)
         .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
         .useViewBoxResizing(true) // adds responsiveness
-        .cx(140)
-        .cy(105)
-        .legend(dc.legend()
-                .x(105).y(65)
-                .itemHeight(12)
-                .gap(5)
-                .maxItems(5))
-        .innerRadius(60)
-        .minAngleForLabel(10)
+        .externalLabels(30)
+        .drawPaths(true)
+        .minAngleForLabel(0)
         .title(function(d){
                     return `${d.key} tops the migrant
             population in ${d.value} boroughs`

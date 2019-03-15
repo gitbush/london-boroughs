@@ -216,28 +216,8 @@ footer {
 
 /*----------  end of number displays  ----------*/
 /*----------  pie chart ----------*/
-@media screen and (max-width: 767px) {
-  #pie-migrant-by-birth {
-    float: none;
-    position: relative;
-    left: 10%;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 899px) {
-  #pie-migrant-by-birth {
-    float: none;
-    position: relative;
-    left: 11.333333%;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  #pie-migrant-by-birth {
-    float: none;
-    position: relative;
-    left: 3%;
-  }
+#pie-migrant-by-birth {
+  float: none;
 }
 
 /*----------  end of pie chart  ----------*/

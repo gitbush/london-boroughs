@@ -49,22 +49,9 @@
 /*----------  pie chart ----------*/
 
 #pie-migrant-by-birth{
-    @include mobile-device{
-        float: none;
-        position: relative;
-        left: 10%;
-    }
-    @include tablet-device{
-        float: none;
-        position: relative;
-        left: 11.333333%;
-    }
-    @include desktop-device{
-        float: none;
-        position: relative;
-        left: 3%;
-    }   
+    float: none;
 }
+
 
 /*----------  end of pie chart  ----------*/
 
