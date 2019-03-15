@@ -56,14 +56,8 @@
 
 .chart-grid{
     & .dc-chart{
-        @include desktop-device{
-            margin-top: 10px;
-        };
-        @include large-desktop-device{
-            margin-top: 15px;
-        };
-        @include xlarge-desktop-device{
-            margin-top: 30px;
+        @include all-desktop-devices{
+            margin-top: 2.1rem;
         };
     }
 }

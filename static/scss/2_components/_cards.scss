@@ -7,4 +7,10 @@
     height: auto;
     text-align: center;
     font-weight: 500;
+    @include large-desktop-device{
+        font-size: 1.3rem;
+    };
+    @include xlarge-desktop-device{
+        font-size: 1.7rem;
+    }
 }

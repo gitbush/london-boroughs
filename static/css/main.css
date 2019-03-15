@@ -175,6 +175,18 @@ footer {
   font-weight: 500;
 }
 
+@media screen and (min-width: 1200px) and (max-width: 1800px) {
+  .card-header {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .card-header {
+    font-size: 1.7rem;
+  }
+}
+
 /*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
@@ -250,21 +262,9 @@ footer {
   }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1200px) {
+@media screen and (min-width: 900px) {
   .chart-grid .dc-chart {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1800px) {
-  .chart-grid .dc-chart {
-    margin-top: 15px;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .chart-grid .dc-chart {
-    margin-top: 30px;
+    margin-top: 2.1rem;
   }
 }
 
