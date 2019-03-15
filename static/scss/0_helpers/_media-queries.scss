@@ -19,8 +19,28 @@
     }
 }
 
-@mixin desktop-device{
+@mixin all-desktop-devices{
     @media screen and (min-width: $desktop-width){
         @content;
     }
 }
+
+@mixin desktop-device{
+    @media screen and (min-width: $desktop-width) and (max-width: $large-desktop-width){
+        @content;
+    }
+}
+
+@mixin large-desktop-device{
+    @media screen and (min-width: $large-desktop-width) and (max-width: $xLarge-desktop-width){
+        @content;
+    }
+}
+
+@mixin xlarge-desktop-device{
+    @media screen and (min-width: $xlarge-desktop-width){
+        @content;
+    }
+}
+
+

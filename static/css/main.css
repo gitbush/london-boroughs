@@ -284,7 +284,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1200px) {
   #map-crimes .axis text {
     font-size: 0.4rem;
   }
@@ -305,7 +305,7 @@ footer {
   fill: black;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1200px) {
   #row-crimes {
     max-width: 41vw;
   }

@@ -46,7 +46,7 @@ main{
     };
 
     // desktop screen
-    @include desktop-device{
+    @include all-desktop-devices{
         margin: 10px;
         display: grid;
         grid-template-columns: 1rem repeat(4, 1fr)  1rem;
