@@ -5,7 +5,7 @@
         "../scss/main.scss",
         "../scss/0_helpers/_helpers-dir.scss",
         "../scss/0_helpers/_variables.scss",
-        "../scss/0_helpers/_media-queries.scss",
+        "../scss/0_helpers/_mixins.scss",
         "../scss/1_base/_base-dir.scss",
         "../scss/1_base/_base-elements.scss",
         "../scss/1_base/_grid-layout.scss",
