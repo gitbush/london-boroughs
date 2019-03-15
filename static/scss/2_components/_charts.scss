@@ -157,13 +157,24 @@ text{
 
 /*---- crimes row chart ----*/
 
+#crimes{
+    @include vendor-prefix(text-align, center)
+}
+
 #row-crimes svg text{
     fill: black;
 }
 
-#row-crimes{
-    @include desktop-device{
-        max-width: 41vw;
+#crimes{
+    & svg {
+        @include all-desktop-devices{
+            max-width: 41vw;
+        }
+        & text{
+            @include all-desktop-devices{
+                font-size: .4rem;
+            };
+        }
     }
 }
 

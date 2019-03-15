@@ -354,13 +354,27 @@ footer {
 
 /*---- end of crimes map ----*/
 /*---- crimes row chart ----*/
+#crimes {
+  text-align: center;
+  -webkit-text-align: center;
+  -ms-text-align: center;
+  -moz-text-align: center;
+  -o-text-align: center;
+}
+
 #row-crimes svg text {
   fill: black;
 }
 
-@media screen and (min-width: 900px) and (max-width: 1200px) {
-  #row-crimes {
+@media screen and (min-width: 900px) {
+  #crimes svg {
     max-width: 41vw;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #crimes svg text {
+    font-size: .4rem;
   }
 }
 
