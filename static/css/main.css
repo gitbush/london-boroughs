@@ -109,6 +109,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 2fr;
   max-height: 80px;
+  text-align: end;
 }
 
 .nd-content {
@@ -194,6 +195,24 @@ footer {
   text-align: center;
   padding: 10px 8% 0px 8%;
   font-size: .7rem;
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  #row-crimes,
+  #scatter-obesity,
+  #row-avg-house,
+  #line-gender-pay {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  #row-crimes svg,
+  #scatter-obesity svg,
+  #row-avg-house svg,
+  #line-gender-pay svg {
+    max-width: 77vw;
+  }
 }
 
 /*----------  end of general chart styles ----------*/

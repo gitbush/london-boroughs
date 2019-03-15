@@ -23,6 +23,20 @@
     font-size: .7rem;
 }
 
+#row-crimes,
+#scatter-obesity,
+#row-avg-house,
+#line-gender-pay{
+    @include large-mobile-device{
+        text-align: center
+    }
+    & svg {
+        @include large-mobile-device{
+                max-width: 77vw;
+            }
+    }
+}
+
 /*----------  end of general chart styles ----------*/
 
 /*----------  number displays  ----------*/
