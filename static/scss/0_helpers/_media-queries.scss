@@ -32,7 +32,7 @@
 }
 
 @mixin large-desktop-device{
-    @media screen and (min-width: $large-desktop-width) and (max-width: $xLarge-desktop-width){
+    @media screen and (min-width: $large-desktop-width) and (max-width: $xlarge-desktop-width){
         @content;
     }
 }

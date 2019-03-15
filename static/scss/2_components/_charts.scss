@@ -20,7 +20,24 @@
 .chart-content{
     text-align: center;
     padding: 10px 8% 0px 8%;
-    font-size: .7rem;
+    @include mobile-device{
+        font-size: 2.8vmax;
+    }
+    @include large-mobile-device{
+        font-size: 2.4vmax;
+    }
+    @include tablet-device{
+        font-size: 1.5vmax;
+    }
+    @include desktop-device{
+        font-size: 1vmax;
+    }
+    @include large-desktop-device{
+        font-size: 1vmax;
+    }
+    @include xlarge-desktop-device{
+        font-size: .8vmax;
+    }
 }
 
 #row-crimes,
@@ -34,6 +51,20 @@
         @include large-mobile-device{
                 max-width: 77vw;
             }
+    }
+}
+
+.chart-grid{
+    & .dc-chart{
+        @include desktop-device{
+            margin-top: 10px;
+        };
+        @include large-desktop-device{
+            margin-top: 15px;
+        };
+        @include xlarge-desktop-device{
+            margin-top: 30px;
+        };
     }
 }
 
