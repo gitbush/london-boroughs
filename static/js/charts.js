@@ -197,6 +197,7 @@ function migrantPieChart(cf){
         .useViewBoxResizing(true) // adds responsiveness
         .externalLabels(30)
         .drawPaths(true)
+        .cap(8)
         .minAngleForLabel(0)
         .title(function(d){
                     return `${d.key} tops the migrant
