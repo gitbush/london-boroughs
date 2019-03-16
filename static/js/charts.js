@@ -462,14 +462,15 @@ function genderPayComposite(cf, boroughDim) {
 		.legend(dc.legend().x(60).y(150).itemHeight(13).gap(5))
 		.compose([
 			dc.lineChart(employCompChart)
-			.group(maleGroup, "Male Average Pay ")
-			.interpolate("bundle")
-			.colors("red"),
+                .group(maleGroup, "Male Average Pay")
+                .interpolate("bundle")
+                .colors("red"),
 			dc.lineChart(employCompChart)
-			.group(femaleGroup, "Female Average Pay")
-			.interpolate("bundle")
-			.colors("green")
-		]);
+                .group(femaleGroup, "Female Average Pay")
+                .interpolate("bundle")
+                .colors("green")
+        ]);
+        
 	// set yAxis tick format
 	employCompChart.yAxis()
 		.ticks(8)
