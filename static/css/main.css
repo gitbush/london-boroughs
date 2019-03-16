@@ -242,7 +242,13 @@ footer {
 
 @media screen and (min-width: 900px) {
   .chart-grid .dc-chart {
-    margin-top: 2.1rem;
+    margin-top: .9rem;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .chart-grid .dc-chart {
+    margin-top: 5rem;
   }
 }
 

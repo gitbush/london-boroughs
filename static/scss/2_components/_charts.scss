@@ -46,7 +46,10 @@
 .chart-grid{
     & .dc-chart{
         @include all-desktop-devices{
-            margin-top: 2.1rem;
+            margin-top: .9rem;
+        };
+        @include fourK-device{
+            margin-top: 5rem;
         };
     }
 }
