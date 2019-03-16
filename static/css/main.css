@@ -1,13 +1,26 @@
 /*=============================================
+=            All scss directories           =
+=============================================*/
+/*=============================================
+=            All helpers directories         =
+=============================================*/
+/*=============================================
+=            All variables            =
+=============================================*/
+/*=====  End of variables  ======*/
+/*=============================================
+=            All mixins/media queries            =
+=============================================*/
+/*=====  End of mixins/media queries  ======*/
+/*=====  End of helpers directories  ======*/
+/*=============================================
+=            All base directories            =
+=============================================*/
+/*=============================================
 =               base elements                 =
 =============================================*/
 main, html, body {
   margin: 0;
-}
-
-footer {
-  height: 50px;
-  background-color: #343a40 !important;
 }
 
 header {
@@ -19,7 +32,12 @@ header {
   margin: 15px 0px 15px 10px;
 }
 
-/*=====  End of Section base elements  ======*/
+footer {
+  height: 50px;
+  background-color: #343a40 !important;
+}
+
+/*=====  End base elements  ======*/
 /*=============================================
 =                grid layout                  =
 =============================================*/
@@ -147,7 +165,13 @@ footer {
 
 /*----------  end of footer grid  ----------*/
 /*=====  End of grid layout  ======*/
-/*----------  navbar styles  ----------*/
+/*=====  End of base directories ======*/
+/*=============================================
+=            All component directories            =
+=============================================*/
+/*=============================================
+=               Navbar styles                 =
+=============================================*/
 .navbar-header {
   display: grid;
   grid-template-columns: auto 2rem;
@@ -165,6 +189,10 @@ footer {
   font-size: 2rem;
 }
 
+/*=====  End of navbar styles  ======*/
+/*=============================================
+=                 Card styles                 =
+=============================================*/
 .card {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -188,6 +216,10 @@ footer {
   }
 }
 
+/*=====  End of card styles  ======*/
+/*=============================================
+=              All chart styles               =
+=============================================*/
 /*---------- general chart styles  ----------*/
 #bar-BAME .axis.x text,
 #bar-english-lng .axis.x text,
@@ -404,12 +436,17 @@ footer {
 }
 
 /*----------  end of reset all button  ----------*/
-/*----------  info modal  ----------*/
+/*=====  End of chart styles  ======*/
+/*=============================================
+=                Info Modal                   =
+=============================================*/
 @media screen and (max-width: 767px) {
   #infoModal {
     max-width: 100vw;
   }
 }
 
-/*----------  end of info modal  ----------*/
+/*=====  End of Info Modal  ======*/
+/*=====  End of component directories  ======*/
+/*=====  End of scss directories  ======*/
 /*# sourceMappingURL=main.css.map */

@@ -6,11 +6,6 @@ main, html, body{
     margin: 0;
 }
 
-footer{
-    height: 50px;
-    background-color: #343a40!important
-}
-
 header{
     background-color: grey;
 }
@@ -20,5 +15,10 @@ header{
     margin: 15px 0px 15px 10px;
 }
 
-/*=====  End of Section base elements  ======*/
+footer{
+    height: 50px;
+    background-color: #343a40!important
+}
+
+/*=====  End base elements  ======*/
 
