@@ -361,11 +361,11 @@ footer {
 /*---- end of crimes map ----*/
 /*---- crimes row chart ----*/
 #crimes {
+  text-align: -webkit-center;
+  text-align: -ms-center;
+  text-align: -moz-center;
+  text-align: -o-center;
   text-align: center;
-  -webkit-text-align: center;
-  -ms-text-align: center;
-  -moz-text-align: center;
-  -o-text-align: center;
 }
 
 #row-crimes svg text {

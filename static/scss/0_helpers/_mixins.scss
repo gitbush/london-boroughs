@@ -43,12 +43,13 @@
     }
 }
 
-// vendor prefixes
+// vendor prefix
 @mixin vendor-prefix($property, $value) {
+    #{$property}: -webkit-#{$value};
+    #{$property}: -ms-#{$value};
+    #{$property}: -moz-#{$value};
+    #{$property}: -o-#{$value};
     #{$property}: #{$value};
-    -webkit-#{$property}: #{$value};
-    -ms-#{$property}: #{$value};
-    -moz-#{$property}: #{$value};
-    -o-#{$property}: #{$value};
-  }
+}
+
 
