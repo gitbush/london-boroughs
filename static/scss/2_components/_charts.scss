@@ -20,23 +20,12 @@
 .chart-content{
     text-align: center;
     padding: 10px 8% 0px 8%;
-    @include mobile-device{
-        font-size: 2.8vmax;
-    }
-    @include large-mobile-device{
-        font-size: 2.4vmax;
-    }
-    @include tablet-device{
-        font-size: 1.5vmax;
-    }
-    @include desktop-device{
-        font-size: 1vmax;
-    }
-    @include large-desktop-device{
-        font-size: 1vmax;
-    }
+    font-size: .7rem;
     @include xlarge-desktop-device{
-        font-size: .8vmax;
+        font-size: .9rem;
+    }
+    @include fourK-device{
+        font-size: 1.9rem;
     }
 }
 

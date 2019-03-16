@@ -173,6 +173,7 @@ footer {
   height: auto;
   text-align: center;
   font-weight: 500;
+  font-size: .7rem;
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1800px) {
@@ -206,41 +207,18 @@ footer {
 .chart-content {
   text-align: center;
   padding: 10px 8% 0px 8%;
-}
-
-@media screen and (max-width: 767px) {
-  .chart-content {
-    font-size: 2.8vmax;
-  }
-}
-
-@media screen and (min-width: 500px) and (max-width: 767px) {
-  .chart-content {
-    font-size: 2.4vmax;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 899px) {
-  .chart-content {
-    font-size: 1.5vmax;
-  }
-}
-
-@media screen and (min-width: 900px) and (max-width: 1200px) {
-  .chart-content {
-    font-size: 1vmax;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1800px) {
-  .chart-content {
-    font-size: 1vmax;
-  }
+  font-size: .7rem;
 }
 
 @media screen and (min-width: 1800px) {
   .chart-content {
-    font-size: .8vmax;
+    font-size: .9rem;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .chart-content {
+    font-size: 1.9rem;
   }
 }
 
