@@ -128,7 +128,7 @@ header {
 /*----------  common chart grids  ----------*/
 .chart-grid {
   display: grid;
-  grid-template-rows: 4rem auto auto;
+  grid-template-rows: 4.5rem auto auto;
 }
 
 /*----------  end of common chart grids  ----------*/
@@ -177,7 +177,7 @@ footer {
 
 @media screen and (min-width: 1200px) and (max-width: 1800px) {
   .card-header {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 
@@ -290,6 +290,12 @@ footer {
 /*----------  pie chart ----------*/
 #pie-migrant-by-birth {
   float: none;
+}
+
+@media screen and (min-width: 1800px) {
+  .pie-chart {
+    margin: 4rem 0;
+  }
 }
 
 /*----------  end of pie chart  ----------*/
