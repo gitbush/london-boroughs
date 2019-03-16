@@ -190,7 +190,7 @@ function migrantPieChart(cf){
 
     migrantPieChart
         .height(210)
-        .radius(60)
+        .radius(70)
         .transitionDuration(1000)
         .dimension(migrantCountryDim)
         .group(migrantGroup)
