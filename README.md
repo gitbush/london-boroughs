@@ -81,6 +81,8 @@ Deployed site on Github pages here:
 
 Github Pages (master branch): <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
+To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/gitbush/london-boroughs.git` into your terminal. 
+
 ### Content
 
 The dashboard is based on two seperate datasets:
@@ -89,4 +91,4 @@ The dashboard is based on two seperate datasets:
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+The color legend used in the Crimes per Borough section was learnt from the <a href="https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html" target="_blank">SVG linear gradient tutorial.</a>
