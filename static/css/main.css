@@ -174,8 +174,8 @@ footer {
 =============================================*/
 .navbar-header {
   display: grid;
-  grid-template-columns: auto 2rem;
-  padding: 0.3rem 1rem;
+  grid-template-columns: auto 2.5rem 2.5rem;
+  padding: 0.3rem .5rem .3rem 1rem;
   background-color: #343a40 !important;
 }
 
@@ -187,6 +187,10 @@ footer {
   color: white;
   margin: 0;
   font-size: 2rem;
+}
+
+#intro {
+  margin-right: 10px;
 }
 
 /*=====  End of navbar styles  ======*/
