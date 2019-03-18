@@ -94,3 +94,5 @@ The dashboard is based on two seperate datasets:
 ### Acknowledgements
 
 The color legend used in the Crimes per Borough section was learnt from the <a href="https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html" target="_blank">SVG linear gradient tutorial.</a>
+
+The tutorial used is from <a href="https://introjs.com/docs/" target="_blank">Intro.js</a>
