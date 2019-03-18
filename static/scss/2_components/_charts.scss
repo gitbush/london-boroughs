@@ -98,10 +98,7 @@
 #scatter-obesity{
     float: none;
     margin-left: 10px;
-}
-
-text{
-    #scatter-obesity &{
+    & text{
         font-size: .9rem;
         @include mobile-device{
             font-size: .7rem; 
@@ -109,16 +106,20 @@ text{
         @include tablet-device{
             font-size: .7rem; 
         }
-    } 
+    }
 }
 
 /*----------  end of scatter plot  ----------*/
 
 /*----------  composite chart  ----------*/
 
-#line-gender-pay .x.axis text,
-#line-gender-pay .x.axis .tick{
-    display: none;
+#line-gender-pay .x.axis{
+    & text{
+        display: none;
+    };
+    & .tixk{
+        display: none;
+    }
 }
 
 /*----------  end of composite chart  ----------*/
@@ -138,27 +139,22 @@ text{
     }
 }
 
-.area path{
-    stroke: white;
+.area{
+    & path{
+        stroke: white; 
+    };
+    &:hover{
+        fill-opacity: 0.5;
+        cursor: pointer;    
+    }
 }
 
-.area:hover{
-    fill-opacity: 0.5;
-    cursor: pointer;
-}
 /*---- end of crimes map ----*/
 
 /*---- crimes row chart ----*/
 
 #crimes{
-    @include vendor-prefix(text-align, center)
-}
-
-#row-crimes svg text{
-    fill: black;
-}
-
-#crimes{
+    @include vendor-prefix(text-align, center);
     & svg {
         @include all-desktop-devices{
             max-width: 41vw;
@@ -171,15 +167,19 @@ text{
     }
 }
 
-#row-crimes .row text{
-    font-size: 0.8rem;
-    @include mobile-device{
-        font-size: 1rem;
+#row-crimes{
+    & svg text{
+        fill: black;
+    };
+    & svg g.axis .tick{
+        display: none; 
+    };
+    & .row text{
+        font-size: 0.8rem;
+        @include mobile-device{
+            font-size: 1rem;    
+        }
     }
-}
-
-#row-crimes svg g g.axis .tick { 
-    display: none; 
 }
 
 /*---- end of crimes row chart ----*/

@@ -349,8 +349,11 @@ footer {
 
 /*----------  end of scatter plot  ----------*/
 /*----------  composite chart  ----------*/
-#line-gender-pay .x.axis text,
-#line-gender-pay .x.axis .tick {
+#line-gender-pay .x.axis text {
+  display: none;
+}
+
+#line-gender-pay .x.axis .tixk {
   display: none;
 }
 
@@ -394,10 +397,6 @@ footer {
   text-align: center;
 }
 
-#row-crimes svg text {
-  fill: black;
-}
-
 @media screen and (min-width: 900px) {
   #crimes svg {
     max-width: 41vw;
@@ -410,6 +409,14 @@ footer {
   }
 }
 
+#row-crimes svg text {
+  fill: black;
+}
+
+#row-crimes svg g.axis .tick {
+  display: none;
+}
+
 #row-crimes .row text {
   font-size: 0.8rem;
 }
@@ -418,10 +425,6 @@ footer {
   #row-crimes .row text {
     font-size: 1rem;
   }
-}
-
-#row-crimes svg g g.axis .tick {
-  display: none;
 }
 
 /*---- end of crimes row chart ----*/
