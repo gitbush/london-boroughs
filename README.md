@@ -13,12 +13,13 @@ Using D3 Dc and Crossfilter, all charts will filter each other on clicking to al
 The crimes per borough section is using its own seperate dataset and as a result will not filter when other chart categories are selected. This was left as is owing to the format of the two datasets and I think leads to a less complicated experience. 
 
 A few potential users are someone who:
-- Is thinking of moving to London and wants to know the economic, social and safety side of the city.
-- Wants to know how all London boroughs differ on key indicators. 
+1. Is thinking of moving to London and wants to know the economic, social and safety side of the city.
+2. Wants to know how all London boroughs differ on key indicators.
+3. Wants to see how a particular borough compares on key indicators. 
 
 ## Features
 
-The dashboard as the name suggests centres around the charts. Each chart is interactive to varied degrees.
+The dashboard, as the name suggests centres around the charts. Each chart is interactive to varied degrees.
 - Four number displays head the dashboard displaying some of the key indicators to any city. These will filter accordingly based on the selected filters
 - Two bar charts and pie chart focused on migration. Showcases some interesting insights into the multicultural population of London.
 - Choropleth Map with accompanied row chart based on crime within each borough. My personal favourite visualisation on the dashboard. By clicking on a borough on the map you can see which crimes are most prevalent.
@@ -26,56 +27,49 @@ The dashboard as the name suggests centres around the charts. Each chart is inte
 - Gender pay gap composite chart. Another data relationship that I was expecting but no less impactful. 
 - Average house price row chart. Showing the extortionate value of property in each borough.
 
+All charts are fully responsive and interactive. Clicking on any chart will apply filters to others allowing the user to narrow down their selection. A reset all button at the bottom of page will remove all filters and reset all charts to starting point. 
+
 ### Features Left to Implement
 - Something that would be useful is to display the name of the selected borough/s so the user is aware of the data being used.
 
 ## Technologies Used
 
 The dashboard relies:
-* HTML 
+* <a href="https://www.w3.org/TR/html52/" target="_blank">HTML</a> 
     - For markup
-* CSS
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank">CSS3</a>
     - For dashboard styles and grid layout
-* SCSS
+* <a href="https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html" target="_blank">SCSS</a>
     - For splitting the stylesheets into partials for ease of development. My first time using SCSS and I do need to find a work flow that suits me. 
-* Bootstrap (version 4.3.1)
+* <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap (version 4.3.1)</a>
     -  Used for all cards, font styles and modal.
-* D3.js (version 3.5.17)
+* <a href="https://d3js.org/" target="_blank">D3.js (version 3.5.17)</a>
     -  JavaScript library for manipulating documents based on data and the backbone of the dashbaord.
-* Dc.js (version 2.1.8)
+* <a href="https://dc-js.github.io/dc.js/" target="_blank">Dc.js (version 2.1.8)</a>
     - Leveraging d3.js to render charts in CSS-friendly SVG format. 
-* Crossfilter.js (version 1.3.12)
+* <a href="http://square.github.io/crossfilter/" target="_blank">Crossfilter.js (version 1.3.12)</a>
     - A dependency of dc.js to provide linked filtering and aggregation of large datasets.
-* Javascript 
+* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a> 
     - All three charting libraries are based on Javascript.
-* Queue.js (version 1.0.7) 
+* <a href="https://github.com/d3/d3-queue" target="_blank">Queue.js (version 1.0.7)</a> 
     - Used to load in csv and geoJson data 
-* Color Brewer (version 1)
-    - A tool designed to select various color schemes for maps and other graphics. Used in the crimes chorpleth map and color legend.
-* Jquery
+* <a href="https://jquery.com/" target="_blank">Jquery (version 3.3.1)</a>
     - For the welcome/info modal.
-* Font Awesome (version v5.7.2)
+* <a href="https://fontawesome.com/" target="_blank">Font Awesome (version v5.7.2)</a>
     - For number display icons and info icon.
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+The dashboard was tested throughout development on all the major browsers latest versions. The dashboard will render accordingly on all device screen widths. Content driven breakpoints were used rather than focusing on individual device width. I think this provides the most fail safe way of accomodating any screen on which the dashboard is viewed as well as keeping up with the speed at which new devices are being made.
 
-I would have liked to incorporate some form of automated testing and TDD during the build of this project but I could not find any reliable sources showing how to use a testing framework like Jasmine on d3.js charts. Or svg testing in general.
+How the potential users mentioned in the UK section can achieve their goals:
+1. A comparison of all boroughs across every indicator can be gained when first arriving at the dashboard as all charts are initially rendered without any filters applied. 
+2. The user can focus on one particular section/indicator and see how all boroughs match up.
+3. Clicking on a particular borough on any chart will filter other indicators so the user can see how that borough compares to others. 
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+I would have liked to incorporate some form of automated testing and TDD during the build of this project but I could not find any reliable sources showing how to use a testing framework like Jasmine on d3.js charts. Or svg testing in general...
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+A testing matrix can be found <a href="docs/testing.xlsx" target="_blank">here</a> showing all tests carried out on all browsers and breakpoints.
 
 ## Deployment
 
@@ -85,7 +79,7 @@ Repo: <a href= "https://github.com/gitbush/london-boroughs" target="_blank">http
 
 Deployed site on Github pages here:
 
-Github Pages: <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
+Github Pages (master branch): <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
 ### Content
 
