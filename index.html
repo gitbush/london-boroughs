@@ -24,7 +24,7 @@
     <!--****** main dashboard header ******-->
     <header class="navbar-header"> 
         <h4 class="navbar-heading">London Dashboard</h4>
-        <a id="intro"><i class="fas fa-question-circle"></i></a>
+        <a class="intro"><i class="fas fa-question-circle"></i></a>
         <a data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></a>
     </header>
     <!--****** end of main dashboard header ******-->
@@ -252,25 +252,35 @@
             <div class="modal-body">
                 <p>The aim of this London Boroughs Dashboard is to be an easy to use source 
                     of London data from a varied array of topics.
-                    Anyone who is interested should be able to look through this window
-                    and gain a detailed breakdown of each borough.</p>
+                </p>
+                <p>
+                    Covered are some of the key indicators of any city such as demographic, 
+                    economic, environmental and crime.
+                </p>
                 <p>
                     All charts are clickable and provide varied levels of interactivity. Be
                     sure to hit the reset button at the bottom of the page to refresh any 
                     filters that have been applied.
                 </p>
                 <p>
+                    Most of the charts are based on a 
+                    2015 dataset found at <a href="https://data.london.gov.uk/dataset/london-borough-profiles" target="_blank">The London Data Store</a>.
+                </p>   
+                <p>    
                     The data used in the Crimes per Borough section was taken from
                     a 2016 <a href=" https://www.met.police.uk/sd/stats-and-data" target="_blank">Met Police</a> 
-                    dataset. The rest of the charts are based on a 
-                    2015 dataset found at <a href="https://data.london.gov.uk/dataset/london-borough-profiles" target="_blank">The London Data Store.</a>
+                    dataset. 
                 </p>
                 <p>
-                    Happy Browsing!
+                    A short tutorial is provided to run you through the best way to use the dashboard.
+                </p>
+                <p>
+                    This information modal and the tutorial can also be accessed later via the icons at the top of the page.
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary intro" data-dismiss="modal">Take tutorial</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Skip tutorial</button>
             </div>
             </div>
         </div>
@@ -295,7 +305,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
     <!-- scripts.js  -->
     <script src="static/js/d3_locale.js"></script>
-    <!-- <script src="static/js/scripts.js"></script> -->
+    <script src="static/js/scripts.js"></script>
     <script src="static/js/intro.js"></script>
     <script src="static/js/charts.js"></script>
 

@@ -1,5 +1,5 @@
-    
-$("#intro").on("click", function startIntro(){
+// intro.js dashboard intructions
+$(".intro").on("click", function startIntro(){
     var intro = introJs();
         intro.setOptions({
         steps: [
@@ -9,12 +9,7 @@ $("#intro").on("click", function startIntro(){
             },
             {
             element: '#bar-BAME',
-            intro: "Select more boroughs to add to the selection.",
-            position: 'auto'
-            },
-            {
-            element: '.reset-all',
-            intro: 'Click this button to remove all filters.',
+            intro: "Click on more boroughs to add to the selection.",
             position: 'auto'
             },
             {
@@ -23,12 +18,17 @@ $("#intro").on("click", function startIntro(){
             position: 'auto'
             },
             {
-            element: '.fa-info-circle',
-            intro: 'The info icon will provide some background about the project'
+            element: '.reset-all',
+            intro: 'Click the reset-all button to remove <b>all</b> filters.',
+            position: 'auto'
             },
             {
-            element: '#intro',
-            intro: 'The question will take you through these steps again.'
+            element: '.fa-info-circle',
+            intro: 'The info button will provide some background about the project'
+            },
+            {
+            element: '.fa-question-circle',
+            intro: 'The question button will take you through these steps again.'
             }
         ]
         });
