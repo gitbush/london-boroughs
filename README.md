@@ -6,16 +6,18 @@ Bringing to life some very interesting London datasets using the Javascript libr
  
 ## UX
  
-The design of this website was used to provide the user with a fun and interactive way to discover facts about each borough of London without over complicating things.
+The design of this website was used to provide the user with a fun and interactive way to discover facts about each borough of London without over complicating things. I kept a minimalist style overall to keep the users focus on the charts. 
 
 Using D3 Dc and Crossfilter, all charts will filter each other on clicking to allow the user to narrow down their selection.
 
-The crimes per borough section is using its own seperate dataset and as a result will not filter when other chart categories are selected. This was left as is owing to the format of the two datasets and I think leads to a less complicated experience. 
+The crimes per borough section is using its own seperate dataset and as a result will not filter when other chart categories are selected. This was left as is owing to the format of the two datasets and I think leads to a less confusing experience. 
 
 A few potential users are someone who:
 1. Is thinking of moving to London and wants to know the economic, social and safety side of the city.
 2. Wants to know how all London boroughs differ on key indicators.
 3. Wants to see how a particular borough compares on key indicators. 
+
+Initial wireframes can be found <a href="docs/dashboardWireframes.png" target="_blank">here</a>.
 
 ## Features
 
@@ -79,7 +81,7 @@ The project source control was handled by git and remotely on Github. The reposi
 
 Repo: <a href= "https://github.com/gitbush/london-boroughs" target="_blank">https://github.com/gitbush/london-boroughs</a>
 
-Deployed site on Github pages here:
+Deployed site on Github pages here. The live site will be updated automatically with each commit on the master branch:
 
 Github Pages (master branch): <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
