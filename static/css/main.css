@@ -179,10 +179,6 @@ footer {
   background-color: #343a40 !important;
 }
 
-.navbar-heading {
-  color: white;
-}
-
 .navbar-header .fas {
   color: white;
   margin: 0;
@@ -193,6 +189,10 @@ footer {
 
 .navbar-header .fas:hover {
   color: #32e458;
+}
+
+.navbar-heading {
+  color: white;
 }
 
 #intro {

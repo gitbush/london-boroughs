@@ -7,22 +7,20 @@
     grid-template-columns: auto 2.5rem 2.5rem;
     padding: 0.3rem .5rem .3rem 1rem;
     background-color: #343a40 !important;
+    & .fas{
+        color: white;
+        margin: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: .5s;
+    };
+    & .fas:hover{
+        color:rgb(50, 228, 88);
+    }
 }
 
 .navbar-heading{
     color: white;
-}
-
-.navbar-header .fas{
-    color: white;
-    margin: 0;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.navbar-header .fas:hover{
-    color:rgb(50, 228, 88);
 }
 
 #intro{
