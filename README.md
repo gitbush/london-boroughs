@@ -41,6 +41,8 @@ The dashboard relies:
     - For dashboard styles and grid layout
 * <a href="https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html" target="_blank">SCSS</a>
     - For splitting the stylesheets into partials for ease of development. My first time using SCSS and I do need to find a work flow that suits me. 
+* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a> 
+    - All three charting libraries are based on Javascript.
 * <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap (version 4.3.1)</a>
     -  Used for all cards, font styles and modal.
 * <a href="https://d3js.org/" target="_blank">D3.js (version 3.5.17)</a>
@@ -49,8 +51,6 @@ The dashboard relies:
     - Leveraging d3.js to render charts in CSS-friendly SVG format. 
 * <a href="http://square.github.io/crossfilter/" target="_blank">Crossfilter.js (version 1.3.12)</a>
     - A dependency of dc.js to provide linked filtering and aggregation of large datasets.
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a> 
-    - All three charting libraries are based on Javascript.
 * <a href="https://github.com/d3/d3-queue" target="_blank">Queue.js (version 1.0.7)</a> 
     - Used to load in csv and geoJson data 
 * <a href="https://jquery.com/" target="_blank">Jquery (version 3.3.1)</a>
