@@ -71,6 +71,8 @@ I would have liked to incorporate some form of automated testing and TDD during 
 
 A testing matrix can be found <a href="docs/testing.xlsx" target="_blank">here</a> showing all tests carried out on all browsers and breakpoints.
 
+The dashboard will not work on Internet Explorer due to the use of CSS. A small sacrifice given the global usage of Internet Explorer is currently at around 4%.
+
 ## Deployment
 
 The project source control was handled by git and remotely on Github. The repository can be found here:
