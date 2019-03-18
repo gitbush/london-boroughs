@@ -451,6 +451,22 @@ footer {
 }
 
 /*=====  End of Info Modal  ======*/
+/*=============================================
+=               info.js message               =
+=============================================*/
+.introjs-tooltip {
+  max-width: 280px;
+}
+
+.introjs-tooltiptext {
+  font-size: .8rem;
+}
+
+.introjs-helperNumberLayer {
+  display: none;
+}
+
+/*=====  End of info.js message  ======*/
 /*=====  End of component directories  ======*/
 /*=====  End of scss directories  ======*/
 /*# sourceMappingURL=main.css.map */

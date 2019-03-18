@@ -20,7 +20,7 @@ $("#intro").on("click", function startIntro(){
             {
             element: '#crimes',
             intro: "The Crimes section will not be affected by other charts. Click on the map to see the type of crime which is most prevalent in the row chart below.",
-            position: 'bottom'
+            position: 'auto'
             },
             {
             element: '.fa-info-circle',
@@ -28,7 +28,7 @@ $("#intro").on("click", function startIntro(){
             },
             {
             element: '#intro',
-            intro: 'Click "Show me" to go through these steps again.'
+            intro: 'The question will take you through these steps again.'
             }
         ]
         });
