@@ -17,6 +17,12 @@
     color: white;
     margin: 0;
     font-size: 2rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.navbar-header .fas:hover{
+    color:rgb(50, 228, 88);
 }
 
 #intro{

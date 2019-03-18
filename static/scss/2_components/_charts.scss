@@ -192,11 +192,18 @@ text{
     height: 30px;
     margin: .6rem .5rem;
     padding: 2%;
-    background-color: #bbb;
+    background-color: #fff;
     border-radius: 3px;
     color: white;
     text-align: center;
     cursor: pointer;
+    transition: .5s;
+        &:hover{
+            background-color: rgb(50, 228, 88);
+        };
+        & a{
+            text-decoration: none;
+        }
 }
 
 .reset{

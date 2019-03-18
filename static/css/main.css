@@ -187,6 +187,12 @@ footer {
   color: white;
   margin: 0;
   font-size: 2rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.navbar-header .fas:hover {
+  color: #32e458;
 }
 
 #intro {
@@ -425,11 +431,20 @@ footer {
   height: 30px;
   margin: .6rem .5rem;
   padding: 2%;
-  background-color: #bbb;
+  background-color: #fff;
   border-radius: 3px;
   color: white;
   text-align: center;
   cursor: pointer;
+  transition: .5s;
+}
+
+.reset-all:hover {
+  background-color: #32e458;
+}
+
+.reset-all a {
+  text-decoration: none;
 }
 
 .reset {
