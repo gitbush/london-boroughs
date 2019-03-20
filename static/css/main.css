@@ -457,9 +457,24 @@ footer {
 
 .reset {
   position: absolute;
+  font-size: .9rem;
+}
+
+#map-crimes .reset {
   left: 2rem;
   top: 8.2rem;
-  font-size: .9rem;
+}
+
+#bar-BAME .reset {
+  right: 2rem;
+  top: 8.5rem;
+}
+
+#bar-english-lng .reset,
+#pie-migrant-by-birth .reset,
+#row-avg-house .reset {
+  right: 2rem;
+  top: 7.5rem;
 }
 
 /*----------  end of reset all button  ----------*/

@@ -208,9 +208,21 @@
 
 .reset{
     position: absolute;
-    left: 2rem;
-    top: 8.2rem;
     font-size: .9rem;
+    #map-crimes &{
+        left: 2rem;
+        top: 8.2rem;
+    };
+    #bar-BAME &{
+        right: 2rem;
+        top: 8.5rem;
+    };
+    #bar-english-lng &,
+    #pie-migrant-by-birth &,
+    #row-avg-house &{
+        right: 2rem;
+        top: 7.5rem;
+    }
 }
 
 /*----------  end of reset all button  ----------*/
