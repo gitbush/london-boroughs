@@ -29,7 +29,9 @@ The dashboard, as the name suggests centres around the charts. Each chart is int
 - Gender pay gap composite chart. Another data relationship that I was expecting but no less impactful. 
 - Average house price row chart. Showing the extortionate value of property in each borough.
 
-All charts are fully responsive and interactive. Clicking on any chart will apply filters to others allowing the user to narrow down their selection. A reset all button at the bottom of page will remove all filters and reset all charts to starting point. 
+All charts are fully responsive and most are interactive with the execption of the obesity scatter plot and gender pay line chart. Clicking on any chart will apply filters to others allowing the user to narrow down their selection. 
+
+A reset link will appear if a chart is clicked allowing the user to reset the selected filters from the corresponding charts and all other charts. An added reset all button at the bottom of page will remove all filters and reset all charts to starting point. 
 
 A modal will render on a users arrival to the page with some information about the dashboard. Within the modal there is an option to take the tutorial which will run the user through the features of the dashboard and how to use it. The modal and tutorial can also be accessed via the info and question icons in the header.
 
