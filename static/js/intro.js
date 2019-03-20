@@ -1,26 +1,24 @@
 // intro.js dashboard intructions
 $(".intro").on("click", function startIntro(){
+
+    $(".reset").css({right:"2rem", top: ".2rem"})
+
     var intro = introJs();
         intro.setOptions({
         steps: [
             {
             element: '#bar-BAME',
-            intro: "Click on a bar in the chart to focus all other charts on a particular borough."
+            intro: "Click on a bar in the chart to focus on a particular borough. The same filter will apply to other charts."
             },
             {
             element: '#bar-BAME',
-            intro: "Click on more boroughs to add to the selection.",
+            intro: "Click on more boroughs to add to the selection. Or click the reset link to clear.",
             position: 'auto'
             },
             {
             element: '#crimes',
             intro: "The Crimes section will not be affected by other charts. Click on the map to see the type of crime which is most prevalent in the row chart below.",
-            position: 'auto'
-            },
-            {
-            element: '.reset-all',
-            intro: 'Click the reset-all button to remove <b>all</b> filters.',
-            position: 'auto'
+            position: 'right'
             },
             {
             element: '.fa-info-circle',
@@ -33,5 +31,9 @@ $(".intro").on("click", function startIntro(){
         ]
         });
 
-        intro.start();
+        intro.onexit(function() {
+            $(".reset").css({right:"2rem", top: "8.5rem"})
+          });
+
+        intro.start();        
 })
