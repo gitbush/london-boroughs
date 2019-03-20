@@ -8,7 +8,7 @@ Bringing to life some very interesting London datasets using the Javascript libr
  
 The design of this website was used to provide the user with a fun and interactive way to discover facts about each borough of London without over complicating things. I kept a minimalist style overall to keep the users focus on the charts. 
 
-Using D3 Dc and Crossfilter, all charts will filter each other on clicking to allow the user to narrow down their selection.
+Using D3, Dc, and Crossfilter, all charts will filter each other on clicking to allow the user to narrow down their selection.
 
 The crimes per borough section is using its own seperate dataset and as a result will not filter when other chart categories are selected. This was left as is owing to the format of the two datasets and I think leads to a less confusing experience. 
 
@@ -30,6 +30,8 @@ The dashboard, as the name suggests centres around the charts. Each chart is int
 - Average house price row chart. Showing the extortionate value of property in each borough.
 
 All charts are fully responsive and interactive. Clicking on any chart will apply filters to others allowing the user to narrow down their selection. A reset all button at the bottom of page will remove all filters and reset all charts to starting point. 
+
+A modal will render on a users arrival to the page with some information about the dashboard. Within the modal there is an option to take the tutorial which will run the user through the features of the dashboard and how to use it. The modal and tutorial can also be accessed via the info and question icons in the header.
 
 ### Features Left to Implement
 - Something that would be useful is to display the name of the selected borough/s so the user is aware of the data being used.
@@ -62,26 +64,32 @@ The dashboard relies:
 
 ## Testing
 
-The dashboard was tested throughout development on all the major browsers latest versions. The dashboard will render accordingly on all device screen widths. Content driven breakpoints were used rather than focusing on individual device width. I think this provides the most fail safe way of accomodating any screen on which the dashboard is viewed as well as keeping up with the speed at which new devices are being made.
+The dashboard was tested throughout development on all the major browsers latest versions using the developer tools and also testing on individual devices. Each chart represented a new piece of functionality and testing was performed after each chart was added. Once all charts were completed, testing was performed after adding each new subsequent feature.
+
+The dashboard will render accordingly on all device screen widths. Content driven breakpoints were used rather than focusing on individual device width. I think this provides the most fail safe way of accomodating any screen on which the dashboard is viewed as well as keeping up with the speed at which new devices are being made.
+
+I would have liked to incorporate some form of automated testing and TDD during the build of this project but I could not find any reliable sources showing how to use a testing framework like Jasmine on d3.js charts. Or svg testing in general... 
 
 How the potential users mentioned in the UK section can achieve their goals:
 1. A comparison of all boroughs across every indicator can be gained when first arriving at the dashboard as all charts are initially rendered without any filters applied. 
 2. The user can focus on one particular section/indicator and see how all boroughs match up.
 3. Clicking on a particular borough on any chart will filter other indicators so the user can see how that borough compares to others. 
 
-I would have liked to incorporate some form of automated testing and TDD during the build of this project but I could not find any reliable sources showing how to use a testing framework like Jasmine on d3.js charts. Or svg testing in general...
-
 A testing matrix can be found <a href="docs/testing.xlsx" target="_blank">here</a> showing all tests carried out on all browsers and breakpoints.
 
-The dashboard will not work on Internet Explorer due to the use of CSS. A small sacrifice given the global usage of Internet Explorer is currently at around 4%.
+The dashboard will not work on Internet Explorer due to the use of CSS. A small sacrifice given the global usage of Internet Explorer is currently at around 4%. On my research I found a workaround for this is using the <a href="https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/" target="_blank">Autoprefixer</a> tool. It does require the use of node.js and npm which is something that is outside the scope of this project but something I would like to incorporate in the future.
 
 ## Deployment
 
-The project source control was handled by git and remotely on Github. The repository can be found here:
+The project source control was handled by git and remotely on Github. Throughout the development process, I mainly worked out of a "develop" branch and at times a further "feature" branch to seperate my code and maintain a secure work flow. This is my first time using multiple branches during development. I do still need to nail down my work flow and become more familiar with working with branches. 
+
+The repository can be found here:
 
 Repo: <a href= "https://github.com/gitbush/london-boroughs" target="_blank">https://github.com/gitbush/london-boroughs</a>
 
-Deployed site on Github pages here. The live site will be updated automatically with each commit on the master branch:
+The site was eventually deployed through github pages from the master branch. The live site will be updated automatically with each commit on the master branch:
+
+Deployed site on Github pages here. 
 
 Github Pages (master branch): <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
