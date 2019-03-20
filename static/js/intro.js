@@ -27,6 +27,9 @@ $(".intro").on("click", function startIntro(){
             {
             element: '.fa-question-circle',
             intro: 'The question button will take you through these steps again.'
+            },
+            {
+            intro: 'This completes the tour'
             }
         ]
         });
