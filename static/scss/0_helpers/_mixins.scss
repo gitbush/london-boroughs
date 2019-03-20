@@ -1,6 +1,4 @@
-/*=============================================
-=            All mixins/media queries            =
-=============================================*/
+// All mixins/media queries        
 // media queries
 @mixin mobile-device{
     @media screen and (max-width: $tablet-width - 1px){
@@ -58,8 +56,4 @@
     #{$property}: -o-#{$value};
     #{$property}: #{$value};
 }
-
-/*=====  End of mixins/media queries  ======*/
-
-
 

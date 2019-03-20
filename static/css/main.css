@@ -1,22 +1,4 @@
 /*=============================================
-=            All scss directories           =
-=============================================*/
-/*=============================================
-=            All helpers directories         =
-=============================================*/
-/*=============================================
-=            All variables            =
-=============================================*/
-/*=====  End of variables  ======*/
-/*=============================================
-=            All mixins/media queries            =
-=============================================*/
-/*=====  End of mixins/media queries  ======*/
-/*=====  End of helpers directories  ======*/
-/*=============================================
-=            All base directories            =
-=============================================*/
-/*=============================================
 =               base elements                 =
 =============================================*/
 main, html, body {
@@ -49,7 +31,17 @@ footer {
     grid-template-columns: auto;
     grid-template-rows: repeat(11, auto);
     grid-gap: 10px;
-    grid-template-areas: "population" "born-abroad" "avg-house-prc" "avg-pay" "BAME" "language" "migrant" "crimes" "obesity" "gender-pay" "avg-house";
+    grid-template-areas: "population"
+ "born-abroad"
+ "avg-house-prc"
+ "avg-pay"
+ "BAME"
+ "language"
+ "migrant"
+ "crimes"
+ "obesity"
+ "gender-pay"
+ "avg-house";
   }
 }
 
@@ -60,7 +52,12 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, auto);
     grid-gap: 10px;
-    grid-template-areas: "population population born-abroad born-abroad" "avg-house-prc avg-house-prc avg-pay avg-pay" "BAME BAME language language" ". crimes crimes ." "migrant migrant obesity obesity" "gender-pay gender-pay avg-house avg-house";
+    grid-template-areas: "population population born-abroad born-abroad"
+ "avg-house-prc avg-house-prc avg-pay avg-pay"
+ "BAME BAME language language"
+ ". crimes crimes ."
+ "migrant migrant obesity obesity"
+ "gender-pay gender-pay avg-house avg-house";
   }
 }
 
@@ -71,7 +68,10 @@ footer {
     grid-template-columns: 1rem repeat(4, 1fr) 1rem;
     grid-template-rows: repeat(4, auto);
     grid-gap: 10px;
-    grid-template-areas: ". population born-abroad avg-house-prc avg-pay ." ". BAME       BAME        language      language ." ". migrant    crimes      crimes        obesity ." ". gender-pay crimes      crimes        avg-house .";
+    grid-template-areas: ". population born-abroad avg-house-prc avg-pay ."
+ ". BAME       BAME        language      language ."
+ ". migrant    crimes      crimes        obesity ."
+ ". gender-pay crimes      crimes        avg-house .";
   }
 }
 
@@ -165,10 +165,6 @@ footer {
 
 /*----------  end of footer grid  ----------*/
 /*=====  End of grid layout  ======*/
-/*=====  End of base directories ======*/
-/*=============================================
-=            All component directories            =
-=============================================*/
 /*=============================================
 =               Navbar styles                 =
 =============================================*/
@@ -353,7 +349,7 @@ footer {
   display: none;
 }
 
-#line-gender-pay .x.axis .tixk {
+#line-gender-pay .x.axis .tick {
   display: none;
 }
 
@@ -485,6 +481,4 @@ footer {
 }
 
 /*=====  End of info.js message  ======*/
-/*=====  End of component directories  ======*/
-/*=====  End of scss directories  ======*/
 /*# sourceMappingURL=main.css.map */
