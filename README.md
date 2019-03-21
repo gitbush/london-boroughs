@@ -8,7 +8,7 @@ Bringing to life some very interesting London datasets using the Javascript libr
  
 The design of this website was used to provide the user with a fun and interactive way to discover facts about each borough of London without over complicating things. I kept a minimalist style overall to keep the users focus on the charts. 
 
-Using D3, Dc, and Crossfilter, all charts will filter each other on clicking to allow the user to narrow down their selection.
+Using D3, Dc, and Crossfilter, all charts (except for the number displays and scatter plot) will filter each other on clicking to allow the user to narrow down their selection.
 
 The crimes per borough section is using its own seperate dataset and as a result will not filter when other chart categories are selected. This was left as is owing to the format of the two datasets and I think leads to a less confusing experience. 
 
@@ -17,23 +17,24 @@ A few potential users are someone who:
 2. Wants to know how all London boroughs differ on key indicators.
 3. Wants to see how a particular borough compares on key indicators. 
 
-Initial wireframes can be found <a href="docs/dashboardWireframes.png" target="_blank">here</a>.
+Initial wireframes can be found <a href="docs/dashboardWireframes.png" target="_blank">here</a>. The sidebar that was initially designed for desktop was left out due to it taking up unnecessary screen real estate. The hamburger menu was swapped for the two individual icons to avoid having the user take a two step process to find the icons.
 
 ## Features
 
 The dashboard, as the name suggests centres around the charts. Each chart is interactive to varied degrees.
-- Four number displays head the dashboard displaying some of the key indicators to any city. These will filter accordingly based on the selected filters
+- Four number displays head the dashboard displaying some of the key indicators to any city. These will filter accordingly based on the selected filters applied to other charts as the number displays themselves are not interactive.
 - Two bar charts and pie chart focused on migration. Showcases some interesting insights into the multicultural population of London.
 - Choropleth Map with accompanied row chart based on crime within each borough. My personal favourite visualisation on the dashboard. By clicking on a borough on the map you can see which crimes are most prevalent.
-- Obesity vs greenspace scatter plot. Shows the correlation between the amount of greenspace a borough has and the rate of chidhood obesity. 
+- Obesity vs greenspace scatter plot. Shows the correlation between the amount of greenspace a borough has and the rate of chidhood obesity. This chart is not interactive.
 - Gender pay gap composite chart. Another data relationship that I was expecting but no less impactful. 
 - Average house price row chart. Showing the extortionate value of property in each borough.
+- A tooltip will show when hovering on all charts (except for the number displays), displaying some information about the hovered selection.
 
-All charts are fully responsive and most are interactive with the execption of the obesity scatter plot and gender pay line chart. Clicking on any chart will apply filters to others allowing the user to narrow down their selection. 
+All charts are fully responsive and most are interactive with the execption of the obesity scatter plot and gender pay line chart. Clicking on any interactive chart will apply filters to others allowing the user to narrow down their selection. 
 
 A reset link will appear if a chart is clicked allowing the user to reset the selected filters from the corresponding charts and all other charts. An added reset all button at the bottom of page will remove all filters and reset all charts to starting point. 
 
-A modal will render on a users arrival to the page with some information about the dashboard. Within the modal there is an option to take the tutorial which will run the user through the features of the dashboard and how to use it. The modal and tutorial can also be accessed via the info and question icons in the header.
+A modal will render on a users arrival to the page with some information about the dashboard. Within the modal there is an option to take the tour which will run the user through the features of the dashboard and how to use it. The modal and tour can also be accessed via the info and question icons in the header.
 
 ### Features Left to Implement
 - Something that would be useful is to display the name of the selected borough/s so the user is aware of the data being used.
@@ -89,7 +90,7 @@ The repository can be found here:
 
 Repo: <a href= "https://github.com/gitbush/london-boroughs" target="_blank">https://github.com/gitbush/london-boroughs</a>
 
-The site was eventually deployed through github pages from the master branch. The live site will be updated automatically with each commit on the master branch:
+The site was eventually deployed through github pages from the master branch. The live site will be updated automatically with each commit on the master branch.
 
 Deployed site on Github pages here. 
 
@@ -107,4 +108,4 @@ The dashboard is based on two seperate datasets:
 
 The color legend used in the Crimes per Borough section was learnt from the <a href="https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient.html" target="_blank">SVG linear gradient tutorial.</a>
 
-The tutorial used is from <a href="https://introjs.com/docs/" target="_blank">Intro.js</a>
+The tour used is from <a href="https://introjs.com/docs/" target="_blank">Intro.js</a>
