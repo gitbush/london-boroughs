@@ -1,6 +1,7 @@
 // intro.js dashboard intructions
 $(".intro").on("click", function startIntro(){
 
+    // stop reset link being pushed out of position by info.js message box
     $(".reset").css({right:"2rem", top: ".2rem"})
 
     var intro = introJs();
@@ -34,6 +35,7 @@ $(".intro").on("click", function startIntro(){
         ]
         });
 
+    // Set reset link back in normal position after info.js message box has gone 
         intro.onexit(function() {
             $(".reset").css({right:"2rem", top: "8.5rem"})
           });
