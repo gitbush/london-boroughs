@@ -96,7 +96,7 @@ Deployed site on Github pages here.
 
 Github Pages (master branch): <a href="https://gitbush.github.io/london-boroughs/" target="_blank">https://gitbush.github.io/london-boroughs/</a>
 
-To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/gitbush/london-boroughs.git` into your terminal. 
+To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/gitbush/london-boroughs.git` into your terminal. No dependencies required for local development.
 
 ### Content
 
